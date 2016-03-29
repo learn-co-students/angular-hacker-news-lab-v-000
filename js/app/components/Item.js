@@ -1,9 +1,9 @@
 angular
   .module('app')
-  .component('story', Story);
+  .component('item', Item);
 
-var Story = {
-  templateUrl: 'views/story.html',
+var Item = {
+  templateUrl: 'views/item.html',
 	bindings: {
 		id: '='
 	},
@@ -16,5 +16,5 @@ var Story = {
 				ctrl.data = res.data;
 			})
 	},
-	controllerAs: 'story'
+	controllerAs: 'item'
 };
