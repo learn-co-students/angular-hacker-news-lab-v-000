@@ -1,0 +1,23 @@
+<div>
+  <ul class="posts">
+    <li ng-repeat="post in ctrl.posts">
+      <item id="post"></item>
+    </li>
+  </ul>
+
+  <div>
+    <ul class="pagination">
+      <li ng-if="ctrl.page > 0">
+        <a href="" ng-click="ctrl.previousPage()"></a>
+            << Previous
+      </li>
+      <li ng-if"ctrl.page < ctrl.totalPages -1">
+        <a href="" ng-click="ctrl.nextPage()">
+            Next >>
+        </a>
+      </li>
+    </ul>
+
+    <div style="clear: both;"></div>
+  </div>
+</div>
