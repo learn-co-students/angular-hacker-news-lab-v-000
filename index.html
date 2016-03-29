@@ -10,5 +10,27 @@
 </head>
 <body>
 
+    <div ng-app="app" class="app">
+        <header class="header">
+            <div class="header__fixed">
+                <ul>
+                    <li>
+                        <a ui-sref="top" ui-sref-active="active">Top Stories</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div ui-view></div>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/components/Item.js"></script>
+    <script src="js/app/controllers/PostController.js"></script>
+    <script src="js/app/controllers/TopStoriesController.js"></script>
+    <script src="js/app/services/PostsService.js"></script>
+
 </body>
 </html>
