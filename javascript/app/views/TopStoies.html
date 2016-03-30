@@ -1,12 +1,16 @@
 <br>
+<button ng-click='ctrl.prevPage()'>Previous Page</button> <br>
 <button ng-click='ctrl.nextPage()'>Next Page</button>
-<button ng-click='ctrl.prevPage()'>Previous Page</button>
 <br>
 <div>
   Top Stories:
 </div>
 <br>
 
-<div ng-repeat='a in ctrl.articles[0] | pageFilter:ctrl.page'>
+<div ng-repeat='a in ctrl.articles '>
   <a href="" ui-sref='article({id: a})'>{{a}}</a>
+  {{post.data.title}}
+  {{ctrl}}
 </div>
+
+<!-- | pageFilter:ctrl.page -->

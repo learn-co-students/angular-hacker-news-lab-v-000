@@ -8,17 +8,17 @@ angular
 				controller: 'TopStoriesController as ctrl',
 				resolve: {
 					articles: function(PostsService) {
-            // PostsService.getAll();
+            PostsService.getAll();
 					}
 				}
 			})
-      .state('article', {
-        url: '/article/:id',
-        templateUrl: 'javascript/app/views/post.html',
-        controller: 'TopStoriesController as ctrl',
+      .state('post', {
+        url: '/post/:id',
+        templateUrl: 'views/post.html',
+        controller: 'PostController as post',
         resolve: {
-          article: function(PostsService, $stateParams) {
-            // PostsService.getArticle($stateParams.id);
+          post: function ($stateParams, PostsService) {
+            return PostsService.getPost($stateParams.id);
           }
         }
       });
