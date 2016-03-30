@@ -7,10 +7,18 @@
 </div>
 <br>
 
-<div ng-repeat='a in ctrl.articles '>
+<div ng-repeat='a in ctrl.articles'>
   <a href="" ui-sref='article({id: a})'>{{a}}</a>
   {{post.data.title}}
   {{ctrl}}
+  {{post}}
+
+  <a class="post__title" href="{{ post.data.url }}" target="_blank">
+        {{ post.data.title }}
+    </a>
+    <a class="post__description">
+        {{ post.data.descendants }} comments {{ post.data.score }} points
+    </a>
 </div>
 
 <!-- | pageFilter:ctrl.page -->

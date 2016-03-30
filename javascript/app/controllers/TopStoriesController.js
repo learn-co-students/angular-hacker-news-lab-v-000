@@ -1,4 +1,4 @@
-function TopStoriesController(PostsService) {
+function TopStoriesController(post) {
   var ctrl = this;
   this.message = "Welcome to Hacker News!";
   this.articles = PostsService.articles;
