@@ -1,20 +1,27 @@
 function TopStoriesController(posts) {
-  var ctrl = this;
-  
-  ctrl.page = 0;
-  ctrl.totalPosts = posts.data.length;
-  ctrl.totalPages = Math.ceil(ctrl.totalPosts / 30);
+	var ctrl = this;
 
-  this.nextPage = function() {
-    ctrl.page++;
-  };
+	ctrl.page = 0;
+	ctrl.totalPosts = posts.data.length;
+	ctrl.totalPages = Math.ceil(ctrl.totalPosts / 30);
 
-  this.prevPage = function() {
-    ctrl.page--;
-  }
+	ctrl.paginatePosts = function () {
+		ctrl.posts = posts.data.slice(ctrl.page * 30, (ctrl.page + 1) * 30);
+	};
 
+	ctrl.nextPage = function () {
+		ctrl.page++;
+		ctrl.paginatePosts()
+	};
+
+	ctrl.previousPage = function () {
+		ctrl.page--;
+		ctrl.paginatePosts();
+	};
+
+	ctrl.paginatePosts();
 }
 
 angular
-  .module('app')
-  .controller('TopStoriesController', TopStoriesController);
+	.module('app')
+	.controller('TopStoriesController', TopStoriesController);

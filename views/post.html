@@ -1,9 +1,12 @@
-<div>
+<div ng-if='post.data'>
+	<a href='{{ post.data.url }}' target='_blank'>
+		{{ post.data.title }}
+  </a>
+	<a> {{ post.data.descendants }} comments {{ post.data.score }} points </a>
 
-  <a href='{{ctrl.article[0].url}}'>Title: {{ctrl.article[0].title}}</a>
-  <p>Author: {{ctrl.article[0].by}}</p>
-  <p>Score: {{ctrl.article[0].score}}</p>
-  <p>Type: {{ctrl.article[0].type}}</p>
-
+	<ul>
+		<li ng-repeat='comment in post.data.kids'>
+			<item id='comment'></item>
+		</li>
+	</ul>
 </div>
-Show page!!
