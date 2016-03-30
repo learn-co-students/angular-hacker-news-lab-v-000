@@ -7,8 +7,23 @@
 	<title>Angular Application</title>
 
     <link rel="stylesheet" href="app.css" />
-</head>
-<body>
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script> -->
 
-</body>
+
+</head>
+	<body ng-app='app'>
+		<div ng-controller='MainCtrl as ctrl'>
+		{{ctrl.message}}
+
+
+		<ui-view></ui-view>
+
+		</div>
+		<script src='javascript/angular.js'></script>
+		<script src='javascript/angular-ui-router.js'></script>
+		<script src='javascript/app/app.js'></script>
+		<script src='javascript/app/controllers/MainCtrl.js'></script>
+		<script src='javascript/app/services/ArticleService.js'></script>
+	</body>
 </html>
