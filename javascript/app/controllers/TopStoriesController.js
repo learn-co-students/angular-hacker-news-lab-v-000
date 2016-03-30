@@ -1,9 +1,9 @@
-function TopStoriesController(post) {
+function TopStoriesController(posts) {
   var ctrl = this;
   this.message = "Welcome to Hacker News!";
-  this.articles = PostsService.articles;
-  this.article = PostsService.article;
-  this.page = 1;
+  ctrl.page = 0;
+  ctrl.totalPosts = posts.data.length;
+  ctrl.totalPages = Math.ceil(ctrl.totalPosts / POSTS_PER_PAGE);
 
   this.nextPage = function() {
     ctrl.page++;
