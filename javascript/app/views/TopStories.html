@@ -6,12 +6,9 @@
   Top Stories:
 </div>
 <br>
-
-<div ng-repeat='a in ctrl.articles'>
-  <a href="" ui-sref='article({id: a})'>{{a}}</a>
-  {{post.data.title}}
-  {{ctrl}}
-  {{post}}
+{{top}}
+<div ng-repeat='post in top'>
+  <!-- <a href="" ui-sref='article({id: a})'>{{a}}</a> -->
 
   <a class="post__title" href="{{ post.data.url }}" target="_blank">
         {{ post.data.title }}

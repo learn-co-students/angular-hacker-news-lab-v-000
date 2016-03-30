@@ -2,16 +2,16 @@ angular
   .module('app', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-            .state('top', {
-                url: '/top',
-                templateUrl: 'views/top-stories.html',
-                controller: 'TopStoriesController as top',
-                resolve: {
-                    posts: function (PostsService) {
-                        return PostsService.getTopStories();
-                    }
-                }
-            })
+      .state('top', {
+        url: '/top',
+        templateUrl: 'views/TopStories.html',
+        controller: 'TopStoriesController as top',
+        resolve: {
+          posts: function (PostsService) {
+            return PostsService.getAll();
+          }
+        }
+      })
       .state('post', {
         url: '/post/:id',
         templateUrl: 'views/post.html',
