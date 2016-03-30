@@ -4,21 +4,21 @@ angular
 		$stateProvider
 			.state('top', {
 				url: '/top',
-				templateUrl: 'javascript/app/templates/top.html',
-				controller: 'MainCtrl as ctrl',
+				templateUrl: 'javascript/app/views/TopStoies.html',
+				controller: 'TopStoriesController as ctrl',
 				resolve: {
-					articles: function(ArticleService) {
-            ArticleService.getAll();
+					articles: function(PostsService) {
+            // PostsService.getAll();
 					}
 				}
 			})
       .state('article', {
         url: '/article/:id',
-        templateUrl: 'javascript/app/templates/show.html',
-        controller: 'MainCtrl as ctrl',
+        templateUrl: 'javascript/app/views/post.html',
+        controller: 'TopStoriesController as ctrl',
         resolve: {
-          article: function(ArticleService, $stateParams) {
-            ArticleService.getArticle($stateParams.id);
+          article: function(PostsService, $stateParams) {
+            // PostsService.getArticle($stateParams.id);
           }
         }
       });
