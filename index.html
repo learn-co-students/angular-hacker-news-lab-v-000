@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+  <div ng-app="app">
+    <div ng-controller="Hello as hello">
+      {{hello.hi}}
+    </div>
+  </div>
+
+  <script src="js/angular.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/hello.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 
 </body>
 </html>
