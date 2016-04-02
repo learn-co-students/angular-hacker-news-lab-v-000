@@ -1,0 +1,7 @@
+<h2>{{ article.post.title }}</h2>
+<h4>{{ article.post.by }}</h4>
+
+
+<ul ng-repeat="comment in article.post.kids">
+  <li>{{ comment }}</li>
+</ul>
