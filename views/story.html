@@ -1,0 +1,9 @@
+<a class="item__title" href="{{storyCtrl.story.url}}" target="_blank">{{storyCtrl.story.title}}</a>
+
+<div>
+  <ul class="comments">
+    <li ng-repeat="kid in storyCtrl.story.kids">
+      <item class="item" id="kid"></item>
+    </li>
+  </ul>
+</div>

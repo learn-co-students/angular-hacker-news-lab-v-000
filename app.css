@@ -3,6 +3,11 @@ html, body {
 	font-family: "Helvetica Neue", Verdana, sans-serif;
 }
 
+.spacer {
+	width: 100%;
+	height: 65px;
+}
+
 .item {
 
 }
