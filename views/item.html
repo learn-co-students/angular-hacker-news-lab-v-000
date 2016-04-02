@@ -1,7 +1,7 @@
-<p class="item__title">
+<a href="{{item.data.url}}" target="_blank" class="item__title">
   {{item.data.title}}
-</p>
-<p class="item__description">
+</a>
+<a href="" ui-sref="story({id: item.data.id})" class="item__description">
   Comments: {{item.data.descendants}}  Score: {{item.data.score}}
-</p>
+</a>
 

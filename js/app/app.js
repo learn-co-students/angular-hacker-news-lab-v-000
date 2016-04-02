@@ -11,6 +11,17 @@ angular
             return StoriesService.getTopStories();
           }
         }
+      })
+      .state('story', {
+        url: '/story/:id',
+        templateUrl: 'views/story.html',
+        controller: 'StoryController as story',
+        resolve: {
+          story: function(StoriesService){
+            return StoriesService.getPostInfo($stateParams.id);
+          }
+        }
       });
+
       $urlRouterProvider.otherwise('/');
   });
