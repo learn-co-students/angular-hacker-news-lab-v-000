@@ -12,9 +12,10 @@
   <div ng-app="app">
     <header class="header__fixed">
       <ul>Hacker News 2.0
-        <li><a href="">home</a></li>
+        <li><a href="" ui-sref="top">home</a></li>
       </ul>
     </header>
+    <div class="spacer"></div>
     <div ui-view></div>
   </div>
 
@@ -24,6 +25,7 @@
   <script src="js/app/app.js"></script>
   <script src="js/app/services/StoriesService.js"></script>
   <script src="js/app/controllers/TopStoriesController.js"></script>
+  <script src="js/app/controllers/StoryController.js"></script>
   <script src="js/app/components/item.js"></script>
 
 </body>

@@ -2,8 +2,8 @@ angular
   .module('app', ['ui.router', 'ngSanitize'])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
-      .state('home', {
-        url: '/',
+      .state('top', {
+        url: '/top',
         templateUrl: 'views/home.html',
         controller: 'TopStoriesController as ctrl',
         resolve: {
@@ -12,16 +12,16 @@ angular
           }
         }
       })
-      .state('story', {
-        url: '/story/:id',
+      .state('post', {
+        url: '/post/:id',
         templateUrl: 'views/story.html',
-        controller: 'StoryController as story',
+        controller: 'StoryController as storyCtrl',
         resolve: {
-          story: function(StoriesService){
+          story: function($stateParams, StoriesService){
             return StoriesService.getPostInfo($stateParams.id);
           }
         }
       });
 
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/top');
   });

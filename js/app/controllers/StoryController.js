@@ -1,5 +1,6 @@
 function StoryController(story){
-  this.story = story.data;
+  var storyCtrl = this;
+  storyCtrl.story = story.data;
 }
 
 angular
