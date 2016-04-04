@@ -1,0 +1,21 @@
+<div class="item" ng-if="item.data">
+  <div ng-switch="item.data.type">
+    <div ng-switch-when="story">
+      <ul>
+        <li class="item__title">
+          <a ui-sref="post({id: item.id})"><h4>{{ item.data.title }} - {{ item.data.by }} </h4></a>
+          <a href="{{ item.data.url }}" target="_blank">Go to Article</a>
+          - Score: {{ item.data.score }}
+          - Comments: {{ item.data.kids.length || 0 }}
+        </li>
+      </ul>
+    </div>
+
+    <div ng-switch-when="comment">
+      <li>
+        <div><p><i>By: {{item.data.by }}</i></p></div>
+        <div ng-bind-html="item.data.text"></div>
+      </li>
+    </div>
+  </div>
+</div>

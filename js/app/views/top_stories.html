@@ -1,0 +1,12 @@
+<h2>Hacker News Top Stories</h2>
+
+<p>
+  <a href="" ng-click="news.previousPage();" ng-if="news.currentPage > 0">Previous</a> |
+  <a href="" ng-click="news.nextPage();" ng-if="news.currentPage < 30">Next</a>
+</p>
+
+<ul>
+  <li ng-repeat="story in news.page()">
+    <item id="story"></item>
+  </li>
+</ul>
