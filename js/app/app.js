@@ -1,9 +1,9 @@
 angular
-  .module('app', ['ui.router'])
+  .module('app', ['ui.router','ngSanitize'])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
-      .state('news', {
-        url: '/',
+      .state('top', {
+        url: '/top',
         templateUrl: 'js/app/views/top_stories.html',
         controller: 'NewsController as news',
         resolve: {
@@ -12,16 +12,16 @@ angular
           }
         }
       })
-      .state('article', {
-        url: '/article/:id',
-        controller: "ArticleController as article",
-        templateUrl: 'js/app/views/article.html',
+      .state('post', {
+        url: '/post/:id',
+        controller: "PostController as post",
+        templateUrl: 'js/app/views/post.html',
         resolve: {
-          item: function($stateParams, NewsService){
+          story: function($stateParams, NewsService){
             return NewsService.getArticle($stateParams.id);
           }
         }
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/top');
   })

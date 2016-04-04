@@ -1,7 +1,12 @@
 <h2>Hacker News Top Stories</h2>
 
-<ul ng-repeat="story in news.stories | limitTo: 10">
-  <li>
-    <a ui-sref="article({id: story})">{{ story }}</a>
+<p>
+  <a href="" ng-click="news.previousPage();" ng-if="news.currentPage > 0">Previous</a> |
+  <a href="" ng-click="news.nextPage();" ng-if="news.currentPage < 30">Next</a>
+</p>
+
+<ul>
+  <li ng-repeat="story in news.page()">
+    <item id="story"></item>
   </li>
 </ul>
