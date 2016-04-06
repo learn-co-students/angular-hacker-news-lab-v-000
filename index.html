@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
-  <div ng-app="hackerNews">
-    
+  <div ng-app="app">
+    <div ui-view></div>
   </div>
 
 
@@ -20,5 +20,7 @@
   <script src="js/angular-ui-router.js"></script>
   <script src="js/angular-sanitize.js"></script>
   <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/TopStoriesController.js"></script>
+  <script src="js/app/Services/StoriesService.js"></script>
 </body>
 </html>
