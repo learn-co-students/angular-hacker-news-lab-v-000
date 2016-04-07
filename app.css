@@ -67,6 +67,7 @@ html, body {
 }
 .pagination li {
 	float: left;
+	list-style-type: none;
 }
 
 .pagination a {

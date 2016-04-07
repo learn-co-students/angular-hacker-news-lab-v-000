@@ -1,0 +1,12 @@
+<div class = "post">
+  <div class = "post__title">
+    <a href="{{post.post.url}}"></a>{{post.post.title}}</div>
+  <div class = "post__descrption">
+    {{post.post.descendants}} comments / {{post.post.score}} points
+  </div>
+  <ul class = "comments">
+    <li ng-repeat = "comment in post.post.kids">
+      <item id = "comment"></item>
+    </li>
+  </ul>
+</div>
