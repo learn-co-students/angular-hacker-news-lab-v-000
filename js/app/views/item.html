@@ -1,0 +1,20 @@
+<div class = "item" ng-if = 'item.post'>
+  <div ng-switch = "item.post.type">
+    
+    <div ng-switch-when = "story">
+      <a href="{{item.post.url}}" class = "item__title" target="_blank">{{item.post.title}}</a>
+      <a href = "" ui-sref="post({id:item.post.id})">{{item.post.descendants}} Comments / {{item.post.score}} points</a>
+    </div>
+
+    <div ng-switch-when = "comment">
+      <div class = "comments">
+        <p ng-bind-html = "item.post.text"></p>
+      </div>
+      <ul class = "comments" ng-if = "item.post.kids.length > 0">
+        <li ng-repeat = "comment in item.post.kids">
+          <item id = "comment">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

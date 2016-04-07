@@ -1,0 +1,18 @@
+<div>
+  <ul class = "posts">
+    <li ng-repeat = "story in topStories.currentStories">
+      <item id = "story"></item>
+    </li>
+  </ul>
+
+  <div class = "pagination">
+    <ul>
+      <li ng-if = "topStories.currentPage > 0">
+        <a href = "" ng-click = "topStories.prevPage()">Prev</a>
+      </li>
+      <li ng-if = "topStories.currentPage < topStories.totalPages">
+        <a href="" ng-click = "topStories.nextPage()">Next</a>
+      </li>
+    </ul>
+  </div>
+</div>
