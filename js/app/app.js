@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui-router', 'ng-sanitize'])
+  .module('app', ['ui-router', 'ngSanitize'])
   .config(function ($stateProvider){
     $stateProvider
       .state('top', {
