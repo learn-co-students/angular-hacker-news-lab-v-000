@@ -82,6 +82,10 @@ html, body {
 	margin-right: 10px;
 }
 
+.active a {
+	background: rgba(0, 0, 0, 0.2);
+}
+
 
 .posts {
 	list-style: none;
@@ -93,20 +97,25 @@ html, body {
 	margin-bottom: 20px;
 }
 
-.post {
+post {
 	padding: 10px 15px;
 }
 
 .post__title {
-	font-size: 24px;
+	font-size: 20px;
+	margin-bottom: 5px;
 	text-decoration: none;
 	display: block;
 	color: #3D77CB;
 }
 
+.show__comments {
+	font-size: 10px;
+}
+
 .post__description {
 	display: block;
-	margin-bottom: 30px;
+
 }
 
 

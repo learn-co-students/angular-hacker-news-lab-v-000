@@ -10,5 +10,20 @@
 </head>
 <body>
 
+	<div ng-app="app" class="app">
+		<h1><a ui-sref="top">HackerNews Top Stories</a></h1>
+		<div ui-view></div>
+	</div>
+
+
+	<script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="js/angular-sanitize.js"></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/services/ApiService.js"></script>
+	<script src="js/app/directives/comments.js"></script>
+	<script src="js/app/directives/post.js"></script>
+	<script src="js/app/controllers/PostController.js"></script>
+	<script src="js/app/directives/displayNews.js"></script>
 </body>
 </html>
