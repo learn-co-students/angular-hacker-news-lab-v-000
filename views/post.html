@@ -1,0 +1,6 @@
+
+<a class="post__title" href="{{MainController.post.url}}">{{MainController.post.title}}</a>
+({{MainController.post.descendants}} comments | {{MainController.post.score}} points)
+<ul ng-repeat="comment in MainController.post.kids">
+  <comments id="comment"></comments>
+</ul>
