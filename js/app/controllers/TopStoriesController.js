@@ -22,18 +22,6 @@ function TopStoriesController(StoryService, PostService) {
         }
    });
 
-   StoryService
-    .getItems()
-    .then(function(res){
-      ctrl.storyData = res.data;
-    });
-
-  PostService
-    .getPostInfo()
-    .then(function (res) {
-      ctrl.storyData = res.data;
-    });
-
 }
 
 
