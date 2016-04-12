@@ -2,22 +2,22 @@ angular
   .module('app', ['ngSanitize', 'ui.router', 'angularUtils.directives.dirPagination'])
   .config(function ($stateProvider){
     $stateProvider
-      .state('topstory', {
-        url: '/topstory',        
-        templateUrl: 'views/topstory.html',
-        controller: 'TopStoriesController as top',
+      .state('top', {
+        url: '/top',        
+        templateUrl: 'views/top.html',
+        controller: 'TopStoriesController as tp',
           resolve: {
           stories: function (StoryService) {
             return StoryService.getTopStoriesId();
           }
         }
       })
-      .state('story', {
-        url: '/story/:id',        
-        templateUrl: 'views/topstory/story.html',
+      .state('post', {
+        url: '/post/:id',        
+        templateUrl: 'views/topstory/post.html',
         controller: 'StoryController as onePost',
         resolve: {
-           story: function ($stateParams, StoryService) {
+           post: function ($stateParams, StoryService) {
             return StoryService.getItems($stateParams.id);
           }
         }

@@ -1,5 +1,5 @@
-function StoryController(story) {
-   this.data = story.data;
+function StoryController(post) {
+   this.data = post.data;
   //debugger;
 }
 
