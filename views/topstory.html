@@ -1,10 +1,16 @@
 <h4>Top Stories</h1>
   <ul>
-    <li ng-repeat="post in top.topStories">
-
+    <li dir-paginate="post in top.topStories | itemsPerPage:30 ">
         <h5>Score: {{ post.score }} - <a href="{{ post.url }}">{{ post.title }}</a></h5>
-
-        <p>by {{ post.by }}</p>
+        <h5>by {{ post.by }} - {{ post.descendants}} Comments </h5>
     </li>
+
   </ul>
+
+    <dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+    </dir-pagination-controls>
+
 </div>

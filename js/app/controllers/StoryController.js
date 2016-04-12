@@ -1,5 +1,4 @@
 function StoryController(StoryService) {
-
   var ctrl = this;
 
   ctrl.topStoriesId = [];
@@ -17,6 +16,7 @@ function StoryController(StoryService) {
         });
       };
     });
+
 
 
 

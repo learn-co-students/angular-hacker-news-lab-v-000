@@ -1,5 +1,5 @@
 angular 
-  .module('app', ['ngSanitize', 'ui.router'])
+  .module('app', ['ngSanitize', 'ui.router', 'angularUtils.directives.dirPagination'])
   .config(function ($stateProvider){
     $stateProvider
       .state('topstory', {
