@@ -1,7 +1,10 @@
-function StoryController(story) {
-   this.data = story.data;
+function StoryController(StoryService, PostService) {
+  var ctrl = this;
 
-  ct
+  ctrl.topStoriesId = [];
+  ctrl.topStories = [];
+
+  ctrl.storyData;
 
   StoryService
     .getTopStoriesId('')

@@ -1,8 +1,8 @@
 <h4>Top Stories</h1>
   <ul>
-    <li dir-paginate="post in top.topStories | itemsPerPage:30 ">
-        <h5>Score: {{ post.score }} - <a href="{{ post.url }}">{{ post.title }}</a></h5>
-        <h5>by {{ post.by }} - {{ post.descendants}} Comments </h5>
+    <li class="" dir-paginate="post in top.topStories | itemsPerPage:30 ">
+        <h5 class="" >Score: {{ post.score }} - <a href="{{ post.url }}">{{ post.title }}</a></h5>
+        <h5>by {{ post.by }} - <a href="" ui-sref="story({id: post.id})">{{ post.descendants}} Comments </a></h5>
     </li>
 
   </ul>

@@ -1,0 +1,11 @@
+<div class="comment">
+  <a ui-sref="user({id: comment.data.by })">
+    {{ comment.data.by }}
+  </a>
+  {{ (comment.data.time * 1000) | date: 'short' }}
+</div>
+  <ul class="comments">
+    <li ng-repeat="comment in comment.data.kids">
+      <comment id="comment"></comment>
+    </li>
+  </ul>

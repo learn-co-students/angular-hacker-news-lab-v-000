@@ -4,7 +4,7 @@ function StoryService($http){
     return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
   };
 
-  this.getTopStories = function(id){
+  this.getItems = function(id){
     return $http.get('https://hacker-news.firebaseio.com/v0/item/'+id+'.json');
   };
 }
