@@ -9,6 +9,8 @@
     "karma-spec-reporter": "0.0.23"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "angular-resource": "^1.5.3",
+    "express": "^4.13.4",
+    "firebase": "^2.4.2"
   }
 }
