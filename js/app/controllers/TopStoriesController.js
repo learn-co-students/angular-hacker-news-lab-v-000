@@ -4,8 +4,6 @@ function TopStoriesController(StoryService, PostService) {
   ctrl.topStoriesId = [];
   ctrl.topStories = [];
 
-  ctrl.storyData;
-
   StoryService
     .getTopStoriesId('')
     .then(function (res){
