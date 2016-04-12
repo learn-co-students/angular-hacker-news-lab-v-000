@@ -1,10 +1,9 @@
-<div class="story" ng-if="story">
-  <h5 class="" >Score: {{ story.score }} - <a href="{{ story.url }}">{{ story.title }}</a></h5>
-  <h5>by {{ story.by }} - {{ story.descendants}} Comments </h5>
+
+  <h5 class="" >Score: {{ onePost.data.score }} - <a href="{{ onePost.data.url }}">{{ onePost.data.title }}</a></h5>
+  <h5>by {{ onePost.data.by }} - {{ onePost.data.descendants}} Comments </h5>
 
   <ul class="comments">
-    <li ng-repeat="comment in story.data.kids">
+    <li ng-repeat="comment in onePost.data.kids">
       <comment id="comment"></comment>
     </li>
   </ul>
-</div>

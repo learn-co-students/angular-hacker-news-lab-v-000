@@ -1,4 +1,4 @@
-function StoryController(StoryService, PostService) {
+function TopStoriesController(StoryService, PostService) {
   var ctrl = this;
 
   ctrl.topStoriesId = [];
@@ -22,9 +22,15 @@ function StoryController(StoryService, PostService) {
         }
    });
 
+   StoryService
+    .getItems()
+    .then(function(res){
+      ctrl.storyData = res.data;
+    });
+
   PostService
-    .getPostInfo(id)
-   .then(function (res) {
+    .getPostInfo()
+    .then(function (res) {
       ctrl.storyData = res.data;
     });
 
@@ -34,4 +40,4 @@ function StoryController(StoryService, PostService) {
 
 angular
   .module('app')
-  .controller('StoryController', StoryController);
+  .controller('TopStoriesController', TopStoriesController);

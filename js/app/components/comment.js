@@ -6,8 +6,8 @@ var Comment = {
   controller: function (StoryService){
     var ctrl = this;
 
-    PostService
-      .getPostInfo(this.id)
+    StoryService
+      .getItems(this.id)
       .then(function (res){
         ctrl.data = res.data;
       })
