@@ -10,21 +10,16 @@
 </head>
 <body>
   <div ng-app="app" class="app">
-    <div ng-controller="StoryController as ctrl">
-      <h1>Top Stories</h1>
-      <ul>
-        <li ng-repeat="post in ctrl.topStories">
-          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-
-          by {{ post.by }}
-        </li>
-      </ul>
-    </div>
+    <h2>Hacker News Client</h2>
+      <li>
+        <a ui-sref="topstory" ui-sref-active="active">Refresh Stories</a>
+      </li>
+        <div ui-view></div>
   </div>
 
-
-
   <script src="js/angular.js"></script>
+  <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
+  <script src="js/angular-ui-router.js"></script>
   <script src="js/app/app.js"></script>
   <script src="js/app/controllers/StoryController.js"></script>
   <script src="js/app/services/StoryService.js"></script>
