@@ -1,4 +1,4 @@
-function TopStoriesController(StoryService, PostService) {
+function TopStoriesController(StoryService) {
   var ctrl = this;
 
   ctrl.topStoriesId = [];
