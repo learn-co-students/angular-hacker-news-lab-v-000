@@ -1,0 +1,14 @@
+<div class="comment" >
+  <h5 ng-bind-html="comment.data.text">
+    {{ comment.data.text }}
+  </h5>
+  <p class="comment">
+    {{ comment.data.by }}
+  {{ (comment.data.time * 1000) | date: 'short' }}
+  </p>
+</div>
+  <ul class="comments">
+    <li ng-repeat="comment in onePost.data.kids">
+      <comment id="comment"></comment>
+    </li>
+  </ul>

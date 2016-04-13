@@ -1,0 +1,9 @@
+
+  <h5 class="" >Score: {{ onePost.data.score }} - <a href="{{ onePost.data.url }}">{{ onePost.data.title }}</a></h5>
+  <h5>by {{ onePost.data.by }} - {{ onePost.data.descendants}} Comments </h5>
+
+  <ul class="comments">
+    <li ng-repeat="comment in onePost.data.kids">
+      <comment id="comment"></comment>
+    </li>
+  </ul>

@@ -1,0 +1,16 @@
+<h4>Top Stories</h1>
+  <ul>
+    <li class="" dir-paginate="tpstory in tp.topStories | itemsPerPage:30 ">
+        <h5 class="" >Score: {{ tpstory.score }} - <a href="{{ tpstory.url }}">{{ tpstory.title }}</a></h5>
+        <h5>by {{ tpstory.by }} - <a href="" ui-sref="post({id: tpstory.id})">{{ tpstory.descendants}} Comments </a> </h5>
+    </li>
+
+  </ul>
+
+    <dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+    </dir-pagination-controls>
+
+</div>
