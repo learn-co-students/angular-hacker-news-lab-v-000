@@ -7,10 +7,8 @@ angular
         templateUrl: 'views/top.html',
         controller: 'TopStoriesController as top',
         resolve: {
-          posts: function ($http, $route) {
-            return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json').then(function (response){
-              console.log(response.data)
-            })
+          posts: function (HackerNewsService) {
+            return HackerNewsService.getData();
           }
         }
       })
@@ -19,10 +17,8 @@ angular
         templateUrl: 'views/post.html',
         controller: 'PostController as post',
         resolve: {
-          post: function ($http, $route) {
-            return $http.get('https://hacker-news.firebaseio.com/v0/item/' + $route.current.params.id + '.json').then(function (response){
-              console.log(response.data)
-            })  
+          post: function (HackerNewsService, $stateParams) {
+            return HackerNewsService.getPost($stateParams.id);
           }
         }
       })

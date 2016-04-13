@@ -4,8 +4,8 @@ function HackerNewsService ($http){
     return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
   };
 
-  this.getPost = function (id) {
-    return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json');
+  this.getPost = function (postId) {
+    return $http.get("https://hacker-news.firebaseio.com/v0/item/" + postId + ".json");
   }; 
 
 }

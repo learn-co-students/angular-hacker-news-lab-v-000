@@ -1,6 +1,7 @@
 function TopStoriesController (posts) {
 
-  this.posts = posts;
+  this.posts = posts.data;
+
 }
 
 angular
