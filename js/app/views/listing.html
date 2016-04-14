@@ -1,0 +1,4 @@
+<li ng-if="listing.story">
+  <a href="{{ listing.story.url }}" class = "item__title">{{ listing.story.title }}</a><br />
+  <span><a href = "" ui-sref="post({id:listing.story.id})">{{ listing.story.score }} points by {{ listing.story.by }} | {{ listing.story.descendants }} comments</a></span>
+</li>
