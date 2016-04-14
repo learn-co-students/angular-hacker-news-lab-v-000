@@ -1,0 +1,11 @@
+<ul class='posts'>
+  <li ng-repeat="post in top.page()">
+    <thread id="post"></thread>
+  </li>  
+</ul>
+
+
+<a ng-if="top.currentPage > 0" href="" ng-click="top.previousPage()">Previous</a> | <a href="" ng-click="top.nextPage()">Next</a>
+
+ 
+
