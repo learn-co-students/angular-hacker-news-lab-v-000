@@ -4,5 +4,8 @@
   </li>  
 </ul>
 
-<a href="" ng-click="top.previousPage()">Previous</a> | <a href="" ng-click="top.nextPage()">Next</a> 
+
+<a ng-if="top.currentPage > 0" href="" ng-click="top.previousPage()">Previous</a> | <a href="" ng-click="top.nextPage()">Next</a>
+
+ 
 

@@ -11,9 +11,15 @@
 <body>
 
   <div ng-app="app">  
-    <div class="header__fixed">
-      <a class="header" href="#/top">Hacker News!</a><br/>
-    </div><br/>
+    <header class="header">
+      <div class="header__fixed">
+        <ul>
+          <li>
+              <a ui-sref="top" ui-sref-active="active">Hacker News!</a>
+          </li>
+        </ul>
+      </div>
+    </header><br/>
     
     <div ui-view></div>
   </div>
