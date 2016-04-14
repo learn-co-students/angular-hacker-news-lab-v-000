@@ -1,13 +1,9 @@
-var Post = {
+var Comment = {
   restrict: 'E',
   bindings: {
     id: '='
   }, 
-  template: [
-    '<div>',
-      '<li>{{ post.data.url }}</li>',
-    '</div>'
-  ].join(''),
+  templateUrl: 'views/comment.html',
   controller: function (HackerNewsService) {
     var ctrl = this;
     HackerNewsService
@@ -16,9 +12,9 @@ var Post = {
         ctrl.data = response.data
       });
   }, 
-  controllerAs: 'post'
+  controllerAs: 'comment'
 }
 
 angular
   .module('app')
-  .component('post', Post)
+  .component('comment', Comment)

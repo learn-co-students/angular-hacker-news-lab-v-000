@@ -1,4 +1,16 @@
+<div class="post">
+  <a href="{{ post.data.url }}" target="_blank" class="post__title">{{ post.data.title }}</a>
+  <div class="post__description">
+    Author - {{ post.data.by }}
+    Score - {{ post.data.score }}
+    Date Posted: {{ post.data.time | date: 'short'}}
+  </div>
 
-URL - {{ post.data.url }}
-Score - {{ post.data.score }}
-Date Posted: {{ post.data.time | date: 'short'}}
+  <ul class="comments">
+    <li ng-repeat="comment in post.data.kids">
+      <comment id="comment"></comment>
+    </li>
+  </ul>
+</div>
+
+

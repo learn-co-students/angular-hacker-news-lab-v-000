@@ -1,5 +1,7 @@
 function TopStoriesController (posts) {
 
+  var ctrl = this;
+
   this.posts = posts.data;
 
 }

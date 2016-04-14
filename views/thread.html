@@ -1,0 +1,10 @@
+<div class="item">
+  <li class="item__title">
+    <a href="{{ thread.data.url }}">{{ thread.data.title }}</a><br/>
+  </li>
+  <li class="item__description">  
+    {{ thread.data.score }} points by {{ thread.data.by }} | 
+    <a href="" ui-sref="post({ id: thread.data.id })"> {{ thread.data.descendants }} comments</a>
+  </li> 
+</div>
+
