@@ -1,0 +1,13 @@
+<div>
+  <ul class = "posts">
+    <div ng-repeat = "story in StoryIndex.currentStories">
+      <listing id="story"></listing>
+    </div>
+  </ul>
+</div>
+<div>
+  <ul class="pagination">
+    <li ng-if="StoryIndex.firstIndex !== 0" ><a href="" ng-click = "StoryIndex.prevPage()">Previous 30 Stories</a></li>
+    <li><a href="" ng-click = "StoryIndex.nextPage()">Next 30 Stories</a></li>
+  </ul>
+</div>

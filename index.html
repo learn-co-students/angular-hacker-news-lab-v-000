@@ -9,6 +9,28 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+    <header class = "header">
+      <div class = "header__fixed">
+        <ul>
+          <li>
+            <a href="/#/top">Hacker News</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+  <div ng-app="app" class="app">
+    <div ui-view></div>
+  </div>
+
+  <script src="js/angular.js"></script>
+  <script src="js/angular-sanitize.js"></script>
+  <script src="js/angular-ui-router.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/StoryIndexController.js"></script>
+  <script src="js/app/controllers/StoryController.js"></script>
+  <script src="js/app/services/StoryService.js"></script>
+  <script src= "js/app/components/Listing.js"></script>
+  <script src= "js/app/components/Comment.js"></script>
 
 </body>
 </html>

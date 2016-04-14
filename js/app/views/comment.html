@@ -1,0 +1,10 @@
+<div ng-if='comment.comment'>
+  <div class="comments">
+    <p ng-bind-html = "comment.comment.text"></p>
+  </div>
+  <ul class="comments" ng-if="comment.comment.kids.length > 0">
+    <li ng-repeat="child in comment.comment.kids">
+      <comment id="child">
+    </li>
+  </ul>
+</div>

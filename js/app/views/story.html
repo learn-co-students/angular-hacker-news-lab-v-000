@@ -1,0 +1,6 @@
+<h2><a href="{{ story.story.url }}" class = "item__title">{{ story.story.title }}</a></h2>
+<p>Score: {{ story.story.score }} | Comments: {{ story.story.descendants }}</p>
+
+<div ng-if="story.story.kids.length > 0" ng-repeat="comment in story.story.kids" class="comments">
+  <comment id="comment">
+</div>
