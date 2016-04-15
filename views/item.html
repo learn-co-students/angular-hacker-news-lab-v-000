@@ -1,0 +1,19 @@
+<div class="item" ng-if="item.data">
+  <div ng-if="item.data.type=='story'">
+    <a class="item__title" href="{{ item.data.url }}" target="_blank">
+      {{ item.data.title }}
+    </a>
+    <a class="item__description" ui-sref="post({id: item.data.id})">
+      {{ item.data.score }} points | {{ item.data.descendants }} comments
+    </a>
+  </div>
+
+  <div ng-if="item.data.type=='comment'">
+    <span ng-bind-html="item.data.text"></span>
+    <ul class="comments">
+      <li ng-repeat="comment in item.data.kids">
+        <item id="comment"></item>
+      </li>
+    </ul>
+  </div>
+</div>

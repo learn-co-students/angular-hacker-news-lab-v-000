@@ -1,0 +1,16 @@
+<ol class="posts" start="{{top.start + 1}}">
+  <li ng-repeat="story in top.stories">
+    <item id="story"></item>
+  </li>
+</ol>
+
+<div>
+  <ul class="pagination">
+    <li ng-if="top.start > 0">
+      <a href="" ui-sref="top" ng-click="top.prevPage()"><< Previous</a>
+    </li>
+    <li ng-if="top.end < top.last">
+      <a href="" ui-sref="top" ng-click="top.nextPage()">Next >></a>
+    </li>
+  </ul>
+</div>
