@@ -1,14 +1,16 @@
 function TopStoriesController(TopStoriesService) {
   console.log("TopStoriesController.js");
-  var topStories = [];
+  this.topStories = [];
+  var vm = this;
 
   this.populateTopStories = function() {
-    var topStories = TopStoriesService.getTopStories();
+    topStories = TopStoriesService.getTopStories().then(function(results) {
+      vm.topStories = results.data;
+    });
     //need to iterate and do something
   };
 
-  debugger;
-//  this.populateTopStories();
+  this.populateTopStories();
 
 }
 
