@@ -1,12 +1,12 @@
 <div>
-  <ul>
+  <ul class="posts">
     <li ng-repeat="story in top.stories">
       <item id="story"></item>
     </li>
   </ul>
 
   <div>
-    <ul>
+    <ul class="pagination">
       <li ng-if="top.page > 0">
         <a href="" ng-click="top.previousPage()">
           << Previous Page

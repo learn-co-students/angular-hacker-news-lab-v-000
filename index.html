@@ -10,10 +10,14 @@
 </head>
 <body ng-app="app">
   
-    <nav>
-      <a href="#" ui-sref="top" ui-sref-active="active">See Top Stories</a>
-    </nav>
-      <h1>Welcome To Hacker News</h1>
+    <header class="header">
+      <div class="header__fixed"> 
+        <ul>
+          <li><a href="#" ui-sref="top" ui-sref-active="active">See Top Stories</a></li>
+        </ul> 
+      </div>
+    </header>      
+    
     <div ui-view></div>
   
 

@@ -1,8 +1,8 @@
-<div ng-if="item.data">
+<div class="item" ng-if="item.data">
   <div ng-switch="item.data.type">
     <div ng-switch-when="comment">
 
-      <div>
+      <div class="item__author">
         <a ui-sref="user({id: item.data.by})" >
           {{item.data.by}}
         </a>
@@ -12,7 +12,7 @@
 
       <div ng-bind-html="item.data.text"></div>
 
-      <ul>
+      <ul class="comments">
         <li ng-repeat="comment in item.data.kids">
           <item id="comment"></item>
         </li>
@@ -21,10 +21,10 @@
     </div>
 
     <div ng-switch-when="story">
-      <a href="{{item.data.url}}" target="_blank">
+      <a class="item__title" href="{{item.data.url}}" target="_blank">
         {{item.data.title}}
       </a>
-      <a href="" ui-sref="story({id: item.data.id})">
+      <a class="item__description" href="" ui-sref="story({id: item.data.id})">
         {{item.data.descendents}} comments {{item.data.score}}
       </a>
     </div>
