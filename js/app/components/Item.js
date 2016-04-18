@@ -17,4 +17,4 @@ var Item = {
 
 angular
   .module('app')
-  .component('Item', Item);
+  .component('item', Item);
