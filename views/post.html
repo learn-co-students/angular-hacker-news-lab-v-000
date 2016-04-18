@@ -1,6 +1,6 @@
-<div>
+<div ng-if="story.data">
   
-  <a href="">
+  <a href="{{post.data.url}}">
     {{ story.data.title }}
   </a>
 
@@ -9,9 +9,12 @@
   </a>
 
   <ul>
-    <li ng-repeat="comment in post.data.kids">
+    <li ng-repeat="comment in story.data.kids">
       <item id="comment"></item>
     </li>
   </ul>
 
 </div>
+
+
+

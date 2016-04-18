@@ -21,10 +21,10 @@
     </div>
 
     <div ng-switch-when="story">
-      <a href="">
+      <a href="{{item.data.url}}" target="_blank">
         {{item.data.title}}
       </a>
-      <a href="">
+      <a href="" ui-sref="story({id: item.data.id})">
         {{item.data.descendents}} comments {{item.data.score}}
       </a>
     </div>
@@ -32,3 +32,4 @@
 
   </div>
 </div>
+
