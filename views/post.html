@@ -1,0 +1,20 @@
+<div class="post" ng-if="story.data">
+  
+  <a class="post__title" href="{{post.data.url}}">
+    {{ story.data.title }}
+  </a>
+
+  <a class="post__description" href="">
+    {{ story.data.descendants}} comments {{ story.data.score }} points
+  </a>
+
+  <ul class="comments">
+    <li ng-repeat="comment in story.data.kids">
+      <item id="comment"></item>
+    </li>
+  </ul>
+
+</div>
+
+
+

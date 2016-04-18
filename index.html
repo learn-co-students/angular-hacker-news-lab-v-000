@@ -8,7 +8,29 @@
 
     <link rel="stylesheet" href="app.css" />
 </head>
-<body>
+<body ng-app="app">
+  
+    <header class="header">
+      <div class="header__fixed"> 
+        <ul>
+          <li><a href="#" ui-sref="top" ui-sref-active="active">See Top Stories</a></li>
+        </ul> 
+      </div>
+    </header>      
+    
+    <div ui-view></div>
+  
 
+
+
+
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-ui-router.js"></script>
+  <script src="js/angular-sanitize.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/TopStoriesController.js"></script>
+  <script src="js/app/controllers/StoryController.js"></script>
+  <script src="js/app/components/Item.js"></script>
+  <script src="js/app/services/StoriesService.js"></script>
 </body>
 </html>
