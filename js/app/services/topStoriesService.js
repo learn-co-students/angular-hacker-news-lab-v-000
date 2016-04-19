@@ -5,10 +5,9 @@ function TopStoriesService($http) {
     return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
   }
 
-
-
-  //this.getStory = function(id) {
-  //}
+  this.getStory = function(id) {
+    return $http.get('https://hacker-news.firebasio.com/v0/item/' + id + '.json');
+  }
 
 }
 

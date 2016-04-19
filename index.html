@@ -16,17 +16,6 @@
     <script src="js/app/services/topStoriesService.js"></script>
 </head>
 <body>
-  <div ng-controller="PostsController">
-    <div ui-view>
-<div ng-controller="TopStoriesController as sss">
-   <ul>
-   <li ng-repeat="d in sss.topStories">
-     {{ d }}
-     </li>
-   </ul>
- </div> 
-    </div>
-  </div>
-
+  <div ui-view></div>
 </body>
 </html>

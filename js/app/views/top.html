@@ -1,1 +1,8 @@
 top.html
+<div ng-controller="TopStoriesController as ctrl">
+  <ul>
+    <li ng-repeat="story in ctrl.topStories">
+      {{ story }}
+    </li>
+  </ul>
+</div>
