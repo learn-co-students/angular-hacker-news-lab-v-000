@@ -1,9 +1,10 @@
-top.html
+<h1>Hacker News</h1>
 <div ng-controller="TopStoriesController as ctrl">
   <ul>
-    <li ng-repeat="story in ctrl.topStories">
-			<story id="{{story}}"></story>
+    {{ ctrl.topStories }}
+    {{ ctrl.stories }}
+    <li ng-repeat="story_id in ctrl.stories">
+		<story id="story_id"></story>
     </li>
   </ul>
-
 </div>

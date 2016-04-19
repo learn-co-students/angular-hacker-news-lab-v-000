@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'ngResource'])
+  .module('app', ['ui.router', 'ngResource', 'ngSanitize'])
   .config(function ($stateProvider) {
     $stateProvider
       .state("index", {
@@ -13,7 +13,7 @@ angular
       })
       .state("post", {
         url: "/post/:id",
-        templateUrl: 'js/app/views/post.html',
+        templateUrl: 'js/app/views/postDetails.html',
         controller: 'PostsController'
       })
   });

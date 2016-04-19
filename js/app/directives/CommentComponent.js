@@ -1,18 +1,18 @@
-var Story = {
-  templateUrl: '/js/app/views/post.html',
+var Comment = {
+  templateUrl: '/js/app/views/comment.html',
   bindings: {
     id: '='
   },
   controller: function(TopStoriesService) {
-		var ctrl = this;
+    var ctrl = this;
 		TopStoriesService.getStory(this.id).then(function(response){
-      ctrl.story = response.data;
+      ctrl.comment = response.data;
     });
 	},
-	controllerAs: 'story'
+	controllerAs: 'comment'
 };
 
 angular
     .module('app')
-    .component('story', Story);
+    .component('comment', Comment);
     
