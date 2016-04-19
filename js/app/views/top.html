@@ -2,7 +2,8 @@ top.html
 <div ng-controller="TopStoriesController as ctrl">
   <ul>
     <li ng-repeat="story in ctrl.topStories">
-      {{ story }}
+			<story id="{{story}}"></story>
     </li>
   </ul>
+
 </div>
