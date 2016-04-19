@@ -7,10 +7,10 @@
 
   <div>
     <ul>
-      <li ng-if="story.page > 0">
+      <li ng-if="post.page > 0">
         <a href="" ng-click="top.previousePage()"> previous stories </a>
       </li>
-      <li ng-if="story.page < story.totalPages - 1">
+      <li ng-if="post.page < post.totalPages - 1">
         <a href="" ng-click="top.nextPage()"> more stories </a>
       </li>
     </ul>
