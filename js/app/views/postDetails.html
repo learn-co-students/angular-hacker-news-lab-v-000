@@ -1,6 +1,6 @@
 <h1>Post Details</h1>
 <div ng-controller="PostsController as ctrl">
-  <h3><a href="{{ ctrl.storyData.url }}">{{ ctrl.storyData.title }}</a></h3>
+  <h3><a href="{{ ctrl.storyData.url }}" class="post__title">{{ ctrl.storyData.title }}</a></h3>
   <p>Posted by: {{ ctrl.storyData.by }}</p>
   {{ ctrl.comments.length }} comments:<br>
   <ul>

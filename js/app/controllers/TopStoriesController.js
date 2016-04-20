@@ -4,12 +4,13 @@ function TopStoriesController(TopStoriesService) {
   ctrl.topStories = [];
   ctrl.stories = [];
   ctrl.currentPage = 0;
-  ctrl.totalPosts = ctrl.topStories.length;
-  ctrl.pages = Math.ceil(ctrl.totalPosts / 30);
 
   ctrl.populateTopStories = function() {
     topStories = TopStoriesService.getTopStories().then(function(results) {
       ctrl.topStories = results.data;
+      ctrl.totalPosts = ctrl.topStories.length;
+      ctrl.pages = Math.ceil(ctrl.totalPosts / 30);
+      ctrl.paginate();
     });
   };
 
@@ -20,21 +21,20 @@ function TopStoriesController(TopStoriesService) {
   };
 
   ctrl.nextPage = function(){
-    //are we on the last page?
-    //-yes-do nothing
-    //-no-increment currentPage, call Paginate again.
+    if(ctrl.currentPage < ctrl.pages){
+      ctrl.currentPage++;
+      ctrl.paginate();
+    }
   };
 
   ctrl.previousPage = function(){
-    //are we on the first page?
-    //-yes-do nothing
-    //-no-decrement currentPage, call Paginate again.
+    if(ctrl.currentPage > 0){
+      ctrl.currentPage--;
+      ctrl.paginate();
+    }
   };
 
-
-
   ctrl.populateTopStories();
-  ctrl.paginate();
 }
 
 angular

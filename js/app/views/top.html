@@ -1,9 +1,11 @@
 <h1>Hacker News</h1>
 <div ng-controller="TopStoriesController as ctrl">
+  {{ debugger }}
+  {{ ctrl.totalPosts }} posts <br>
+  Page {{ ctrl.currentPage + 1 }} of {{ ctrl.pages + 1 }}<br>
+  <a href="" ng-click="ctrl.previousPage()" class="pagination">Previous</a>|<a href='' ng-click='ctrl.nextPage()' class='pagination'>Next</a>
   <ul>
-    {{ ctrl.topStories }}
-    {{ ctrl.stories }}
-    <li ng-repeat="story_id in ctrl.stories">
+    <li ng-repeat="story_id in ctrl.stories" class="item">
 		<story id="story_id"></story>
     </li>
   </ul>

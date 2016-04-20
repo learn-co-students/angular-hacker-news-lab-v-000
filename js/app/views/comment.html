@@ -1,2 +1,7 @@
-<p ng-bind-html="comment.comment.text | safeHTMLFilter "></p>
+<p ng-bind-html="comment.comment.text | safeHTMLFilter " class="comments"></p>
 <p>by: {{ comment.comment.by }}</p>
+<ul ng-if="comment.comment.kids.length > 0">
+  <li ng-repeat="comment_kid in comment.comment.kids">
+    <comment id="comment_kid"></comment>
+  </li>
+</ul>
