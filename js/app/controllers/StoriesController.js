@@ -24,8 +24,8 @@ function StoriesController(stories){
 
   top.slicePosts();
 
-});
+};
 
 angular
-  .app('app')
+  .module('app')
   .controller("StoriesController", StoriesController)
