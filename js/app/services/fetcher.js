@@ -10,4 +10,4 @@ function Fetcher($http) {
 
 angular
 	.module('app')
-	.service('PostsService', PostsService);
+	.service('Fetcher', Fetcher);
