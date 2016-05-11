@@ -12,11 +12,9 @@
 <div ng-app="app">
 
 	 <h1> Hacker News Top Stories!!</h1>
-
-
-
-
-		This is a test!!
+   <a ui-sref="top">Top Stories</a><br>
+	 <input size ="3" ng-model="searchId"/> <a ui-sref="post({id: searchId})"> Search Post by ID!</a>
+   {{searchId}}
 	  <div ui-view></div>
 
 

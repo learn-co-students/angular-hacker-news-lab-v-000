@@ -23,8 +23,13 @@ angular
         }
       })
       .state('post', {
-        url: '/post',
+        url: '/post/:id',
         templateUrl: 'views/post.html',
         controller: 'PostController as postctrl',
-      })
+        resolve: {
+          post: function(StoryService, $stateParams) {
+            return StoryService.getStoryJSONById($stateParams.id);
+          }
+        }
+      });
     });

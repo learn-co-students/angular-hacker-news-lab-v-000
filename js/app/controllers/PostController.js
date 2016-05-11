@@ -1,17 +1,8 @@
-function PostController(StoryService) {
+function PostController(post) {
   var ctrl = this;
-  ctrl.postId= "";
-  ctrl.data = {};
-  ctrl.on = false;
-
-  ctrl.getPost = function(id) {
-    StoryService
-    .getStoryJSONById(id)
-    .then(function(results) {
-      ctrl.data = results.data;
-      ctrl.on =  true;
-    });
-  }
+  ctrl.data = post.data;
+  console.log(ctrl.data);
+  console.log('this is a t')
 }
 
 angular
