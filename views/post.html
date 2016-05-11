@@ -1,0 +1,15 @@
+<div>
+  <label>
+    Please enter post ID:
+    <input ng-model= "postctrl.postId" />
+    {{postctrl.postId}}
+    {{postctrl.on}}
+    <button ng-click="postctrl.getPost(postctrl.postId)">Search!</button>
+  </label>
+</div>
+
+<div ng-show="postctrl.on">
+    <h4> Search Results </h4>
+    Title: {{postctrl.data.title}}
+    URL: {{postctrl.data.url}}
+</div>
