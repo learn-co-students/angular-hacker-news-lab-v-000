@@ -11,7 +11,7 @@ describe('Routes', function () {
 		var state;
 
 		it('should have the correct URL', function () {
-			state = $state.get('top');
+			state = $state.get('topStories');
 
 			expect(state.url).toEqual('/top');
 		});
