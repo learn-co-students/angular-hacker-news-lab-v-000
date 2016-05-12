@@ -6,9 +6,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Angular Application</title>
 
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app.css"js/ />
 </head>
 <body>
+<div ng-app="app">
 
+	 <h1> Hacker News Top Stories!!</h1>
+   <a ui-sref="top">Top Stories</a><br>
+	 <input size ="3" ng-model="searchId"/> <a ui-sref="post({id: searchId})"> Search Post by ID!</a>
+   {{searchId}}
+	  <div ui-view></div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="js/angular.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/controllers/StoryController.js"></script>
+<script src="js/app/services/StoryService.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
 </body>
 </html>
