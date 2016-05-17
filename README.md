@@ -30,7 +30,7 @@ Create a service, and a method to grab all the top stories. Then create a method
 
 Display a list of 30 posts on the top stories, and put two links at the bottom to allow the user to change to the next/previous page. As we've already got the ~500 or so top stories, we can just slice a different chunk out of the array depending what page they're on instead of making a new request.
 
-**Note** normally with pagination, we'd request a new dataset from the server depending what page number we're on. However, in this case, we'll already have all of the top stories, so we'll just need to slice a different part of the array.
+The pagination is a bit different from normal pagination - normally, we'd request a new dataset from the server depending what page number we're on. However, we've already got all of the top stories so we just need to slice a different part of the array.
 
 Each top story should have it's URL displayed along with the amount of comments and the score.
 
@@ -42,7 +42,7 @@ Create a component to display the comments - this should grab data from the URL 
 
 Each kid (comment) might have kids (comments) inside it - so each comment should actually call the comment component inside of it. This means we've got a recursive component - awesome!
 
-There are simple styles for you to use inside `app.css` to make it look pretty!
+There are simple styles for you to use inside `index.html` to make it look pretty!
 
 ## Resources
 
