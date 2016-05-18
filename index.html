@@ -4,18 +4,20 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
+
 	<title>Angular Application</title>
 
   <link rel="stylesheet" href="app.css" />
 </head>
 <body>
 
-  <div ng-app="app" class="app-container">
+  <div class="app-container" ng-app="app" ng-strict-di >
+
+		<div ui-view></div>
 
   </div>
 
-  <script src="js/angular.min.js"></script>
+  <script src="js/angular.js"></script>
   <script src="js/app/app.js"></script>
 </body>
 </html>
