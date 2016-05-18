@@ -1,6 +1,6 @@
 angular
   .module('app', ['ui.router'])
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('top', {
         url: '/top',
@@ -9,6 +9,13 @@ angular
       .state('post', {
         url: '/post/:id',
         templateUrl: 'views/post.html',
-        controller: 'PostController'
+        controller: 'PostController as post',
+        resolve: {
+          post: function ($http, $stateParams) {
+            return $http.get('http://0.0.0.0:8080/post/' + $stateParams.id);
+          }
+        }
       });
+
+      $urlRouterProvider.otherwise('/top'); //default route
   });
