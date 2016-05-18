@@ -4,15 +4,21 @@ angular
     $stateProvider
       .state('top', {
         url: '/top',
-        templateUrl: 'views/top.html'
+        templateUrl: 'views/top.html',
+        controller: 'TopStoriesController as top',
+				resolve: {
+					posts: function (PostsService) {
+						return PostsService.getTopStories();
+					}
+				}
       })
       .state('post', {
         url: '/post/:id',
         templateUrl: 'views/post.html',
         controller: 'PostController as post',
         resolve: {
-          post: function ($http, $stateParams) {
-            return $http.get('http://0.0.0.0:8080/post/' + $stateParams.id);
+          post: function function ($stateParams, PostsService) {
+						return PostsService.getPost($stateParams.id);
           }
         }
       });
