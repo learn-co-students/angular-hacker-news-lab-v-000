@@ -1,8 +1,15 @@
 function PostService ($http) {
 
-}
+  this.baseUrl = 'https://hacker-news.firebaseio.com/v0';
 
-PostService.$inject = ['$http'];
+  this.getPost = function (id) {
+    return $http.get(this.baseUrl + '/item/' + id + '.json');
+  };
+
+  this.getPosts = function() {
+    return $http.get(this.baseUrl + '/topstories.json');
+  };
+}
 
 angular
   .module('app')

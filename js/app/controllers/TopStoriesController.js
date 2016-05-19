@@ -1,8 +1,7 @@
-function TopStoriesController (topStories) {
-  this.topStories = topStories;
+function TopStoriesController (posts) {
+  this.posts = posts.data;
+  debugger;
 }
-
-TopStoriesController.$inject = [];
 
 angular
   .module('app')

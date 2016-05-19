@@ -9,15 +9,20 @@
 
   <link rel="stylesheet" href="app.css" />
 </head>
-<body>
+<body ng-app="app">
+	<a ui.sref="top">Top</a>
 
-  <div class="app-container" ng-app="app" ng-strict-di >
-
-		<div ui-view></div>
-
-  </div>
+	<ui-view></ui-view>
 
   <script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="js/angular-sanitize.js"></script>
   <script src="js/app/app.js"></script>
+	<script src="js/app/services/PostService.js"></script>
+	<script src="js/app/controllers/TopStoriesController.js"></script>
+	<script src="js/app/controllers/PostController.js"></script>
+	<script src="js/app/components/comment.js">
+
+	</script>
 </body>
 </html>

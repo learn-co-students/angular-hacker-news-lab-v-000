@@ -1,2 +1,3 @@
-<a ui.sref="top"></a>
-{{top.topStories}}
+<div ng-repeat="post in top.posts">
+  {{post.data.title}}
+</div>

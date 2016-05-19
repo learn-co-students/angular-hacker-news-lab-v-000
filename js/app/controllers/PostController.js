@@ -1,8 +1,6 @@
-function PostController () {
-
+function PostController (post) {
+  this.data = post.data;
 }
-
-PostController.$inject = [];
 
 angular
   .module('app')

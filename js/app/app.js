@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router'])
+  .module('app', ['ui.router', 'ngSanitize'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
@@ -8,16 +8,21 @@ angular
         templateUrl: 'views/top.html',
         controller: 'TopStoriesController as top',
         resolve: {
-          topStories: function(TopStoriesService) {
-            return TopStoriesService.getTopStories();
+          posts: function(PostService) {
+            return PostService.getPosts();
+          }
+        }
+      })
+      .state('post', {
+        url: '/post/:id',
+        templateUrl: 'views/post.html',
+        controller: 'PostController as post',
+        resolve: {
+          post: function($stateParams, PostService) {
+            return PostService.getPost($stateParams.id);
           }
         }
       });
-      // .state('post', {
-      //   url: '/post/:id',
-      //   templateUrl: 'views/post.html',
-      //   controller: 'PostController as post'
-      // });
 
     $urlRouterProvider.otherwise('/top');
   });
