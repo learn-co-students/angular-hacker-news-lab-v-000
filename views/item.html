@@ -2,7 +2,19 @@
   <div ng-switch="item.data.type"> <!-- switch case, using data type -->
 
     <div ng-switch-when="comment">
-      comment
+      <div class="item__author">
+        <a ui-sref="user({id: item.data.by })"> <!-- ui-router url helper to automatically create link -->
+          {{ item.data.by }}
+        </a>
+        {{ (item.data.time * 1000) | date: 'short'}} <!-- filter date -->
+      </div>
+      <div ng-bind-html="item.data.text"></div> <!-- use ngSanitize to injext text from variable -->
+
+      <ul class="comments">
+        <li ng-repeat="comment in item.data.kids">
+          <item id="comment"></item> <!-- nested item component, as a comment -->
+        </li>
+      </ul>
     </div>
 
     <div ng-switch-when="story">
