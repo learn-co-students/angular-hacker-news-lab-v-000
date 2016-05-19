@@ -17,7 +17,7 @@ angular
         templateUrl: 'views/post.html',
         controller: 'PostController as post',
         resolve: {
-          post: function function ($stateParams, PostsService) {
+          post: function ($stateParams, PostsService) {
 						return PostsService.getPost($stateParams.id);
           }
         }

@@ -1,4 +1,4 @@
-function PostController(post) {
+function PostController(post) { //post is injected from app.js resolve
 	this.data = post.data;
 }
 
