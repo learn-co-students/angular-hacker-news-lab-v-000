@@ -1,19 +1,12 @@
-<div class="post-container">
-<!-- Post Info -->
-  <h3> {{post.data.title}} </h3>
-  <p>
-    <strong>URL:</strong> {{post.data.url}}
-  </p>
-  <p>
-    <strong>Score:</strong> {{post.data.score}}
-  </p>
-  <hr>
+<div class="post" ng-if="post.data">
+  <!-- Story -->
+  <story id="post.data.id"></story>
 
-<!-- Comments -->
-  <h5>Comments</h5>
-
-  <div class="comments" ng-repeat="id in post.data.kids">
-    <comment id="id"></comment>
-  </div>
+  <!-- Comments -->
+  <ul class="comments">
+    <li ng-repeat="comment in post.data.kids">
+      <comment id="comment"></comment>
+    </li>
+  </ul>
 
 </div>

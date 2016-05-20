@@ -10,8 +10,8 @@ function TopStoriesController (postIds) {
     this.nextPage = (this.page < this.pageTotal) ? this.page + 1 : undefined;
     this.prevPage = (this.pageTotal > 1 && this.page > 1) ? this.page - 1 : undefined;
 
-    var startingIndex = (this.page - 1) * this.pageTotal;
-    var endingIndex = this.page * this.pageTotal;
+    var startingIndex = (this.page - 1) * this.postsPerPage;
+    var endingIndex = this.page * this.postsPerPage;
     this.postIdsList = this.postIds.slice(startingIndex, endingIndex);
   };
 

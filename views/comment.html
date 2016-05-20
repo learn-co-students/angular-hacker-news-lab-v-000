@@ -1,14 +1,12 @@
-<div class="comment-container">
-  <p>
-    <span class="comment-by">{{comment.data.by}}</span>
-    <span class="comment-time-elapsed">{{ comment.timeDifference | date:"H 'hours ago'":'Z'}}</span>
-  </p>
-  
-  <p ng-bind-html="comment.data.text" class="comment-text">
-    {{comment.data.text}}
-  </p>
-
-  <div class="comment-children" ng-repeat="id in comment.data.kids">
-    <comment id="id"></comment>
-  </div>
+<div class="item__author">
+  {{comment.data.by}} {{comment.timeDifference | date:"H 'hours ago'":'Z'}}
 </div>
+<hr>
+
+<div ng-bind-html="comment.data.text"></div>
+
+<ul class="comments">
+  <li ng-repeat="comment in comment.data.kids">
+    <comment id="comment"></comment>
+  </li>
+</ul>

@@ -10,7 +10,13 @@
   <link rel="stylesheet" href="app.css" />
 </head>
 <body ng-app="app">
-
+	<header class="header">
+		<div class="header__fixed">
+			<ul>
+				<a ui-sref="top" ui-sref-active="active">Top Stories</a>
+			</ul>
+		</div>
+	</header>
 	<ui-view></ui-view>
 
   <script src="js/angular.js"></script>

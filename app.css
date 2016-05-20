@@ -10,6 +10,10 @@ html, body {
 	display: block;
 }
 
+.story-url-container * {
+	display: inline;
+}
+
 .header {
 	height: 47px;
 }
@@ -90,11 +94,12 @@ html, body {
 }
 
 .posts li {
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 }
 
 .post {
 	padding: 10px 15px;
+	margin: .1em 0em;
 }
 
 .post__title {
