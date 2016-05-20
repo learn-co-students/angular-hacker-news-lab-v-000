@@ -8,8 +8,8 @@ angular
         templateUrl: 'views/top.html',
         controller: 'TopStoriesController as top',
         resolve: {
-          posts: function(PostService) {
-            return PostService.getPosts();
+          postIds: function(PostService) {
+            return PostService.getPostIds();
           }
         }
       })

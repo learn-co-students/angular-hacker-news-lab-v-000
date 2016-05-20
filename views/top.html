@@ -1,3 +1,4 @@
-<div ng-repeat="post in top.posts">
-  {{post.data.title}}
+<div class="top-stories-container" ng-repeat="id in top.postIds">
+  {{$index}}<br>
+  <story id="id"></story>
 </div>

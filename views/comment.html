@@ -3,10 +3,7 @@
     <span class="comment-by">{{comment.data.by}}</span>
     <span class="comment-time-elapsed">{{ comment.timeDifference | date:"H 'hours ago'":'Z'}}</span>
   </p>
-
-  <!-- <p>
-    Kids: {{comment.data.kids}}
-  </p> -->
+  
   <p ng-bind-html="comment.data.text" class="comment-text">
     {{comment.data.text}}
   </p>
