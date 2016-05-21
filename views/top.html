@@ -1,0 +1,15 @@
+<ul ng-repeat="postId in top.postIdsList" class="posts">
+  <li><story id="postId"></story></li>
+</ul>
+
+<div>
+  <ul class="pagination">
+    <li ng-if="top.prevPage">
+      <a href="" name="prev" ng-click="top.getPrevPage()"><< Previous</a>
+    </li>
+    <li ng-if="top.nextPage">
+      <a href="" name="next" ng-click="top.getNextPage()">Next >></a>
+    </li>
+  </ul>
+  <div style="clear: both;"></div>
+</div>

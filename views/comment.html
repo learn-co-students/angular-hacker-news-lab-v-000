@@ -1,0 +1,12 @@
+<div class="item__author">
+  {{comment.data.by}} {{comment.timeDifference | date:"H 'hours ago'":'Z'}}
+</div>
+<hr>
+
+<div ng-bind-html="comment.data.text"></div>
+
+<ul class="comments">
+  <li ng-repeat="comment in comment.data.kids">
+    <comment id="comment"></comment>
+  </li>
+</ul>

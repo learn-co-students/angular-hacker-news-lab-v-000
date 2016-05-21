@@ -1,0 +1,12 @@
+<div class="post" ng-if="post.data">
+  <!-- Story -->
+  <story id="post.data.id"></story>
+
+  <!-- Comments -->
+  <ul class="comments">
+    <li ng-repeat="comment in post.data.kids">
+      <comment id="comment"></comment>
+    </li>
+  </ul>
+
+</div>

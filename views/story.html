@@ -1,0 +1,16 @@
+<div class="post" ng-if="story.data">
+  <div class="story-url-container">
+    <a href="{{story.data.url}}" class="item__title" target="_blank">
+      {{story.data.title}}
+    </a>
+    <div class="item__description">
+      ({{story.shortUrl}})
+    </div>
+   </div>
+
+  <a ui-sref="post({id: story.data.id})" class="item__description">
+     {{story.data.score}} points <span class="item__author">by {{story.data.by}}</span>
+     {{story.timeDifference | date:"H 'hours ago'":'Z'}}
+      | {{story.data.descendants}} comments
+   </a>
+</div>
