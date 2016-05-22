@@ -4,7 +4,20 @@ probably will have to load posts from a different template
 
 Use relevant Directives to bind ViewModels and Events for what?
 
+probably should be more of a get item than getstory
+
+
+
+
 IN PROGRESS
+link to post from index
+** **
+params from route
+arr.slice(0, 30) is base
+arr.slice(input, 30) where input is page number * 30
+extract out method from controller into a service so it can be used easily in the ui router
+
+
 Allow the user to navigate "Next" and "Previous" page
 
 
@@ -17,6 +30,7 @@ Display dates in human-readible formats
 
 
 DONE
+route, controller, and view for post show
 Render the top stories view
 Use ui-router for advanced routing
 Set the top stories view as the default route
