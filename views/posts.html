@@ -1,3 +1,5 @@
+<a href="" ui-sref="pages({id: (page - 1)})">Previous</a>
+<a href="" ui-sref="pages({id: (page + 1)})">Next</a>
 <div ng-repeat="story in stories">
   <div class="item__title"> Title: {{story.title}} </div>
   Score: {{story.score}}
@@ -5,3 +7,5 @@
   Comments: {{story.descendants}}
   <a href="" ui-sref="post({id: story.id})">Show</a>
 </div>
+
+
