@@ -23,14 +23,9 @@ angular
         resolve: {
           post: function(BasicService, $stateParams) {
             return BasicService.story($stateParams.id);
-            // return {value: 'simple'};
           }
         }
       })
-      // .state('other', {
-      //   url: '/other',
-      //   template: 'I am other'
-      // })
       .state('pages', {
         url: '/pages/:id',
         templateUrl: 'views/posts.html',

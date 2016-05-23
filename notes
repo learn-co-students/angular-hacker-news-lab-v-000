@@ -1,6 +1,4 @@
-call splice instead of slice to remove elements from array while returning a new one?
 
-probably will have to load posts from a different template
 
 Use relevant Directives to bind ViewModels and Events for what?
 
@@ -10,26 +8,23 @@ probably should be more of a get item than getstory
 
 
 IN PROGRESS
-link to post from index
-** **
-params from route
-arr.slice(0, 30) is base
-arr.slice(input, 30) where input is page number * 30
-extract out method from controller into a service so it can be used easily in the ui router
+comments
+Show all comments for a post in the news item
+Nest replies to comments where necessary
 
-
-Allow the user to navigate "Next" and "Previous" page
 
 
 Use dynamic views in routes
 Use relevant Directives to bind ViewModels and Events
 Use routing resolves to preload data fetched from Services
-Show all comments for a post in the news item
-Nest replies to comments where necessary
+
 Display dates in human-readible formats
 
 
 DONE
+link to post from index
+Allow the user to navigate "Next" and "Previous" page
+
 route, controller, and view for post show
 Render the top stories view
 Use ui-router for advanced routing

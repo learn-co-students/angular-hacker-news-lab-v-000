@@ -1,6 +1,6 @@
 function OtherController ($scope, post) {
   $scope.single = post.data;
-  $scope.thingy = "thing";
+  $scope.comments = post.data.kids;
 }
 
 angular

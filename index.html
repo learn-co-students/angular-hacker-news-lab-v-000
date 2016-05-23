@@ -10,13 +10,14 @@
 </head>
 <body >
 <div ng-app="app">
+
   <div >
     Name:<input ng-model="name" type="text"/>
     Hello {{name}}
   </div>
 
-    <div ui-view></div>
-    
+  <div ui-view></div>
+
 </div>
 
 <script src="js/angular.js"></script>
@@ -25,10 +26,12 @@
 <script src="js/app/controllers/BasicController.js"></script>
 <script src="js/app/controllers/OtherController.js"></script>
 <script src="js/app/controllers/PagesController.js"></script>
+<script src="js/app/directives/Comments.js"></script>
+
 
 
 <script src="js/app/services/BasicService.js"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+
 </body>
 </html>
