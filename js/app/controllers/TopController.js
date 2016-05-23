@@ -1,4 +1,4 @@
-function BasicController ($scope, BasicService) {
+function TopController ($scope, BasicService) {
   $scope.stories = $scope.stories || [];
   BasicService.topList()
     .then(function(res) {
@@ -14,4 +14,4 @@ function BasicController ($scope, BasicService) {
 
 angular
   .module('app')
-  .controller('BasicController', BasicController);
+  .controller('TopController', TopController);
