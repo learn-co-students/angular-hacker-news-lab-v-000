@@ -1,6 +1,9 @@
 function PagesController ($scope, pages, BasicService) {
-  $scope.thingy = "thing";
-  $scope.page = parseInt(pages.params);
+  if (pages.params) {
+    $scope.page = parseInt(pages.params);
+  } else {
+    $scope.page = 1;
+  }
 
   $scope.stories = $scope.stories || [];
 
