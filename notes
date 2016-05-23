@@ -8,19 +8,15 @@ probably should be more of a get item than getstory
 
 
 IN PROGRESS
-comments
-Nest replies to comments where necessary
-
-
-
-Use dynamic views in routes
-Use relevant Directives to bind ViewModels and Events
-Use routing resolves to preload data fetched from Services
 
 Display dates in human-readible formats
 
 
 DONE
+comments
+Nest replies to comments where necessary
+http://benfoster.io/blog/angularjs-recursive-templates
+
 Show all comments for a post in the news item
 
 link to post from index
@@ -32,4 +28,6 @@ Use ui-router for advanced routing
 Set the top stories view as the default route
 Create relevant Controllers and Services
 Allow a user to transition to a news item when clicked
-
+Use dynamic views in routes
+Use relevant Directives to bind ViewModels and Events
+Use routing resolves to preload data fetched from Services
