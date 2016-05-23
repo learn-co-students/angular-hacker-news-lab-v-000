@@ -2,7 +2,7 @@ var Comments = {
   bindings: {
     kids: '='
   },
-  template: "Comment: {{ctrl.allComments}}",
+  templateUrl: "views/comments.html",
   controller: function(BasicService) {
     var ctrl = this;
     this.sing = this.kids[0];
@@ -11,13 +11,8 @@ var Comments = {
       BasicService.story(item)
       .then(function(res) {
         ctrl.allComments.push(res.data);
-        // ctrl.singleStory = res.data;
       });
     });
-    // BasicService.stories(this.kids)
-    //   .then(function(res) {
-    //     ctrl.allComments = res.data;
-    //   });
   },
   controllerAs: 'ctrl'
 };

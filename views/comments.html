@@ -1,0 +1,10 @@
+<!-- Comment: {{ctrl.allComments[0].text}} -->
+<ul>
+  <li ng-repeat="comment in ctrl.allComments">
+    {{comment.text}}
+    <ul ng-if="comment.kids">
+    can probably just call the directive here
+      <comments kids="comment.kids"></comments>
+    </ul>
+  </li>
+</ul>

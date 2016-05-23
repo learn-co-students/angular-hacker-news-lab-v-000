@@ -9,7 +9,6 @@ probably should be more of a get item than getstory
 
 IN PROGRESS
 comments
-Show all comments for a post in the news item
 Nest replies to comments where necessary
 
 
@@ -22,6 +21,8 @@ Display dates in human-readible formats
 
 
 DONE
+Show all comments for a post in the news item
+
 link to post from index
 Allow the user to navigate "Next" and "Previous" page
 
