@@ -5,11 +5,11 @@ angular
         .state('top',{
           url: '/top',
           templateUrl: '/views/posts.html',
-          controller: 'PostController',
+          controller: 'TopPostsController',
           controllerAs: 'ctrl',
           resolve:{
-            top_stories: function($http){
-              return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+            top_stories: function(PostService){
+              return PostService.getPosts();
             }
           }
         })
@@ -19,8 +19,8 @@ angular
           controller: 'ArticleController',
           controllerAs: 'ctrl',
           resolve:{
-            article: function($http){
-              return $http.get('https://hacker-news.firebaseio.com/v0/item/11761065.json');
+            article: function(PostService, $stateParams){
+              return PostService.getPost($stateParams.id);
             }
           }
         });
