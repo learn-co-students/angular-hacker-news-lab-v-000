@@ -1,4 +1,4 @@
-function TopPostsController(top_stories){
+function TopPostsController(top_stories, PostService){
   var ctrl = this;
   this.top_stories = top_stories.data;
   this.start = 0;
@@ -13,7 +13,13 @@ function TopPostsController(top_stories){
   };
 
   this.update_top_stories = function(){
-    ctrl.top_stories_slice = ctrl.top_stories.slice(ctrl.start, ctrl.start + ctrl.PAGE_DIF);
+    ctrl.these_top_stories = ctrl.top_stories.slice(ctrl.start, ctrl.start + ctrl.PAGE_DIF);
+    ctrl.these_top_stories.forEach(function(d,i){
+      PostService.getPost(d)
+        .then(function(res){
+          ctrl.these_top_stories[i] = res;
+        });
+    });
   };
 
   this.update_top_stories();

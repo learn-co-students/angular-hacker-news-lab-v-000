@@ -8,7 +8,10 @@ function PostService ($http){
 
   this.getPost = function(id){
     //this can be a root article, root comment, or child comment
-    return $http.get(BASE_URL + 'item/' + id + '.json');
+    return $http.get(BASE_URL + 'item/' + id + '.json')
+      .then(function(res){
+        return res.data;
+      });
   }
 }
 
