@@ -1,5 +1,7 @@
 function ArticleController(article){
-  this.article = article.data;
+  this.article = article;
+
+  this.comments = this.article.kids;
 }
 
 angular

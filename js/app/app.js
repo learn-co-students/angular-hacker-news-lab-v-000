@@ -1,5 +1,5 @@
 angular
-    .module('app', ['ui.router'])
+    .module('app', ['ui.router', 'ngSanitize'])
     .config(function($stateProvider, $urlRouterProvider){
       $urlRouterProvider.when('/', '/top');
       $stateProvider

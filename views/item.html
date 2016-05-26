@@ -1,0 +1,8 @@
+<div>{{ item.data.by }}: <br><span ng-bind-html="item.data.text"></span></div><br>
+<div ng-if="item.data.kids">
+  <ul>
+    <li ng-repeat="comment in item.data.kids">
+      <item id="comment"></item>
+    </li>
+  </ul>
+</div>
