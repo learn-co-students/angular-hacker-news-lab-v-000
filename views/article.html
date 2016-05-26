@@ -1,0 +1,18 @@
+<h1>Here is the article in question:</h1>
+<span class="story">
+  <h3><a href="{{ ctrl.article.url }}">{{ ctrl.article.title }}</a></h3>
+</span>
+<span id="comments">
+  <a ui-sref="post({id: ctrl.article.id })">({{ ctrl.article.descendants }} comments,</a>
+</span>
+<span id="points">{{ ctrl.article.score }} points,</span>
+<span id="poster">by {{ ctrl.article.by }},</span>
+<span id="time">at {{ ctrl.article.time * 1000 | date:'short' }})</span>
+
+<div ng-if="ctrl.comments">
+  <ul>
+    <li ng-repeat="comment in ctrl.article.kids">
+      <item id="comment"></item>
+    </li>
+  </ul>
+</div>

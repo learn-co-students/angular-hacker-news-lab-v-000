@@ -1,0 +1,15 @@
+<h1>POSTS EVERYONE!</h1>
+<div ng-repeat="story in ctrl.these_top_stories">
+  <span class="story_number">{{ ctrl.start + $index + 1}}:</span>
+  <span class="story">
+    <a href="{{ story.url }}">{{ story.title }}</a>
+  </span>
+  <span id="comments">
+    <a ui-sref="post({id: story.id })">({{ story.descendants }} comments,</a>
+  </span>
+  <span id="points">{{ story.score }} points,</span>
+  <span id="poster">by {{ story.by }},</span>
+  <span id="time">at {{ story.time | date:'short' }})</span>
+</div>
+<div ng-if="ctrl.nextable()" ng-click="ctrl.serveNext()">Next</div>
+<div ng-if="ctrl.prevable()" ng-click="ctrl.servePrev()">Previous</div>
