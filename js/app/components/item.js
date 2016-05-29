@@ -8,7 +8,7 @@ var Item = {
     PostsService.getPost(this.id)
       .then(function(res) {
         ctrl.data = res.data;
-      });
+      })
   },
   controllerAs: 'item'
 };
