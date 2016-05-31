@@ -1,7 +1,7 @@
-function PostController(data) {
+function PostController(post) {
   this.data = post.data;
 }
 
 angular
   .module('app')
-  .controller('postController', PostController)
+  .controller('PostController', PostController)

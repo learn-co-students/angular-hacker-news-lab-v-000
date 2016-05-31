@@ -1,15 +1,17 @@
-var api_url = 'https://hacker-news.firebaseio.com/v0'
+var API_URL = 'https://hacker-news.firebaseio.com/v0'
 
 function PostsService($http) {
   this.getTopStories = function() {
-    return $http.get(api_url + '/topstories.json');
+    // console.log(API_URL + '/topstories.json');
+    return $http.get(API_URL + '/topstories.json');
   };
 
   this.getPost = function(id) {
-    return $http.get(api_url + '/item/' + id + '.json');
+    // console.log(API_URL + '/item/' + id + '.json');
+    return $http.get(API_URL + '/item/' + id + '.json');
   };
 }
 
 angular
   .module('app')
-  .service('postsService', PostsService);
+  .service('PostsService', PostsService);
