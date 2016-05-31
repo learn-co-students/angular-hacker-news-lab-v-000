@@ -1,6 +1,6 @@
 function TopStoriesController(posts) {
   this.posts = posts.data
-  console.log(posts);
+  // console.log(posts);
   
   this.page = 0;
   this.postSize = posts.data.length;
