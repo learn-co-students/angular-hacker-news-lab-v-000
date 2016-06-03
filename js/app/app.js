@@ -2,21 +2,27 @@ angular
     .module('app', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider){
         $stateProvider
-            .state('home', {
-                url: '/',
-                templateURL: 'index.html',
-                // controller: 'StoriesController as stories'
-            })
+            // .state('home', {
+            //     url: '/',
+            //     templateUrl: 'index.html',
+            //     controller: 'StoriesController as stories'
+            // })
 
             .state('top', {
                 url: '/top',
-                template: 'views/topstories.hmtl',
-                controller: 'StoriesController as stories'
+                templateUrl: 'views/topstories.html',
+                controller: 'StoriesController as stories',
+//                 resolve: {
+//                     stories: function(ApiService){
+// debugger;
+//                           return ApiService.getTop()
+//                     },
+//                 }
             })
 
             .state('post', {
                 url: '/post/:id',
-                template: 'views/post.html',
+                templateUrl: 'views/post.html',
                 controller: 'StoriesController as stories'
             })
 

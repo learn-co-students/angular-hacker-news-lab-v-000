@@ -1,17 +1,17 @@
-// function ApiService($http){
+function ApiService($http){
 
-//     this.topStories = function(){
-//       return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json')
-//     }
+    this.getTop = function(){
+      return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json')
+    }
 
-//     this.storiesById = function(id){
-//       return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id +'.json' )
-//     }
+    this.getStory = function(id){
+      return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id +'.json')
+    }
 
-    
 
-// }
 
-// angular 
-//     .module('app')
-//     .service('ApiService', ApiService)
+}
+
+angular 
+    .module('app')
+    .service('ApiService', ApiService)

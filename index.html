@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
-  <h1>This is index.html</h1>
-
+  <h1>This should only show up once</h1>
     <div ng-app="app" class="app">
-        <div ng-controller="StoriesController as stories">
+<!--         <div ng-controller="StoriesController as stories">
           {{ stories.message }}
-        </div>
+        </div> -->
+
+        <a ui-sref="top">Get Top stories</a> 
+        
+        <div ui-view></div>   
+
 
 
     </div>
