@@ -1,0 +1,17 @@
+
+<div class="post-detail">
+    <p class="post__title"> {{ post.data.title}} </p>
+    <a ui-sref="post({ id: post.data.id })">url: {{post.data.url}}</a>
+    <p>comments: {{post.data.kids.length}}</p>
+    <p>Score: {{post.data.score}}</p>
+</div>
+
+<div ng-if="post.data.kids.length > 0">
+      <ul class="comments">
+          <li ng-repeat="comment in post.data.kids">
+            <item id="comment"></item>
+          </li>
+      </ul>
+
+
+</div>
