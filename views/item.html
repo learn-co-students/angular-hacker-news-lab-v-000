@@ -1,1 +1,5 @@
-{{ item.data }}
+<a href="" ui-sref="post({ id: item.data.id})" ng-bind-html="item.data.url" name="Post {{ item.data.id }}"></a>
+<div ng-bind-html="item.data.by"></div>
+<div ng-bind-html="item.data.title"></div>
+<div ng-bind-html="item.data.score"></div>
+<div ng-bind-html="item.data.type"></div>

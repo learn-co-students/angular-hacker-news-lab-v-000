@@ -19,6 +19,7 @@ angular
                 controller: 'PostController as post',
                 resolve: {
                           post: function($routeParams, ApiService){
+              debugger;
                               return ApiService.getPost($routeParams.id)
                           }
                         }
