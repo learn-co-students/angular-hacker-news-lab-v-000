@@ -5,12 +5,12 @@ var Item = {
   },
   controller: function(ApiService){
       var ctrl = this
-
       ApiService
         .getPost(this.id)
         .then(function(res){
             ctrl.data=res.data
-        })    
+        })
+
   },
   controllerAs: 'item'
 

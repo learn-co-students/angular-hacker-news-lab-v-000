@@ -1,5 +1,31 @@
-<a href="" ui-sref="post({ id: item.data.id})" ng-bind-html="item.data.url" name="Post {{ item.data.id }}"></a>
-<div ng-bind-html="item.data.by"></div>
-<div ng-bind-html="item.data.title"></div>
-<div ng-bind-html="item.data.score"></div>
-<div ng-bind-html="item.data.type"></div>
+<!-- Allows for reuse of item component at any point, can be called later in ng-repeat -->
+
+<!-- First div makes sure there an object with some stuff in it. -->
+<div ng-if='item.data'>
+<!-- Second Div then checks to see what kind of data we're dealing with -->
+    <div ng-switch='item.data.type'>
+<!--       Two types of data to deal with here. Only one will get displayed depending on the individual Item instance we're dealing with. REMEMBER: this URL is called by the Item component, which itself is called by "<item>" tag on whichever view. Whichever of these divs evaluates to true passes up its HTML to the point where it was called, then that gets displayed.  --> 
+          <div ng-switch-when='story'>
+            <div class="item">
+                <p class="item__title"> {{ item.data.title}} </h3>
+                  <div class="item__description">
+                    <a ui-sref="post({ id: item.data.id })">url: {{item.data.url}}</a>
+                    <p>comments: {{item.data.kids.length}}</p>
+                    <p>Score: {{item.data.score}}</p>
+                  </div>
+              </div>
+          </div>
+<!-- This one should only get called when someone follows the individual post route. That's the only point, in post.html, where there's an ng-repeat that checks the "kids" array that every type of item can (but doesn't necessarily) return -->
+          <div ng-switch-when='comment'>
+              <p>By {{item.data.by}}
+              <div ng-bind-html="item.data.text"></div>
+
+              <ul class="comments">
+                  <li ng-repeat="comment in item.data.kids">
+                    <item id="comment"></item>
+              </ul>
+          </div>
+
+
+    </div>
+</div>

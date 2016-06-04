@@ -7,7 +7,7 @@ function ApiService($http){
     }
 
     this.getPost = function(id){
-      return $http.get(API_URL + 'item/' + id +'.json')
+        return $http.get(API_URL + 'item/' + id +'.json')
     }
 }
 

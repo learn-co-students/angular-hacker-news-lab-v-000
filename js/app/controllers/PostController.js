@@ -1,5 +1,5 @@
 function PostController(post){
-    this.post = post.data
+    this.data = post.data
 
 }
 

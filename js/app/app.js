@@ -18,9 +18,8 @@ angular
                 templateUrl: 'views/post.html',
                 controller: 'PostController as post',
                 resolve: {
-                          post: function($routeParams, ApiService){
-              debugger;
-                              return ApiService.getPost($routeParams.id)
+                          post: function($stateParams, ApiService){
+                              return ApiService.getPost($stateParams.id)
                           }
                         }
             })

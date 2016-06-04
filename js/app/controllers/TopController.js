@@ -4,8 +4,8 @@ function TopController(stories, $scope){
     this.pgNumber = 0
 
     this.makePage = function(){
-          var start=this.pgNumber*5
-          var selection= start + 5
+          var start=this.pgNumber*30
+          var selection= start + 30
           this.thisPage = postIds.slice(start, selection)  
     }
     

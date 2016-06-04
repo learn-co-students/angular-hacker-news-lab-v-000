@@ -1,17 +1,20 @@
+<div class="header">
+  <p>Top Stories</p>
+  <p>Page: {{ top.pgNumber + 1 }}</p>
+</div>
+
 <div>
-    <p>Page: {{ top.pgNumber + 1 }}</p>
     <ul class="posts">
         <li ng-repeat="post in top.thisPage">
-            <item id="post"></item>
+            <item id="post" class="item"></item>
         </li>
     </ul>
 
 </div>
 
-<div class="navigation">
+<div class="pagination">
     <a href="" ng-if="top.pgNumber > 0" ng-click="top.prevPage()">Previous Page</a>
 
-   
     <a href="" ng-if="top.totPages != top.pgNumber" ng-click="top.nextPage()">Next Page</next-pg>
 
 </div>
