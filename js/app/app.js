@@ -1,10 +1,13 @@
 angular
   .module('app', ['ui.router'])
-  .config(function ($stateProvider){
+  .config(['$stateProvider', function ($stateProvider){
     $stateProvider
-      .state('topstories'), {
-        url: '/topstories',
+      .state('topstories', {
+        url: '',
         templateUrl: 'views/topstories.html',
-        controller: 'StoriesController'
-      }
-    });
+        controller: 'StoriesController as ctrl'
+      });
+
+    }]);
+
+

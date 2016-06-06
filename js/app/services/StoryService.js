@@ -3,12 +3,12 @@ function StoryService($http){
     return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
   }
 
-  this.getPostById = function(id){
+  this.getStoryById = function(id){
     return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json');
   }
 }
 
-StoryService.inject = ['$http'];
+StoryService.$inject = ['$http'];
 
 angular
   .module('app')
