@@ -1,6 +1,6 @@
 angular
     .module('app', ['ui.router'])
-    .config(function($stateProvider){
+    .config(function($stateProvider,  $urlRouterProvider){
       $stateProvider
         .state('top', {
           url: '/top',
@@ -16,5 +16,6 @@ angular
           url: '/post/:id',
           templateUrl: 'story.html'
         });
+        $urlRouterProvider.otherwise("/top");
 
     });
