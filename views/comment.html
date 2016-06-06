@@ -1,0 +1,8 @@
+<li class="comment">
+  By: <span ng-bind-html="ctrl.comment.by"></span></br>
+  Date: <span ng-bind-html="ctrl.date"></span>
+  <div ng-bind-html="ctrl.comment.text"></div>
+  <ul class="comments" ng-repeat="comment in ctrl.comment.kids">
+    <comment id="{{comment}}"></comment>
+  </ul>
+</li>

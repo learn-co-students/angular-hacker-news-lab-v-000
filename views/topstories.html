@@ -1,4 +1,13 @@
 <div class="header">TOP STORIES</div>
-<div ng-repeat="story in ctrl.thirtyStories">
+
+<ul ng-repeat="story in ctrl.thirtyStories">
   <show-story story="{{story}}"></show-story>
-</div>
+</ul>
+
+<span ng-if="ctrl.currentPage !== 1">
+  <a href="" ng-click="ctrl.changePage(ctrl.currentPage - 1)">Previous Page</a>
+</span> ||
+<span ng-if="ctrl.currentPage !== 17">
+  <a href="" ng-click="ctrl.changePage(ctrl.currentPage + 1)">Next Page</a>
+</span>
+

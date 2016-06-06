@@ -1,15 +1,8 @@
-function StoriesController(StoryService) {
+function StoriesController(stories) {
   var ctrl = this;
-  ctrl.stories = [];
+  ctrl.stories = stories.data;
   ctrl.thirtyStories = [];
   ctrl.currentPage = 1;
-
-  StoryService
-    .getStories()
-    .then(function (res){
-    ctrl.stories = res.data;
-    ctrl.getStoriesByPage(ctrl.currentPage);
-  });
 
   ctrl.getStoriesByPage = function(currentPage){
     var startingIndex;
@@ -19,14 +12,19 @@ function StoriesController(StoryService) {
     } else {
       startingIndex = (30 * (currentPage - 1) - 1);
     };
-
-    ctrl.thirtyStories = ctrl.stories.splice(startingIndex, 30);
-    debugger;
+    ctrl.thirtyStories = ctrl.stories.slice(startingIndex, startingIndex + 31);
   }
+
+  ctrl.changePage = function(newPage){
+    ctrl.currentPage = newPage;
+    ctrl.getStoriesByPage(ctrl.currentPage);
+  }
+  
+  ctrl.getStoriesByPage(ctrl.currentPage);
 
 }
 
-StoriesController.$inject = ['StoryService'];
+StoriesController.$inject = ['stories'];
 
 angular
   .module('app')

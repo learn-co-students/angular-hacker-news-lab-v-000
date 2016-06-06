@@ -1,1 +1,12 @@
-{{ ctrl.story }}
+<li class="item">
+  <a href="" ui-sref="post({id: ctrl.story.id })">
+    <div class="item__title">{{ ctrl.story.title }}</div>
+  </a>
+  <a href="{{ ctrl.story.url }}">Read Story</a>
+  Comments: {{ ctrl.story.descendants }}
+  Score: {{ ctrl.story.score }}
+</li>
+
+
+
+
