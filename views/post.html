@@ -1,0 +1,10 @@
+
+<div class="post__title">{{ ctrl.post.title }}</div>
+
+<a href="{{ ctrl.post.url }}">Read Story</a>
+Comments: {{ ctrl.post.descendants }}
+Score: {{ ctrl.post.score }}
+
+<ul class="comments" ng-repeat="comment in ctrl.post.kids">
+    <comment id="{{comment}}"></comment>
+</ul>
