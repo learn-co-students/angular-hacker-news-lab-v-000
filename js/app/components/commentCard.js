@@ -1,19 +1,13 @@
-var StoryCard = {
+var CommentCard = {
   bindings: {
-    storyid: '='
+    commentid: '='
   },
-  template: [
-    "<div class='post'>",
-      "<a class='post__title' href='{{ctrl.story.url}}'>{{ctrl.story.title}}</a>", 
-        "<h6>by {{ctrl.story.by}}</h6>",
-      "<a class='post__description' href='#' ui-sref='post({id: ctrl.story.id})'>{{ctrl.story.score}} points | {{ctrl.story.descendants}} comments</a>",
-    "</div>"
-  ].join(''),
+  templateUrl: 'templates/comments.html',
   controller: function (storyService){
     var ctrl = this;
 
-    storyService.getSingleStory(ctrl.storyid).then(function(resp){
-        ctrl.story = resp.data;
+    storyService.getComment(ctrl.commentid).then(function(resp){
+        ctrl.comment = resp.data;
       }
     );
 
@@ -23,7 +17,7 @@ var StoryCard = {
 
 angular
   .module('app')
-  .component('storyCard', StoryCard);
+  .component('commentCard', CommentCard);
 
   // This story's id is 11844171
 

@@ -1,5 +1,5 @@
 angular
-    .module('app', ['ui.router'])
+    .module('app', ['ui.router', 'ngSanitize'])
     .config(function($stateProvider,  $urlRouterProvider){
       $stateProvider
         .state('top', {
@@ -14,7 +14,13 @@ angular
         })
         .state('post', {
           url: '/post/:id',
-          templateUrl: 'story.html'
+          templateUrl: 'templates/story.html',
+          controller: 'StoryController as ctrl',
+          resolve: {
+              story: function (storyService, $stateParams) {
+                 return storyService.getSingleStory($stateParams.id);
+              }
+          }
         });
         $urlRouterProvider.otherwise("/top");
 

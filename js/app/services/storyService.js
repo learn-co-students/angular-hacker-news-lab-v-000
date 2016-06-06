@@ -8,6 +8,10 @@ function storyService($http){
     return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json');        
   };
 
+  this.getComment = function(id){
+    return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json');        
+  };
+
 }
 
 angular
