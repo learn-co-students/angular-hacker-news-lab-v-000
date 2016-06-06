@@ -3,9 +3,9 @@ var StoryCard = {
     storyid: '='
   },
   template: [
-    "<h5>{{ctrl.story.title}}</h5> <h6>by {{ctrl.story.by}}</h6>",
-    "<a>{{ctrl.story.url}}</a>",
-    "<p>{{ctrl.story.score}} points | {{ctrl.story.descendants}} comments</p>",
+    "<a href='{{ctrl.story.url}}'>{{ctrl.story.title}}</a>", 
+    "<h6>by {{ctrl.story.by}}</h6>",
+    "<a href='#' ui-sref='post({{ctrl.story.id}})'>{{ctrl.story.score}} points | {{ctrl.story.descendants}} comments</a>",
   ].join(''),
   controller: function (storyService){
     var ctrl = this;
