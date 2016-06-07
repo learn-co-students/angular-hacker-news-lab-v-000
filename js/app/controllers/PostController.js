@@ -1,11 +1,7 @@
-function PostController (PostService) {
+function PostController (post) {
   var ctrl = this;
 
-  // PostService
-  //   .getPost()
-  //   .then(function (resp) {
-      
-  //   });
+  ctrl.story = post.data;
 
 }
 

@@ -17,8 +17,8 @@ angular
         templateUrl: '/views/post.html',
         controller: 'PostController as ctrl',
         resolve: {
-          post: function ($http, $stateParams) { // could refactor to use PostService
-            return $http.get('https://hacker-news.firebaseio.com/v0/item/' + $stateParams.id + '.json');
+          post: function (PostService, $stateParams) {
+            return PostService.getPost($stateParams.id);
           }
         }
       })
