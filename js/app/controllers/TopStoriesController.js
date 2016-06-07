@@ -1,9 +1,9 @@
-function TopStoriesController (topStoriesResponse, PostService) {
+function TopStoriesController (topStories, PostService) {
   var ctrl = this;
 
-  ctrl.topStoryIds = topStoriesResponse.data;
+  ctrl.topStoryIds = topStories.data;
 
-  ctrl.fullTopStories = []; // should have a default value of the first 30 stories
+  ctrl.fullTopStories = []; // will have a default value of the first 30 stories
 
   ctrl.getFullStories = function (stories) { // call this with a sliced array of 30 stories at a time
     ctrl.fullTopStories = []; // clear out any old values
@@ -21,15 +21,17 @@ function TopStoriesController (topStoriesResponse, PostService) {
   ctrl.nextSlice = function () {
     counter += 30;
     var stories = ctrl.topStoryIds.slice(counter, counter + 30);
-    ctrl.getFullStories(stories);
+    ctrl.getFullStories(stories); // redefine fullTopStories array for the view
   };
 
   ctrl.prevSlice = function () {
     counter -= 30;
     var stories = ctrl.topStoryIds.slice(counter, counter + 30);
-    ctrl.getFullStories(stories);
+    ctrl.getFullStories(stories); // redefine fullTopStories array for the view
   };
 
+  var defaultStories = ctrl.topStoryIds.slice(0, 30);
+  ctrl.getFullStories(defaultStories); // make sure fullTopStories has an initial value with stories
 
 }
 

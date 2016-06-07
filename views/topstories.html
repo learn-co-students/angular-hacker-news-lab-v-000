@@ -4,9 +4,9 @@
   <li ng-repeat="story in ctrl.fullTopStories">
     <top-story 
       url="story.url"
-      comments="story.comments"
+      title="story.title"
       score="story.score"
-    />
+      comments="story.kids.length" />
   </li>
 </ul>
 
