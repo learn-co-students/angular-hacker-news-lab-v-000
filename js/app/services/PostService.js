@@ -1,4 +1,4 @@
-function PostService ($http) { // technically also CommentService
+function PostService ($http) { // gets stories and also comments
   this.getPost = function (id) {
     return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json');
   }

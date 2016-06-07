@@ -5,4 +5,14 @@
   id="ctrl.story.id"
   title="ctrl.story.title"
   score="ctrl.story.score"
-  comments="ctrl.story.kids.length" />
+  comments="ctrl.story.kids.length"></top-story>
+
+<ul>
+  <li ng-repeat="comment in ctrl.commentDetails">
+    <comment 
+      by="comment.by" 
+      id="comment.id"
+      text="comment.text"
+      kids="comment.kids"></comment>
+  </li>
+</ul>
