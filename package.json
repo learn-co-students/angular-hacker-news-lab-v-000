@@ -7,8 +7,5 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.6",
     "karma-spec-reporter": "0.0.23"
-  },
-  "dependencies": {
-    "express": "^4.13.4"
   }
 }
