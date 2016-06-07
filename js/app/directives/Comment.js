@@ -1,6 +1,6 @@
 var Comment = {  
   template: [
-    '<p ng-bind-html="ctrl.text"></p>',
+    '<p class="post" ng-bind-html="ctrl.text"></p>',
     '<h6>by {{ ctrl.by }} </h6>',
     '<ul>',
       '<li ng-repeat="subcomment in ctrl.subcomments">',

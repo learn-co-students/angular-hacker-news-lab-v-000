@@ -12,6 +12,8 @@ html, body {
 
 .header {
 	height: 47px;
+	background: #3661A2;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .header__fixed {
@@ -31,6 +33,14 @@ html, body {
 }
 
 .header a {
+	display: block;
+	padding: 14px 15px;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.5);
+	float: left;
+}
+
+.header-link {
 	display: block;
 	padding: 14px 15px;
 	text-decoration: none;

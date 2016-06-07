@@ -2,15 +2,15 @@ function TopStory () {
   return {
     scope: {},
     template: [
-      '<div class="story">',
-        '<h4>',
+      '<div>',
+        '<h4 class="item__title">',
           '<a ui-sref="post({id: {{ctrl.id}} })">',
             '{{ ctrl.title }}',
           '</a>',
         '</h4>',
-        '<a href="{{ ctrl.url }}">{{ ctrl.url }}</a>',
-        '<p>Score: {{ ctrl.score }}</p>',
-        '<p>Comments: {{ ctrl.comments }}</p>',
+        '<a class="item__description" href="{{ ctrl.url }}">{{ ctrl.url }}</a>',
+        '<p class="item__description">Score: {{ ctrl.score }}</p>',
+        '<p class="item__description">Comments: {{ ctrl.comments }}</p>',
       '</div>'
     ].join(''),
     controller: function () {
