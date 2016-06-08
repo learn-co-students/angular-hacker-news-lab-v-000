@@ -1,8 +1,17 @@
-<div class="posts">
-  <div class="post">
-    <a href="" ui-sref="post({id: post.data.id})">{{ post.data.title }}</a><br/>
-    <a href="{{ post.data.url }}">{{ post.data.url }}</a>
-    <h6>SCORE {{ post.data.score }} | {{ post.data.kids.length }} COMMENTS</h6>
+<div ng-if="post.data.type === 'story'" class="post">
+  <div class="posts">
+    <div class="post">
+      <a href="" ui-sref="post({id: post.data.id})">{{ post.data.title }}</a><br/>
+      <a href="{{ post.data.url }}">{{ post.data.url }}</a>
+      <h6>SCORE {{ post.data.score }} | {{ post.data.kids.length }} COMMENTS</h6>
+    </div>
   </div>
-  <div ui-view></div>
+</div>
+
+<div ng-if="post.data.type === 'comment'" class="comments">
+  <b>{{ post.data.by }}</b>
+  <div ng-bind-html="post.data.text"></div>
+  <li ng-if="post.data.kids" ng-repeat="kid in post.data.kids">
+    <item id="kid"></item>
+  </li><br/>
 </div>

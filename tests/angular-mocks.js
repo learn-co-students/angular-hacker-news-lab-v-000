@@ -1025,20 +1025,16 @@ angular.mock.dump = function(object) {
   angular
     .module('MyApp', [])
     .controller('MyController', MyController);
-
   // The controller code
   function MyController($scope, $http) {
     var authToken;
-
     $http.get('/auth.py').success(function(data, status, headers) {
       authToken = headers('A-Token');
       $scope.user = data;
     });
-
     $scope.saveMessage = function(message) {
       var headers = { 'Authorization': authToken };
       $scope.status = 'Saving...';
-
       $http.post('/add-msg.py', message, { headers: headers } ).success(function(response) {
         $scope.status = '';
       }).error(function() {
@@ -1054,80 +1050,60 @@ angular.mock.dump = function(object) {
     // testing controller
     describe('MyController', function() {
        var $httpBackend, $rootScope, createController, authRequestHandler;
-
        // Set up the module
        beforeEach(module('MyApp'));
-
        beforeEach(inject(function($injector) {
          // Set up the mock http service responses
          $httpBackend = $injector.get('$httpBackend');
          // backend definition common for all tests
          authRequestHandler = $httpBackend.when('GET', '/auth.py')
                                 .respond({userId: 'userX'}, {'A-Token': 'xxx'});
-
          // Get hold of a scope (i.e. the root scope)
          $rootScope = $injector.get('$rootScope');
          // The $controller service is used to create instances of controllers
          var $controller = $injector.get('$controller');
-
          createController = function() {
            return $controller('MyController', {'$scope' : $rootScope });
          };
        }));
-
-
        afterEach(function() {
          $httpBackend.verifyNoOutstandingExpectation();
          $httpBackend.verifyNoOutstandingRequest();
        });
-
-
        it('should fetch authentication token', function() {
          $httpBackend.expectGET('/auth.py');
          var controller = createController();
          $httpBackend.flush();
        });
-
-
        it('should fail authentication', function() {
-
          // Notice how you can change the response even after it was set
          authRequestHandler.respond(401, '');
-
          $httpBackend.expectGET('/auth.py');
          var controller = createController();
          $httpBackend.flush();
          expect($rootScope.status).toBe('Failed...');
        });
-
-
        it('should send msg to server', function() {
          var controller = createController();
          $httpBackend.flush();
-
          // now you don’t care about the authentication, but
          // the controller will still send the request and
          // $httpBackend will respond without you having to
          // specify the expectation and response for this request
-
          $httpBackend.expectPOST('/add-msg.py', 'message content').respond(201, '');
          $rootScope.saveMessage('message content');
          expect($rootScope.status).toBe('Saving...');
          $httpBackend.flush();
          expect($rootScope.status).toBe('');
        });
-
-
        it('should send auth header', function() {
          var controller = createController();
          $httpBackend.flush();
-
          $httpBackend.expectPOST('/add-msg.py', undefined, function(headers) {
            // check if the header was sent, if it wasn't the expectation won't
            // match the request and the test will fail
            return headers['Authorization'] == 'xxx';
          }).respond(201, '');
-
          $rootScope.saveMessage('whatever');
          $httpBackend.flush();
        });
@@ -1184,25 +1160,20 @@ angular.mock.dump = function(object) {
       .respond(function(method, url, data, headers, params) {
         return [200, MockUserList[Number(params.id)]];
       });
-
     $httpBackend.whenRoute('GET', '/users')
       .respond(function(method, url, data, headers, params) {
         var userList = angular.copy(MockUserList),
           defaultSort = 'lastName',
           count, pages, isPrevious, isNext;
-
         // paged api response '/v1/users?page=2'
         params.page = Number(params.page) || 1;
-
         // query for last names '/v1/users?q=Archer'
         if (params.q) {
           userList = $filter('filter')({lastName: params.q});
         }
-
         pages = Math.ceil(userList.length / pagingLength);
         isPrevious = params.page > 1;
         isNext = params.page < pages;
-
         return [200, {
           count:    userList.length,
           previous: isPrevious,

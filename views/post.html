@@ -1,1 +1,11 @@
-<h1>you're at the post!</h1>
+<div class="posts">
+  <div class="post">
+    <h5>{{ post.data.title }}</h5><br/>
+    <a href="{{ post.data.url }}">{{ post.data.url }}</a>
+    <h6>SCORE {{ post.data.score }}</h6>
+    
+    <div ng-repeat="kid in post.data.kids">
+      <item id="kid"></item>
+    </div>
+  </div>
+</div>
