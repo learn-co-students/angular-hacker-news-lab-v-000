@@ -1,14 +1,33 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Angular Application</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HACKER NEWS</title>
 
     <link rel="stylesheet" href="app.css" />
 </head>
-<body>
+<body ng-app="app">
+  <header class="header">
+    <div class="header__fixed">
+      <ul>
+        <a ui-sref="top">Top Stories</a>
+      </ul>
+    </div>
+  </header>
+
+  <div ui-view></div>
+
+
+    <script src="js/angular.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/controllers/PostController.js"></script>
+    <script src="js/app/controllers/TopController.js"></script>
+    <script src="js/app/services/DomainService.js"></script>
+    <script src="js/app/components/Item.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/angular-sanitize.js"></script>
 
 </body>
 </html>
