@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router'])
+  .module('app', ['ui.router', 'ngSanitize'])
   .config(function($stateProvider) {
     $stateProvider
       .state('top', {
@@ -18,8 +18,10 @@ angular
           controller: 'PostController as post',
           resolve: {
             post: function($stateParams, DomainService) {
-              return DomainService.getPost(11855638);
+              return DomainService.getPost($stateParams.id);
             }
           }
       });
+
+      // $locationProvider.html5Mode(true);
   });

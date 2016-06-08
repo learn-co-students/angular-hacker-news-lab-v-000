@@ -1,16 +1,10 @@
 
-    <h1>Top Posts</h1>
-{{top.posts}}
-    <!-- <div ng-repeat="post in top.posts">
-    {{ post }}
-    </div> -->
+<h2>Front Page -- Hacker News</h2>
+  <div ng-repeat="post in top.posts">
+    <item post="post"></item>
+  </div>
 
-    <ul class="pagination">
-      <li>
-        <a href="" ng-click="top.previousPage()"><< PREVIOUS</a>
-      </li>
-
-      <li>
-        <a href="" ng-click="top.nextPage()">NEXT >></a>
-      </li>
-    </ul>
+<ul class="pagination">
+  <li><a href="" ng-click="top.previousPage()"><< PREVIOUS</a></li>
+  <li><a href="" ng-click="top.nextPage()">NEXT >></a></li>
+</ul>

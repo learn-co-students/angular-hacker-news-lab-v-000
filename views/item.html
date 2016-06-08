@@ -1,0 +1,8 @@
+<div class="posts">
+  <div class="post">
+    <a href="" ui-sref="post({id: post.data.id})">{{ post.data.title }}</a><br/>
+    <a href="{{ post.data.url }}">{{ post.data.url }}</a>
+    <h6>SCORE {{ post.data.score }} | {{ post.data.kids.length }} COMMENTS</h6>
+  </div>
+  <div ui-view></div>
+</div>
