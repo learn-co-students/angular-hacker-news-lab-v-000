@@ -10,16 +10,24 @@
 </head>
 <body>
 
+  <div ng-app="app" class="app">
+    <div class="header">
+      <div class="header__fixed">
+        <a ui-sref="top" ui-sref-active="active">Top Stories</a>
+      </div>
+    </div>
+    <div ui-view></div>
+  </div>
+
 
   <script src="js/angular.js"></script>
-  <script src="tests/angular-sanitize.js"></script>
-  <script src="tests/angular-ui-router.js"></script>
+  <script src="node_modules/angular-sanitize.js"></script>
+  <script src="node_modules/angular-ui-router.js"></script>
   <script src="js/app/app.js"></script>
   <script src="js/app/components/item.js"></script>
   <script src="js/app/controllers/PostController.js"></script>
   <script src="js/app/controllers/TopStoriesController.js"></script>
-  <script src="js/app/services/getTopStoriesService.js"></script>
-  <script src="js/app/services/getPostsService.js"></script>
+  <script src="js/app/services/TopStoriesService.js"></script>
 
 </body>
 </html>
