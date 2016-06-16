@@ -34,70 +34,71 @@
 24 verbose addNameTag registry:https://registry.npmjs.org/angular-sanitize not in flight; fetching
 25 verbose request uri https://registry.npmjs.org/angular-sanitize
 26 verbose request no auth needed
-27 info attempt registry request try #1 at 3:03:01 PM
-28 verbose request id 0a8282b9bf2dca4c
-29 http request GET https://registry.npmjs.org/angular-sanitize
-30 http 200 https://registry.npmjs.org/angular-sanitize
-31 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-31 verbose headers   etag: '"209VGVR5HF4YU99V0SHI4L4S6"',
-31 verbose headers   'content-type': 'application/json',
-31 verbose headers   'content-encoding': 'gzip',
-31 verbose headers   'cache-control': 'max-age=300',
-31 verbose headers   'content-length': '10015',
-31 verbose headers   'accept-ranges': 'bytes',
-31 verbose headers   date: 'Wed, 15 Jun 2016 19:03:01 GMT',
-31 verbose headers   via: '1.1 varnish',
-31 verbose headers   age: '196',
-31 verbose headers   connection: 'keep-alive',
-31 verbose headers   'x-served-by': 'cache-jfk1044-JFK',
-31 verbose headers   'x-cache': 'HIT',
-31 verbose headers   'x-cache-hits': '1',
-31 verbose headers   'x-timer': 'S1466017381.283981,VS0,VE0',
-31 verbose headers   vary: 'Accept-Encoding' }
-32 silly get cb [ 200,
-32 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-32 silly get     etag: '"209VGVR5HF4YU99V0SHI4L4S6"',
-32 silly get     'content-type': 'application/json',
-32 silly get     'content-encoding': 'gzip',
-32 silly get     'cache-control': 'max-age=300',
-32 silly get     'content-length': '10015',
-32 silly get     'accept-ranges': 'bytes',
-32 silly get     date: 'Wed, 15 Jun 2016 19:03:01 GMT',
-32 silly get     via: '1.1 varnish',
-32 silly get     age: '196',
-32 silly get     connection: 'keep-alive',
-32 silly get     'x-served-by': 'cache-jfk1044-JFK',
-32 silly get     'x-cache': 'HIT',
-32 silly get     'x-cache-hits': '1',
-32 silly get     'x-timer': 'S1466017381.283981,VS0,VE0',
-32 silly get     vary: 'Accept-Encoding' } ]
-33 verbose get saving angular-sanitize to /Users/pedroacosta/.npm/registry.npmjs.org/angular-sanitize/.cache.json
-34 silly addNameTag next cb for angular-sanitize with tag X.Y.Z
-35 verbose stack Error: No compatible version found: angular-sanitize@'X.Y.Z'
-35 verbose stack Valid install targets:
-35 verbose stack ["0.0.1","1.3.0-rc.5","1.3.0","1.3.1","1.3.2","1.3.3","1.3.4-build.3587","1.2.27","1.3.4","1.3.5","1.3.6","1.3.7","1.2.28","1.3.8","1.4.0-beta.0","1.3.9","1.3.10","1.4.0-beta.1","1.4.0-beta.2","1.3.11","1.4.0-beta.3","1.3.12","1.3.13","1.4.0-beta.4","1.3.14","1.4.0-beta.5","1.4.0-beta.6","1.3.15","1.4.0-rc.0","1.4.0-rc.1","1.4.0-rc.2","1.4.0","1.3.16","1.4.1","1.4.2","1.3.17","1.4.3","1.4.4","1.3.18","1.4.5","1.3.19","1.4.6","1.5.0-beta.0","1.2.29","1.3.20","1.4.7","1.5.0-beta.2","1.4.8","1.5.0-rc.0","1.5.0-rc.1","1.4.9","1.5.0-rc.2","1.5.0","1.5.1","1.4.10","1.5.2","1.5.3","1.5.5","1.4.11","1.5.6","1.4.12"]
-35 verbose stack
-35 verbose stack     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:284:12)
-35 verbose stack     at next (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:94:10)
-35 verbose stack     at RES (/usr/local/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
-35 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
-35 verbose stack     at fixName (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:29:5)
-35 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:173:7)
-35 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
-35 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
-36 verbose cwd /Users/pedroacosta/Development/code/angular-hacker-news-lab-v-000
-37 error Darwin 15.5.0
-38 error argv "/usr/local/Cellar/node/4.2.1/bin/node" "/usr/local/bin/npm" "install" "angular-sanitize@X.Y.Z"
-39 error node v4.2.1
-40 error npm  v2.14.7
-41 error code ETARGET
-42 error notarget No compatible version found: angular-sanitize@'X.Y.Z'
-42 error notarget Valid install targets:
-42 error notarget ["0.0.1","1.3.0-rc.5","1.3.0","1.3.1","1.3.2","1.3.3","1.3.4-build.3587","1.2.27","1.3.4","1.3.5","1.3.6","1.3.7","1.2.28","1.3.8","1.4.0-beta.0","1.3.9","1.3.10","1.4.0-beta.1","1.4.0-beta.2","1.3.11","1.4.0-beta.3","1.3.12","1.3.13","1.4.0-beta.4","1.3.14","1.4.0-beta.5","1.4.0-beta.6","1.3.15","1.4.0-rc.0","1.4.0-rc.1","1.4.0-rc.2","1.4.0","1.3.16","1.4.1","1.4.2","1.3.17","1.4.3","1.4.4","1.3.18","1.4.5","1.3.19","1.4.6","1.5.0-beta.0","1.2.29","1.3.20","1.4.7","1.5.0-beta.2","1.4.8","1.5.0-rc.0","1.5.0-rc.1","1.4.9","1.5.0-rc.2","1.5.0","1.5.1","1.4.10","1.5.2","1.5.3","1.5.5","1.4.11","1.5.6","1.4.12"]
-42 error notarget
-42 error notarget This is most likely not a problem with npm itself.
-42 error notarget In most cases you or one of your dependencies are requesting
-42 error notarget a package version that doesn't exist.
-42 error notarget
-42 error notarget It was specified as a dependency of 'testing-controllers'
-43 verbose exit [ 1, true ]
+27 info attempt registry request try #1 at 12:24:12 PM
+28 verbose request id 7168fbf8d21c1374
+29 verbose etag "209VGVR5HF4YU99V0SHI4L4S6"
+30 http request GET https://registry.npmjs.org/angular-sanitize
+31 http 200 https://registry.npmjs.org/angular-sanitize
+32 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+32 verbose headers   etag: '"6ICJUD59F00GUJ9IO3RZCZGZ7"',
+32 verbose headers   'content-type': 'application/json',
+32 verbose headers   'content-encoding': 'gzip',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '10190',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Thu, 16 Jun 2016 16:24:12 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   age: '114',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-iad2142-IAD',
+32 verbose headers   'x-cache': 'HIT',
+32 verbose headers   'x-cache-hits': '1',
+32 verbose headers   'x-timer': 'S1466094252.711500,VS0,VE0',
+32 verbose headers   vary: 'Accept-Encoding' }
+33 silly get cb [ 200,
+33 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+33 silly get     etag: '"6ICJUD59F00GUJ9IO3RZCZGZ7"',
+33 silly get     'content-type': 'application/json',
+33 silly get     'content-encoding': 'gzip',
+33 silly get     'cache-control': 'max-age=300',
+33 silly get     'content-length': '10190',
+33 silly get     'accept-ranges': 'bytes',
+33 silly get     date: 'Thu, 16 Jun 2016 16:24:12 GMT',
+33 silly get     via: '1.1 varnish',
+33 silly get     age: '114',
+33 silly get     connection: 'keep-alive',
+33 silly get     'x-served-by': 'cache-iad2142-IAD',
+33 silly get     'x-cache': 'HIT',
+33 silly get     'x-cache-hits': '1',
+33 silly get     'x-timer': 'S1466094252.711500,VS0,VE0',
+33 silly get     vary: 'Accept-Encoding' } ]
+34 verbose get saving angular-sanitize to /Users/pedroacosta/.npm/registry.npmjs.org/angular-sanitize/.cache.json
+35 silly addNameTag next cb for angular-sanitize with tag X.Y.Z
+36 verbose stack Error: No compatible version found: angular-sanitize@'X.Y.Z'
+36 verbose stack Valid install targets:
+36 verbose stack ["0.0.1","1.3.0-rc.5","1.3.0","1.3.1","1.3.2","1.3.3","1.3.4-build.3587","1.2.27","1.3.4","1.3.5","1.3.6","1.3.7","1.2.28","1.3.8","1.4.0-beta.0","1.3.9","1.3.10","1.4.0-beta.1","1.4.0-beta.2","1.3.11","1.4.0-beta.3","1.3.12","1.3.13","1.4.0-beta.4","1.3.14","1.4.0-beta.5","1.4.0-beta.6","1.3.15","1.4.0-rc.0","1.4.0-rc.1","1.4.0-rc.2","1.4.0","1.3.16","1.4.1","1.4.2","1.3.17","1.4.3","1.4.4","1.3.18","1.4.5","1.3.19","1.4.6","1.5.0-beta.0","1.2.29","1.3.20","1.4.7","1.5.0-beta.2","1.4.8","1.5.0-rc.0","1.5.0-rc.1","1.4.9","1.5.0-rc.2","1.5.0","1.5.1","1.4.10","1.5.2","1.5.3","1.5.5","1.4.11","1.5.6","1.4.12","1.5.7"]
+36 verbose stack
+36 verbose stack     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:284:12)
+36 verbose stack     at next (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:94:10)
+36 verbose stack     at RES (/usr/local/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+36 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+36 verbose stack     at fixName (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:29:5)
+36 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:173:7)
+36 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+36 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
+37 verbose cwd /Users/pedroacosta/Development/code/angular-hacker-news-lab-v-000
+38 error Darwin 15.5.0
+39 error argv "/usr/local/Cellar/node/4.2.1/bin/node" "/usr/local/bin/npm" "install" "angular-sanitize@X.Y.Z"
+40 error node v4.2.1
+41 error npm  v2.14.7
+42 error code ETARGET
+43 error notarget No compatible version found: angular-sanitize@'X.Y.Z'
+43 error notarget Valid install targets:
+43 error notarget ["0.0.1","1.3.0-rc.5","1.3.0","1.3.1","1.3.2","1.3.3","1.3.4-build.3587","1.2.27","1.3.4","1.3.5","1.3.6","1.3.7","1.2.28","1.3.8","1.4.0-beta.0","1.3.9","1.3.10","1.4.0-beta.1","1.4.0-beta.2","1.3.11","1.4.0-beta.3","1.3.12","1.3.13","1.4.0-beta.4","1.3.14","1.4.0-beta.5","1.4.0-beta.6","1.3.15","1.4.0-rc.0","1.4.0-rc.1","1.4.0-rc.2","1.4.0","1.3.16","1.4.1","1.4.2","1.3.17","1.4.3","1.4.4","1.3.18","1.4.5","1.3.19","1.4.6","1.5.0-beta.0","1.2.29","1.3.20","1.4.7","1.5.0-beta.2","1.4.8","1.5.0-rc.0","1.5.0-rc.1","1.4.9","1.5.0-rc.2","1.5.0","1.5.1","1.4.10","1.5.2","1.5.3","1.5.5","1.4.11","1.5.6","1.4.12","1.5.7"]
+43 error notarget
+43 error notarget This is most likely not a problem with npm itself.
+43 error notarget In most cases you or one of your dependencies are requesting
+43 error notarget a package version that doesn't exist.
+43 error notarget
+43 error notarget It was specified as a dependency of 'testing-controllers'
+44 verbose exit [ 1, true ]

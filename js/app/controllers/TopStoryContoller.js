@@ -7,9 +7,7 @@ function TopStoryController (story){
   ctrl.totalPages = Math.ceil(ctrl.totalStories / ctrl.storyPerPage);
 
   ctrl.getStories = function (){
-    var first = ctrl.page * ctrl.storyPerPage;
-    var selectPage = first + ctrl.storyPerPage;
-    ctrl.currentPage = story.data.slice(first, selectPage);
+    ctrl.story = story.data.slice(ctrl.page * ctrl.storyPerPage, (ctrl.page + 1) * ctrl.storyPerPage);
   };
 
   ctrl.nextPage = function (){
