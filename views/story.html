@@ -1,0 +1,18 @@
+<h3>Story</h3>
+<div class="post" ng-if="post">
+	<a class="post__title" href="{{ post.data.url }}" target="_blank">
+		{{ post.data.title }}
+	</a>
+	<p>
+		<i>{{ post.data.by }}</i>
+	</p>
+	<a class="post__description">
+		{{ post.data.descendants }} comments {{ post.data.score }} points
+	</a>
+
+	<ul class="comments">
+		<li ng-repeat="comment in post.data.kids">
+			<item id="comment"></item>
+		</li>
+	</ul>
+</div>
