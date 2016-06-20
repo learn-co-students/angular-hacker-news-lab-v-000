@@ -1,0 +1,7 @@
+<div class="item">
+
+  <h2><a class="item__title" href="{{story.data.url}}" target="_blank">{{story.data.title}}</a></h2>
+
+  <p class="item__description">{{story.data.score}} points by {{story.data.by}} at {{ story.data.time * 1000 | date: 'short' }} | <a ui-sref="post({id: story.data.id})">{{story.data.descendants}} comments</a></p>
+
+</div>

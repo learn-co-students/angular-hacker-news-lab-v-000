@@ -1,0 +1,18 @@
+<div>
+  <ul class="posts">
+    <li ng-repeat="story in topCtrl.stories">
+      <story id="story"></story>
+
+    </li>
+    {{topCtrl.page}}
+  </ul>
+
+  <div>
+    <ul class="pagination">
+
+      <li> <a href="" ng-click="topCtrl.prevPage()">Previous</a> </li>
+      <li> <a href="" ng-click="topCtrl.nextPage()">Next</a> </li>
+    </ul>
+  </div>
+
+</div>
