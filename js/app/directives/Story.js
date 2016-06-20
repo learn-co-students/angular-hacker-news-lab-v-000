@@ -15,7 +15,7 @@ function Story() {
     },
     controllerAs: 'story'
   };
-};
+}
 
 angular
     .module('app')

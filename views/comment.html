@@ -1,8 +1,8 @@
 <div class="item">
 
-    <h3> {{comment.data.by}} </h3>
+    <h3> {{comment.data.by}}  at {{ comment.data.time * 1000 | date: 'short' }}</h3>
 
-  <p ng-bind-html="comment.data.text"></p>
+  <p class="post__description" ng-bind-html="comment.data.text"></p>
   <ul class="posts">
     <li ng-repeat="kid in comment.data.kids">
       <comment id="kid"></comment>
