@@ -5,7 +5,6 @@ function Story() {
     restrict: 'E',
     controller: function(HackerNewsService) {
       var story = this;
-
       HackerNewsService.getStory(story.id)
       .then(function(response) {
         story.data = response.data
@@ -16,7 +15,7 @@ function Story() {
     },
     controllerAs: 'story'
   };
-}
+};
 
 angular
     .module('app')

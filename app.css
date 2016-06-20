@@ -34,12 +34,12 @@ html, body {
 	display: block;
 	padding: 14px 15px;
 	text-decoration: none;
+	background: #2C538C;
 	color: rgba(255, 255, 255, 0.5);
 	float: left;
 }
 
 .header a.active {
-	background: #2C538C;
 	font-weight: 700;
 	color: #fff;
 }
