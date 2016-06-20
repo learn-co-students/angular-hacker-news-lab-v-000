@@ -1,12 +1,11 @@
 function TopStoryService($http){
-  var url = 'https://hacker-news.firebaseio.com/v0/';
 
   this.getTopStories = function () {
-    return $http.get(url + 'topstories.json');
+    return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
   };
 
   this.getPost = function (id){
-    return $http.get(url + 'item/' + id + '.json');
+    return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json');
   };
 }
 

@@ -1,28 +1,24 @@
-function TopStoryController (story){
+function TopStoryController (TopStoryService){
   var ctrl = this;
 
-  ctrl.page = 0;
-  ctrl.storyPerPage = 30;
-  ctrl.totalStories = story.data.length;
-  ctrl.totalPages = Math.ceil(ctrl.totalStories / ctrl.storyPerPage);
+  ctrl.storyId = [];
+  ctrl.stories = [];
 
-  ctrl.getStories = function (){
-    ctrl.story = story.data.slice(ctrl.page * ctrl.storyPerPage, (ctrl.page + 1) * ctrl.storyPerPage);
-  };
+  TopStoryService
+    .getTopStories('')
+    .then(function (res){
+      ctrl.storyId = res.data;
 
-  ctrl.nextPage = function (){
-    ctrl.page++;
-    ctrl.getStories();
-  };
-
-  ctrl.previousPage = function(){
-    ctrl.page--;
-    ctrl.getStories();
-  };
-
-  ctrl.getStories();
+      for(var i = 0; i < ctrl.storyId.length; i++) {
+        TopStoryService
+          .getPost(ctrl.storyId[i])
+          .then(function(res){
+            ctrl.stories.push(res.data);
+          });
+      }
+    });
 }
 
 angular
   .module('app')
-  .controller('TopStoryController', TopStoryController)
+  .controller('TopStoryController', TopStoryController);

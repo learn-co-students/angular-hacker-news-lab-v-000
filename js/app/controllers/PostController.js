@@ -5,4 +5,4 @@ function PostController (post){
 
 angular
   .module('app')
-  .controller('PostController', PostController)
+  .controller('PostController', PostController);
