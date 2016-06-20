@@ -1,6 +1,6 @@
 angular
     .module('app', ['ui.router'])
-	  .config(function ($stateProvider) {
+	  .config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('top', {
 				url: '/top',
@@ -22,4 +22,6 @@ angular
 					}
 				}
 			});
+
+		$urlRouterProvider.otherwise('/top');
 	});

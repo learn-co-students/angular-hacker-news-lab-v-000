@@ -1,5 +1,5 @@
 <div>
-  <ul class="stories">
+  <ul class="posts">
     <li ng-repeat="story in topCtrl.stories">
       <story id="story"></story>
 
@@ -7,7 +7,12 @@
     {{topCtrl.page}}
   </ul>
 
+  <div>
+    <ul class="pagination">
 
-  <a href="" ng-click="topCtrl.prevPage()">Previous</a>
-  <a href="" ng-click="topCtrl.nextPage()">Next</a>
+      <li> <a href="" ng-click="topCtrl.prevPage()">Previous</a> </li>
+      <li> <a href="" ng-click="topCtrl.nextPage()">Next</a> </li>
+    </ul>
+  </div>
+
 </div>
