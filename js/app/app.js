@@ -15,7 +15,7 @@ angular
 			.state('post', {
 				url: '/post/:id',
 				templateUrl: 'views/post.html',
-				controller: 'PostController as post',
+				controller: 'PostController as postCtrl',
 				resolve: {
 					story: function (HackerNewsService, $stateParams) {
 						return HackerNewsService.getStory($stateParams.id);
