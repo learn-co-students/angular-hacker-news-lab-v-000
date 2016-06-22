@@ -1,0 +1,11 @@
+
+
+  <ul class='posts'>
+    <li ng-repeat='story in ctrl.pageStories'><story-card storyid="story"></story-card></li>
+  </ul>
+
+  <ul class='pagination'>
+    <li ng-if='ctrl.startPage > 0' ng-click='ctrl.prevPage()'><a>prev</a></li>
+    <li ng-if='ctrl.endPage < ctrl.totalStories - 1' ng-click='ctrl.nextPage()'><a>next</a></li>
+  </ul>
+
