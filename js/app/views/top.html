@@ -3,6 +3,10 @@
     <p>{{id}}</p>
   </li>
 </div> -->
-<div ng-controller="TopController as top">
-<h1>HELLO</h1>
+<div>
+<ul>
+  <li ng-repeat="id in topCtrl.story_ids">
+    <story id='id'></story>
+  </li>
+</ul>
 </div>

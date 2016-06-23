@@ -4,7 +4,7 @@ angular
     $stateProvider
       .state('top', {
         url: '/top',
-        templateUrl: 'views/top.html',
+        templateUrl: 'js/app/views/top.html',
         controller: 'TopController as topCtrl',
         resolve: {
           top: function (HackerNewsService) {
@@ -14,7 +14,7 @@ angular
       })
       .state('post', {
         url: '/post/:id',
-        templateUrl: 'views/post.html',
+        templateUrl: 'js/app/views/post.html',
         controller: 'PostController as postCtrl',
         resolve: {
           story: function (HackerNewsService, $stateParams) {
