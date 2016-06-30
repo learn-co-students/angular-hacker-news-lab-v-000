@@ -1,0 +1,12 @@
+<div class="post">
+	<a class="post__title" href="{{story.data.url}}" target="_blank">
+		{{story.data.title}}
+	</a>
+
+	<ul class="comments">
+		<li ng-repeat="comment in story.data.kids">
+			<item storyid="comment"></item>
+		</li>
+	</ul>
+
+</div>
