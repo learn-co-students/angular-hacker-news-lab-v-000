@@ -1,0 +1,19 @@
+<h3>Top Stories</h3>
+
+<li ng-repeat="post in top.posts">
+  <item id="post"></item>
+</li>
+
+<div>
+    <li ng-if="top.page > 0">
+      <a href="" ng-click="top.pageBack()">
+        << Previous
+      </a>
+    </li>
+    <li ng-if="top.page < top.allPages - 1">
+      <a href="" ng-click="top.pageFoward()">
+        Next >>
+      </a>
+    </li>
+  <div style="clear: both;"></div>
+</div>
