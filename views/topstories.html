@@ -1,0 +1,15 @@
+<h2>Top Stories</h2>
+
+<ul class="item">
+  <li ng-repeat="story in ctrl.fullTopStories">
+    <top-story
+      url="story.url"
+      id="story.id"
+      title="story.title"
+      score="story.score"
+      comments="story.kids.length" />
+  </li>
+</ul>
+
+
+<a class="pagination" href="" ng-click="ctrl.nextSlice()">Next</a> - <a class="pagination" href="" ng-click="ctrl.prevSlice()">Previous</a>
