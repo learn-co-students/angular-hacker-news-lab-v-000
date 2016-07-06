@@ -2,8 +2,8 @@ var Item = {
   templateUrl: 'views/item.html',
   bindings: {
     id: '='
-  }
-  controller: function (PostsServices) {
+  },
+  controller: function (PostsService) {
     var ctrl = this;
 
     PostsService
