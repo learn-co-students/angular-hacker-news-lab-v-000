@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="app" class = "app">
 <head>
 	<meta charset="utf-8">
 
@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+<h1> index page </h1>
+
+
+	  <div ui-view></div>
+
+	<script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="js/app/app.js"></script>
+
+
+	<script src="js/app/controllers/MainController.js"></script>
+	<script src="js/app/controllers/PostController.js"></script>
+	<script src="js/app/services/DataService.js"></script>
 
 </body>
 </html>
