@@ -1,18 +1,7 @@
-function PostController(post, DataService) {
+function PostController(post) {
 
   ctrl = this
   ctrl.story = post.data
-  ctrl.comments = []
-
-  ctrl.story.kids.forEach(function(kid){
-    DataService.getStoryInfo(kid)
-    .then(function(result){
-      ctrl.comments.push(result.data)
-    })
-  })
-
-
-
 
 };
 

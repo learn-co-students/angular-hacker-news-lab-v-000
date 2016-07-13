@@ -3,7 +3,7 @@
 <p> {{ ctrl.story.time * 1000 | date: 'short' }} | comments: {{ctrl.story.descendants}} | score: {{ctrl.story.score}} </p>
 
 <ul>
-  <li ng-repeat="comment in ctrl.comments">
+  <li ng-repeat="comment in ctrl.story.kids">
     <comment id="comment"></comment>
   </li>
 </ul>
