@@ -1,0 +1,16 @@
+<div ng-repeat="story in main.topStoriesFullArray">
+  <top-story story="story">
+
+  </top-story>
+</div>
+
+
+<div ng-if="main.end < main.topStoriesIdArray.length">
+<a class="pagination" href="" ng-click="main.nextPage()">Next 30 stories</a>
+</div>
+
+</br>
+
+<div ng-if="main.start > 0">
+ <a class="pagination" href="" ng-click="main.prevPage()">Previous 30 stories</a>
+</div>
