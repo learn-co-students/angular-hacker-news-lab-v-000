@@ -1,0 +1,13 @@
+<div>
+  <p>Page: {{top.pageNumber +1}}</p>
+  <ul>
+    <li ng-repeat="post in top.currentPage">
+      <item id="post"></item>
+    </li>
+  </ul>
+</div>
+
+<div class="pagination">
+   <a href="" ng-if="top.pageNumber > 0" ng-click="top.previousPage()">Previous Page</a>
+   <a href="" ng-if="top.pageNumber != top.totalPages" ng-click="top.nextPage()">Next Page</a>
+</div>

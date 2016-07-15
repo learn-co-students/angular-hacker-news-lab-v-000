@@ -1,0 +1,14 @@
+<div class="posts">
+  <div class="post">
+    <p class="item__title">title: {{post.data.title}}</p>
+    <p>comments: {{post.data.kids.length}}</p>
+    <p>score: {{post.data.score}}</p>
+    <a href="{{post.data.url}}">{{post.data.url}}</a>
+
+    <ul>
+      <li ng-repeat="kid in post.data.kids">
+        <item id='kid'></item>
+      </li>
+    </ul>
+  </div>
+</div>
