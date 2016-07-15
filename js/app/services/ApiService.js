@@ -1,6 +1,6 @@
 var API_URL = "https://hacker-news.firebaseio.com/v0/";
 
-function apiService($http){
+function ApiService($http){
 
   this.getTopStories = function(){
     return $http.get(API_URL + 'topstories.json')
@@ -13,4 +13,4 @@ function apiService($http){
 
 angular
       .module("app")
-      .service("apiService", apiService);
+      .service("ApiService", ApiService);

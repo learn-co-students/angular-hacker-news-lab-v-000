@@ -1,0 +1,19 @@
+<div ng-if="item.data.type === 'story'" class="item">
+  <div class="posts">
+    <div class="post">
+      <a href="" ui-sref="post({id: item.data.id})" class="item__title">{{item.data.title}}</a><br />
+      <a href="{{item.data.url}}">{{item.data.url}}</a>
+      <p>comments: {{item.data.kids.length}}</p>
+      <p>score: {{item.data.score}}</p>
+    </div>
+  </div>
+</div>
+
+<div ng-if="item.data.type === 'comment'" class="comments" >
+  <p>By {{item.data.by}}</p>
+  <p>Date: {{(item.data.time * 1000) | date: "short"}}</p>
+  <div ng-bind-html="item.data.text"></div>
+  <li ng-if="item.data.kids" ng-repeat="kid in item.data.kids">
+      <item id='kid'></item>
+  </li>
+</div>

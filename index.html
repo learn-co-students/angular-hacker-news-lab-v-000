@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+	<div ng-app="app" class="app">
+    <div class="header">
+			<ul class="header_fixed">
+				<li>Hacker News Clone</li>
+			</ul>
+		</div>
 
+		<div ui-view></div>
+	</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controllers/PostController.js"></script>
+	<script src="js/app/controllers/TopStoriesController.js"></script>
+	<script src="js/app/services/ApiService.js"></script>
+	<script src="js/app/components/item.js"></script>
 </body>
 </html>
