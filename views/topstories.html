@@ -1,0 +1,9 @@
+
+<ul class="post" ng-repeat="post in top.posts track by post.id">
+  <li class="post">
+    <h3 class='item__title'>{{post.title}}</h3>
+    <p>{{post.score}} points by {{post.by}} {{post.time | date:'short'}} | {{post.descendants}} comments </p>
+  </li>
+</ul>
+
+
