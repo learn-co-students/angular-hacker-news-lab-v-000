@@ -1,5 +1,17 @@
 angular
-  .module('app', [])
-  .config(function () {
-    
+  .module('app', [
+    'ui.router'
+  ])
+  .config(function ($stateProvider) {
+    $stateProvider
+      .state('', {
+        url: '',
+        templateUrl: '.html',
+        controller: '',
+        resolve: {
+          something:  function ($http, $stateParams) {
+                        return
+                      }
+        }
+      })
   });
