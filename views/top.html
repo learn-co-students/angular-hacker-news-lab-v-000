@@ -1,7 +1,7 @@
 <div class="">
   <ul>
     <li ng-repeat="post in top.posts">
-      <item id="post">{{ post }}</item>
+      <a ui-sref="post({ id: post })">{{ post }}</a>
     </li>
   </ul>
 

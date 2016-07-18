@@ -20,8 +20,10 @@ angular
         url: 'post/:id',
         templateUrl: 'views/post.html',
         controller: 'PostController as post',
-        resolve: function (PostsService, $stateParams) {
-          return PostsService.get(getTopStories($stateParams.id));
+        resolve: {
+          post: function (PostsService, $stateParams) {
+            return PostsService.getPost($stateParams.id);
+          }
         }
       });
   });

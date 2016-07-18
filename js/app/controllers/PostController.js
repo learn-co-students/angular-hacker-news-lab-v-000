@@ -1,5 +1,6 @@
 function PostController(post) {
-  this.data = post.data;
+  var ctrl = this;
+  ctrl.data = post.data;
 }
 
 angular
