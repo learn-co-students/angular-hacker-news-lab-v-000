@@ -17,7 +17,7 @@ angular
         }
       })
       .state('post', {
-        url: 'post/:id',
+        url: '/post/:id',
         templateUrl: 'views/post.html',
         controller: 'PostController as post',
         resolve: {
