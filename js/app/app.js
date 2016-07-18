@@ -11,8 +11,8 @@ angular
         templateUrl: 'views/top.html',
         controller: 'TopStoriesController as top',
         resolve: {
-          top: function ($http) {
-            return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+          posts: function (PostsService) {
+            return PostsService.getTopStories();
           }
         }
       });
