@@ -4,13 +4,13 @@ angular
   ])
   .config(function ($stateProvider) {
     $stateProvider
-      .state('', {
-        url: '',
-        templateUrl: '.html',
-        controller: '',
+      .state('top', {
+        url: '/top',
+        templateUrl: 'views/top.html',
+        controller: 'TopStoriesController as ctrl',
         resolve: {
-          something:  function ($http, $stateParams) {
-                        return
+          top_stories:  function ($http) {
+                        return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
                       }
         }
       })
