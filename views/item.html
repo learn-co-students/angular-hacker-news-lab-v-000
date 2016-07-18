@@ -1,11 +1,12 @@
 <div ng-switch="item.data.type">
   <div ng-switch-when="comment">
-    <a ui-sref="post({ id: item.id })">{{ item.data.title }}</a> | <a href="{{ item.data.url }}">{{ item.data.url }}</a>
+    <div ng-bind-html="item.data.text"></div>
     <p>
-      submitted by: {{ item.data.by }} at {{ item.data.time * 1000 | date: 'short' }} | descendants: {{ item.data.descendants }} | comments score: {{ item.data.score }}
+      - submitted by: {{ item.data.by }} at {{ item.data.time * 1000 | date: 'short' }} -
+      <div ng-if="item.data.kids.length > 0">
+        <a ui-sref="post({ id: item.id })">{{ item.data.kids.length }} comments</a>
+      </div>
     </p>
-    <div ng-bind-html="item.data.text">
-    </div>
 
   </div>
 

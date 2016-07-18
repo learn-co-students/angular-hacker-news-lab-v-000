@@ -1,5 +1,13 @@
 <h2><a href="{{ post.data.url }}">{{ post.data.title }}</a></h2>
 
 <p>
-  descendants {{ post.data.descendants }} | <a ui-sref="post({ id: post.data.id })">comments score {{ post.data.score }}</a>
+  descendants {{ post.data.descendants }} | comments score {{ post.data.score }}
 </p>
+
+
+
+<ul>
+  <li ng-repeat="comment in post.data.kids">
+    <item id="comment"></item>
+  </li>
+</ul>
