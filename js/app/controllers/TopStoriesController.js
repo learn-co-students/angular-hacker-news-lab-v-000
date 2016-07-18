@@ -4,7 +4,7 @@ function TopStoriesController(posts) {
   ctrl.data = posts.data;
 
   ctrl.currentPage = 0;
-  ctrl.totalPosts = posts.length;
+  ctrl.totalPosts = posts.data.length;
   ctrl.totalPages = Math.ceil(ctrl.totalPosts / 30)
 
   ctrl.paginatePosts = function () {
