@@ -1,11 +1,11 @@
-<div class="">
-  <ul>
-    <li ng-repeat="post in top.posts">
+<div>
+  <ul class="posts">
+    <li ng-repeat="post in top.posts" class="item">
       <item id="post"></item>
     </li>
   </ul>
 
-  <ul>
+  <ul class="pagination">
     <li ng-if="top.currentPage > 0">
       <a ng-click="top.previousPage()">Previous 30</a>
     </li>

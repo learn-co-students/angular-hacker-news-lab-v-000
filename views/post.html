@@ -1,8 +1,8 @@
-<h2><a href="{{ post.data.url }}">{{ post.data.title }}</a></h2>
+<a href="{{ post.data.url }}" class="post__title">{{ post.data.title }}</a>
 
-<p>
-  descendants {{ post.data.descendants }} | comments score {{ post.data.score }}
-</p>
+<div class="post__description">
+  {{ post.data.descendants }} comments | score {{ post.data.score }}
+</div>
 
 
 

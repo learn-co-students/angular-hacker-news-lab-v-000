@@ -10,10 +10,17 @@
 </head>
 <body>
 	<div ng-app='app' class='app'>
+		<header class="header">
+      <div class="header__fixed">
+          <ul>
+              <li>
+                  <a ui-sref="top" ui-sref-active="active">Top Stories</a>
+              </li>
+          </ul>
+      </div>
+		</header>
 
-	    <a ui-sref="top" ui-sref-active="active">Top Stories</a>
-
-			<div ui-view></div>
+		<div ui-view></div>
 	</div>
 
 
