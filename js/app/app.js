@@ -15,5 +15,13 @@ angular
             return PostsService.getTopStories();
           }
         }
+      })
+      .state('post', {
+        url: 'post/:id',
+        templateUrl: 'views/post.html',
+        controller: 'PostController as post',
+        resolve: function (PostsService, $stateParams) {
+          return PostsService.get(getTopStories($stateParams.id));
+        }
       });
   });
