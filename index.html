@@ -8,7 +8,20 @@
 
     <link rel="stylesheet" href="app.css" />
 </head>
-<body>
+<body ng-app="app">
+
+
+<ui-view></ui-view>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
+<script src="js/app/controllers/TopStoriesController.js"></script>
+ <script src="js/app/services/PostsService.js"></script>
+  <script src="js/app/components/Item.js"></script>
 
 </body>
 </html>
