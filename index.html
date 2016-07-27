@@ -1,14 +1,32 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Angular Application</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular Application</title>
 
-    <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="app.css" />
+
 </head>
 <body>
+  <div ng-app="app" class="app">
+    <div class="header">
+      <div class="header__fixed">
+        <a ui-sref="top" ui-sref-active="active">Top Stories</a>
+      </div>
+    </div>
+    <div ui-view></div>
+  </div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
+<script src="js/app/app.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<script src="js/app/components/Item.js"></script>
+<script src="js/app/services/PostService.js"></script>
+<script src="js/app/controllers/TopStoriesController.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
 </body>
 </html>
