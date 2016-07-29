@@ -16,25 +16,12 @@
   	</div>
   </header>
   <div ng-app="app" class="app">
-    <div ng-controller="TopListCtrl" class="well col-md-8 col-md-offset-2">
-      <ul class="list-unstyled posts">
-        <li ng-repeat="post in posts | pagination: curPage * pageSize | limitTo: pageSize">
-              <span id="post"><span>{{ post.listId }}.</span> <a href="{{ post.url }}">{{ post.title }}</a>
-              <small>({{ post.url | shortUrl }})</small><br>
-              <small> {{ post.score + " points"}} by {{ post.by }} {{ post.time * 1000 | date:'MM-dd-yyyy HH:mm:ss' }} | {{ post.kids.length + " comments" }}</small></span>
-          </li>
-      </ul>
-
-      <div class="pagination" ng-show="posts.length">
-        <button type="button" ng-disabled="curPage == 0" ng-click="curPage=curPage-1" class="btn btn-xs btn-default">PREV</button>
-        <small>Page {{curPage + 1}} of {{ numberOfPages() }}</small>
-        <button type="button" ng-disabled="curPage >= posts.length/pageSize - 1" ng-click="curPage = curPage+1" class="btn btn-xs btn-default">NEXT </button>
-      </div>
-    </div>
+    <div ui-view></div>
   </div>
 
   <script src="js/angular.js"></script>
   <script src="js/angular-ui-router.js"></script>
+  <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
   <script src="js/app/app.js"></script>
   <script src="js/app/controllers/TopListCtrl.js"></script>
   <script src="js/app/services/GetPostsService.js"></script>
