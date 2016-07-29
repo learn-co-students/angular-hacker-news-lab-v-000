@@ -22,6 +22,7 @@ function TopListCtrl($scope, $http, GetPostsService) {
     };
   });
 
+
 }
 
 angular
