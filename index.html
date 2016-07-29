@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+  <div ng-app="app">
+    <div ng-controller="TopListCtrl">
+      <li ng-repeat="post in posts">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="url">{{ post.url | shortUrl }}</span>
+            <small> {{ post.points + " points"}} by {{ post.by }} {{ post.postedAgo }} | {{ post.commentCount + " comments" }}</small>
+        </li>
 
+    </div>
+  </div>
+
+  <script src="js/angular.js"></script>
+  <script src="js/angular-ui-router.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/TopListCtrl.js"></script>
+  <script src="js/app/services/GetPostsService.js"></script>
 </body>
 </html>
