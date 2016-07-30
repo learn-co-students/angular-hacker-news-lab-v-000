@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router'])
+angular.module('app', ['ui.router', 'ngSanitize'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('list', {
@@ -7,6 +7,7 @@ angular.module('app', ['ui.router'])
       })
       .state('post', {
         url: '/post/:id',
+        controller: 'PostInfoCtrl as post',
         templateUrl: 'views/post.html'
       })
 
