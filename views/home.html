@@ -3,7 +3,7 @@
     <li ng-repeat="post in posts | pagination: curPage * pageSize | limitTo: pageSize">
           <span id="post"><span>{{ post.listId }}.</span> <a href="{{ post.url }}">{{ post.title }}</a>
           <small>({{ post.url | shortUrl }})</small><br>
-          <small> {{ post.score + " points"}} by {{ post.by }} {{ post.time * 1000 | date:'MM-dd-yyyy HH:mm:ss' }} | {{ post.kids.length + " comments" }}</small></span>
+          <small> <a ui-sref="post({id: post.id })">{{ post.score + " points"}} by {{ post.by }} {{ post.kids.length + " comments" }}</a></small></span>
       </li>
   </ul>
 

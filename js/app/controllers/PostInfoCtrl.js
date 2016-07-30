@@ -6,6 +6,7 @@ function PostInfoCtrl($scope, $http, $stateParams, GetPostsService) {
       .postInfo(postId)
       .then(function (res) {
         $scope.post = res.data;
+        
       });
 }
 

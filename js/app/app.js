@@ -1,8 +1,8 @@
 angular.module('app', ['ui.router', 'ngSanitize'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('list', {
-        url: '/',
+      .state('top', {
+        url: '/top',
         templateUrl: 'views/home.html'
       })
       .state('post', {
@@ -12,5 +12,5 @@ angular.module('app', ['ui.router', 'ngSanitize'])
       })
 
 
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/top');
   })
