@@ -1,5 +1,5 @@
 function StoryService($http) {
-  var base_url = "https://hacker-news.firebaseio.com/v0/";
+  base_url = "https://hacker-news.firebaseio.com/v0/";
 
   this.getTopStories = function() {
     return $http.get(base_url + 'topstories.json');

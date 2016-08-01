@@ -1,6 +1,13 @@
-function TopStoriesController(posts) {
+function TopStoriesController(StoryService) {
   var ctrl = this;
-  debugger;
+  ctrl.posts = [];
+
+  StoryService
+    .getTopStories()
+    .then(function(res) {
+      debugger;
+    });
+
 }
 
 angular

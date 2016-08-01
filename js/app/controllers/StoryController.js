@@ -1,5 +1,12 @@
-function StoryController(story) {
-  this.data = story.data;
+function StoryController($stateParams, StoryService) {
+  var ctrl = this;
+
+  StoryService
+    .getStory($stateParams.id)
+    .then(function(res) {
+      debugger;
+    })
+
 }
 
 angular
