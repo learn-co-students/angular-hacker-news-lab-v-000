@@ -17,7 +17,7 @@ html, body {
 .header__fixed {
 	background: #3661A2;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	position: fixed;
+	position: absolute;
 	height: inherit;
 	top: 0;
 	left: 0;
@@ -129,4 +129,25 @@ html, body {
 
 .comments li + li {
 	margin-top: 20px;
+}
+
+.paginationclass{
+
+margin: 19px 28px;
+}
+.paginationclass span{
+    margin-left:15px;
+    display:inline-block;
+}
+.pagination-controle li{
+    display: inline-block;
+}
+.pagination-controle button{
+    font-size: 12px;
+    margin-top: -26px;
+    cursor:pointer;
+
+}
+.pagination{
+    margin:5px 12px !important;
 }
