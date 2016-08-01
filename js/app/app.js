@@ -5,7 +5,12 @@ angular
       .state('top', {
         url: '/top',
         templateUrl: 'views/top.html',
-        controller: 'TopStoriesController as top'
+        controller: 'TopStoriesController as topStories',
+        resolve: {
+          topStories: function(StoryService) {
+            return StoryService.getTopStories();
+          }
+        }
       })
       .state('post', {
         url: '/post/:id',

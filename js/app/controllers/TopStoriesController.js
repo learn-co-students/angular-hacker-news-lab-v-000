@@ -1,12 +1,8 @@
-function TopStoriesController(StoryService) {
+function TopStoriesController(topStories) {
   var ctrl = this;
-  ctrl.posts = [];
+  var postIds = topStories.data;
 
-  StoryService
-    .getTopStories()
-    .then(function(res) {
-      debugger;
-    });
+  debugger;
 
 }
 
