@@ -15,7 +15,12 @@ angular
       .state('post', {
         url: '/post/:id',
         templateUrl: 'views/post.html',
-        controller: 'StoryController as story'
+        controller: 'StoryController as story',
+        resolve: {
+          story: function($stateParams, StoryService) {
+            return StoryService.getStory($stateParams.id);
+          }
+        }
       });
 
       $urlRouterProvider.otherwise('/top');

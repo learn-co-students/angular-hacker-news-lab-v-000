@@ -1,6 +1,15 @@
-<div ng-repeat="post in top.posts">
+<div>
+  <ul class="posts">
+    <li ng-repeat="post in topStories.posts">
+      <story id="post"></story>
+    </li>
+  </ul>
+
+  <br><br>
+  <ul>
+    <li><a href="" ng-click="topStories.previous()">Previous</a></li>
+    <li><a href="" ng-click="topStories.next()">Next</a></li>
+  </ul>
+
 
 </div>
-
-<br><br>
-<a href="" ng-click="top.previous()">Previous</a> - <a href="" ng-click="top.next()">Next</a>
