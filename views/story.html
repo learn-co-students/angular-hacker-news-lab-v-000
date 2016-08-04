@@ -1,0 +1,12 @@
+<div class="post" ng-if="story.data">
+  <a class="post__title" href="{{ story.data.url }}">
+    {{ story.data.title }}
+  </a>
+  <br>
+  <div class="post__description">
+    {{ story.data.score }} points by
+    <a href="https://news.ycombinator.com/user?id={{ story.data.by }}">{{ story.data.by }}</a> |
+
+    <a href="" ui-sref="story({id: story.id})">{{ story.data.descendants }} comments</a>
+  </div>
+</div>
