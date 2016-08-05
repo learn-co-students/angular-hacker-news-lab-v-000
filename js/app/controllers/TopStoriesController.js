@@ -12,4 +12,4 @@ function TopStoriesController(PostsService) {
 
 angular
   .module('app')
-  .controller('TopStoriesController', TopStoriesController)
+  .controller('TopStoriesController', TopStoriesController);
