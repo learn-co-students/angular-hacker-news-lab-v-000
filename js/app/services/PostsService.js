@@ -6,6 +6,10 @@ function PostsService($http) {
     return $http.get(URL + 'topstories.json');
   };
 
+  this.getPost = function(id) {
+    return $http.get(URL + 'item/' + id + '.json');
+  }
+
 }
 
 angular
