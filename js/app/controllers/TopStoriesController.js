@@ -1,7 +1,6 @@
 function TopStoriesController(PostsService) {
   
   var ctrl = this;
-  var ctrl.posts = '';
 
   PostsService
     .getPosts()

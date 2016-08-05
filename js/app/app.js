@@ -5,7 +5,8 @@ angular
       .state('top', {
         url: '/top',
         templateUrl: 'views/top-stories.html',
-        controller: 'TopStoriesController'
+        controller: 'TopStoriesController',
+        controllerAs: 'top'
       });
     $urlRouterProvider.otherwise('/top');
   });

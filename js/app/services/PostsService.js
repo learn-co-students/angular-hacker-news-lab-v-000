@@ -8,7 +8,7 @@ function PostsService($http) {
 
   this.getPost = function(id) {
     return $http.get(URL + 'item/' + id + '.json');
-  }
+  };
 
 }
 
