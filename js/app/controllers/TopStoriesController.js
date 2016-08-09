@@ -5,7 +5,12 @@ function TopStoriesController(PostsService) {
   PostsService
     .getPosts()
     .then(function(res) {
-      ctrl.posts = res.data;
+      ctrl.posts = res.data; // array of ids
+      ctrl.articles = []
+      ctrl.posts.forEach(function(id) {
+        ctrl.articles.push(PostsService.getPost(id).then(function(res) {res.data}));
+        // console.log(Number(id));
+      });
     });
 }
 
