@@ -1,3 +1,5 @@
-<ul>
-  <li ng-repeat="post in top.posts">{{post}}</li>
-<ul>
+<div ng-repeat="article in top.articles">
+  <br><a href="#/post/{{article.id}}">{{article.title}}</a>
+  <br>{{article.score}} points by {{article.by}} | {{article.descendants}} comments
+  <br>
+</div>
