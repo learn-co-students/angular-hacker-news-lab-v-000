@@ -12,7 +12,6 @@ function TopStoriesController(PostsService) {
           ctrl.articles.push(res.data);
         });
       });
-      console.log(ctrl.articles);
     });
 }
 
