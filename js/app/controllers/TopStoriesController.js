@@ -5,8 +5,9 @@
     .module('app')
     .controller('TopStoriesController', TopStoriesController);
 
-  TopStoriesController.$inject = ['TopStoriesService'];
-  function TopStoriesController(TopStoriesService) {
+  TopStoriesController.$inject = ['TopStoriesService', '$scope'];
+  function TopStoriesController(TopStoriesService, $scope) {
+
     var vm = this;
     
 
@@ -15,14 +16,22 @@
     ////////////////
 
     function activate() {
-      // vm.stories = [];
+      vm.stories = [];
+      $scope.updatePage = updatePage;
+      vm.start;
 
       TopStoriesService 
         .getStories()
         .then(function(res) {
           vm.stories = res.data;
         });
+        
+      function updatePage(newPageNumber, oldPageNumber) {
+        vm.start = 30 * (newPageNumber - 1) + 1;
+        console.log(vm.start); 
+      }
 
     }
   }
+
 })();
