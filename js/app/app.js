@@ -6,12 +6,7 @@
     .config(function($stateProvider){
       $stateProvider
         .state('top', {
-          url: '/:page', 
-          templateUrl: 'views/top-stories.html', 
-          controller: 'TopStoriesController as vm'
-        })
-        .state('otherwise', {
-          url: '',
+          url: '', 
           templateUrl: 'views/top-stories.html', 
           controller: 'TopStoriesController as vm'
         })
