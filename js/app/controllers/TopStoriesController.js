@@ -27,7 +27,6 @@
 
       function updatePage(newPageNumber, oldPageNumber) {
         vm.start = 30 * (newPageNumber - 1) + 1;
-        console.log(vm.start);
       }
 
     }
