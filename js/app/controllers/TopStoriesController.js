@@ -5,8 +5,8 @@
     .module('app')
     .controller('TopStoriesController', TopStoriesController);
 
-  TopStoriesController.$inject = ['TopStoriesService', '$scope'];
-  function TopStoriesController(TopStoriesService, $scope) {
+  TopStoriesController.$inject = ['TopStoriesService', '$scope', '$stateParams'];
+  function TopStoriesController(TopStoriesService, $scope, $stateParams) {
     var vm = this;
     
 
@@ -17,7 +17,8 @@
     function activate() {
       vm.stories = [];
       $scope.updatePage = updatePage;
-      vm.start;
+      $scope.currentPage = $stateParams.page || 1;
+      vm.start = 30 * ($scope.currentPage - 1) + 1;
 
       TopStoriesService 
         .getStories()
