@@ -14,8 +14,8 @@
     controllerAs: 'vm'
   };
 
-  StoryCommentController.$inject = ['TopStoriesService']
-  function StoryCommentController (TopStoriesService) {
+  StoryCommentController.$inject = ['TopStoriesService', 'getHoursAgoFilter']
+  function StoryCommentController (TopStoriesService, getHoursAgoFilter) {
     var vm = this;
     vm.comment;
     vm.commentText;
@@ -27,7 +27,7 @@
       .then(function(res){
         vm.commentText = res.data.text;
         vm.commentAuthor = res.data.by;
-        vm.commentTime = res.data.time;
+        vm.commentTime = getHoursAgoFilter(res.data.time);
       });
   }
 

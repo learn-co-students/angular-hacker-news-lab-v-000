@@ -5,8 +5,8 @@
     .module('app')
     .directive('story', story);
 
-  story.$inject = ['TopStoriesService'];
-  function story(TopStoriesService) {
+  story.$inject = ['TopStoriesService', 'getHoursAgoFilter'];
+  function story(TopStoriesService, getHoursAgoFilter) {
     // Usage:
     //
     // Creates:
@@ -37,7 +37,7 @@
     }
   }
   /* @ngInject */
-  function StoryDirectiveController (TopStoriesService) {
+  function StoryDirectiveController (TopStoriesService, getHoursAgoFilter) {
     var vm = this;
 
     function getDomainFromUrl(url) {
@@ -83,7 +83,7 @@
         vm.domain = getDomainFromUrl(vm.url);
         vm.score = vm.story.score;
         vm.author = vm.story.by;
-        vm.time = getHoursAgo(vm.story.time);
+        vm.time = getHoursAgoFilter(vm.story.time);
         vm.numComments = getNumComments(vm.story.kids);
       })
   }
