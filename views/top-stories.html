@@ -1,3 +1,7 @@
+<br><button ng-click="top.start = top.start + 30; top.end = top.end + 30">Next 30</button>
+<button ng-click="top.start = top.start - 30; top.end = top.end - 30">Previous 30</button>
+<br>Articles: <span ng-bind="top.start + 1"></span>-<span ng-bind="top.end + 1"></span>
+
 <div ng-repeat="article in top.articles">
   <br><a href="#/post/{{article.id}}">{{article.title}}</a>
   <br>{{article.score}} points by {{article.by}} | {{article.descendants}} comments
