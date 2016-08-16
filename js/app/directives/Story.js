@@ -5,8 +5,8 @@
     .module('app')
     .directive('story', story);
 
-  story.$inject = ['TopStoriesService', 'getHoursAgoFilter', 'getDomainFromUrlFilter'];
-  function story(TopStoriesService, getHoursAgoFilter, getDomainFromUrlFilter) {
+  story.$inject = ['TopStoriesService', 'getHoursAgoFilter', 'getDomainFromUrlFilter', 'getNumCommentsFilter'];
+  function story(TopStoriesService, getHoursAgoFilter, getDomainFromUrlFilter, getNumCommentsFilter) {
     // Usage:
     //
     // Creates:
@@ -37,18 +37,8 @@
     }
   }
   /* @ngInject */
-  function StoryDirectiveController (TopStoriesService, getHoursAgoFilter, getDomainFromUrlFilter) {
+  function StoryDirectiveController (TopStoriesService, getHoursAgoFilter, getDomainFromUrlFilter, getNumCommentsFilter) {
     var vm = this;
-
-    function getNumComments(comments) {
-      if ( !comments || comments.length === 0 ) {
-        return 'discuss';
-      } else if (comments.length === 1) {
-        return '1 comment';
-      } else {
-        return comments.length + ' comments';
-      }
-    }
 
     TopStoriesService
       .getStory(vm.id)
@@ -63,7 +53,7 @@
         vm.score = vm.story.score;
         vm.author = vm.story.by;
         vm.time = getHoursAgoFilter(vm.story.time);
-        vm.numComments = getNumComments(vm.story.kids);
+        vm.numComments = getNumCommentsFilter(vm.story.kids);
       })
   }
 })();
