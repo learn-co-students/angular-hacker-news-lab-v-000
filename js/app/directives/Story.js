@@ -5,8 +5,8 @@
     .module('app')
     .directive('story', story);
 
-  story.$inject = ['TopStoriesService', 'getHoursAgoFilter'];
-  function story(TopStoriesService, getHoursAgoFilter) {
+  story.$inject = ['TopStoriesService', 'getHoursAgoFilter', 'getDomainFromUrlFilter'];
+  function story(TopStoriesService, getHoursAgoFilter, getDomainFromUrlFilter) {
     // Usage:
     //
     // Creates:
@@ -37,18 +37,8 @@
     }
   }
   /* @ngInject */
-  function StoryDirectiveController (TopStoriesService, getHoursAgoFilter) {
+  function StoryDirectiveController (TopStoriesService, getHoursAgoFilter, getDomainFromUrlFilter) {
     var vm = this;
-
-    function getDomainFromUrl(url) {
-      var a = document.createElement('a');
-      a.setAttribute('href', url);
-      if (a.hostname === 'news.ycombinator.com') {
-        return '';
-      } else {
-        return '(' + a.hostname + ')';
-      }
-    }
 
     function getNumComments(comments) {
       if ( !comments || comments.length === 0 ) {
@@ -69,7 +59,7 @@
         if(!vm.url) {
           vm.url = 'https://news.ycombinator.com/item?id=' + vm.story.id;
         }
-        vm.domain = getDomainFromUrl(vm.url);
+        vm.domain = getDomainFromUrlFilter(vm.url);
         vm.score = vm.story.score;
         vm.author = vm.story.by;
         vm.time = getHoursAgoFilter(vm.story.time);
