@@ -50,17 +50,6 @@
       }
     }
 
-    function getHoursAgo(seconds) {
-      var secondDifference = (Date.now()/1000) - seconds;
-      if (secondDifference < 3600) {
-        var minutesAgo = secondDifference/60;
-        return Math.floor(minutesAgo) + ' minutes ago';
-      } else {
-        var hoursAgo = secondDifference/3600;
-        return Math.floor(hoursAgo) + ' hours ago';
-      }
-    }
-
     function getNumComments(comments) {
       if ( !comments || comments.length === 0 ) {
         return 'discuss';
