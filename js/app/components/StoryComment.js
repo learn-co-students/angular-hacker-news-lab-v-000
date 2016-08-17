@@ -21,6 +21,7 @@
     vm.commentText;
     vm.commentAuthor;
     vm.commentTime;
+    vm.commentKids;
 
     TopStoriesService
       .getStory(vm.id)
@@ -28,6 +29,7 @@
         vm.commentText = res.data.text;
         vm.commentAuthor = res.data.by;
         vm.commentTime = getHoursAgoFilter(res.data.time);
+        vm.commentKids = res.data.kids;
       });
   }
 

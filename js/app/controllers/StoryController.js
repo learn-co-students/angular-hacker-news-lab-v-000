@@ -24,6 +24,7 @@
         .getStory(vm.id)
         .then(function(res) {
           vm.story = res.data;
+          vm.comments = res.data.kids;
         });
 
     }

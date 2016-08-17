@@ -12,4 +12,8 @@
 
 {{ vm.story }}
 <h3>Comments</h3>
-<story-comment id="15"></story-comment>
+<ul class="list mt0">
+  <li class="pt2" ng-repeat="commentId in vm.comments">
+    <story-comment id="commentId"></story-comment>
+  </li>
+</ul>
