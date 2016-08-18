@@ -8,12 +8,7 @@
         .state('top', {
           url: '/top?page', 
           templateUrl: 'views/top-stories.html', 
-          controller: 'TopStoriesController as vm',
-          resolve: {
-            stories: function(TopStoriesService) {
-              return TopStoriesService.getStories();
-            }
-          }
+          controller: 'TopStoriesController as vm'
         })
         .state('post', {
           url: '/post?id', 
