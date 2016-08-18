@@ -10,6 +10,10 @@ function PostsService($http) {
     return $http.get(URL + 'item/' + id + '.json');
   };
 
+  this.getComment = function(id) {
+    return $http.get(URL + 'item/' + id + '.json');
+  };
+
 }
 
 angular
