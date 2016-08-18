@@ -3,7 +3,8 @@ module.exports = function (config) {
         basePath: '.',
         frameworks: ['jasmine'],
         files: [
-            'js/angular.js',
+            'js/angular.min.js',
+            'node_modules/angular-utils-pagination/dirPagination.js',
             'tests/angular-ui-router.js',
             'tests/angular-mocks.js',
             'tests/angular-sanitize.js',
