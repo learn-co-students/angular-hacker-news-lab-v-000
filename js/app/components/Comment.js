@@ -1,5 +1,5 @@
-var Post = {
-  templateUrl: 'views/post.html',
+var Comment = {
+  templateUrl: 'views/comment.html',
   bindings: {
     id: '='
   },
@@ -17,4 +17,4 @@ var Post = {
 
 angular
   .module('app')
-  .component('post', Post);
+  .component('comment', Comment);
