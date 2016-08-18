@@ -25,11 +25,6 @@
         .then(function(res) {
           vm.stories = res.data;
         });
-        
-      function updatePage(newPageNumber, oldPageNumber) {
-        $location.path(newPageNumber);
-        vm.start = 30 * (newPageNumber - 1) + 1;
-      }
 
       function updatePage(newPageNumber, oldPageNumber) {
         $location.url('top?page=' + newPageNumber);
