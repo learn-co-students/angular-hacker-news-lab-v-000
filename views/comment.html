@@ -1,0 +1,29 @@
+<div class="comment" ng-if="comment.data">
+  <div ng-switch="comment.data.type">
+    <div ng-switch-when="comment">
+      <div class="item__author">
+        <a ui-sref="user({id: comment.data.by })">
+          {{ comment.data.by }}
+        </a>
+        {{ (comment.data.time * 1000) | date: 'short'}}
+
+      </div>
+      <br>{{comment.data.text}}<br><br>
+      <div ng-bind-html="comment.data.text"></div>
+
+      <ul class="comments">
+        <li ng-repeat="comment in comment.data.kids">
+          <comment id="comment"></comment>
+        </li>
+      </ul>
+    </div>
+    <div ng-switch-when="story">
+      <a class="comment__title" href="{{ comment.data.url }}" target="_blank">
+        {{ comment.data.title }}
+      </a>
+      <a class="comment__description" ui-sref="post({id: comment.data.id})">
+        {{ comment.data.descendants }} comments {{ comment.data.score }} points
+      </a>
+    </div>
+  </div>
+</div>

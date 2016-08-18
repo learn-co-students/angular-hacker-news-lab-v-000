@@ -1,0 +1,9 @@
+<br><button ng-click="top.paginateNext()">Next 30</button>
+<button ng-click="top.paginatePrevious()">Previous 30</button>
+<br>Articles: <span ng-bind="top.start + 1"></span>-<span ng-bind="top.end + 1"></span>
+
+<div ng-repeat="article in top.stories">
+  <br><a href="#/post/{{article.id}}">{{article.title}}</a>
+  <br>{{article.score}} points by {{article.by}} | {{article.descendants}} comments
+  <br>
+</div>
