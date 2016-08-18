@@ -12,7 +12,7 @@ var Comment = {
         ctrl.data = res.data;
       })
   },
-  controllerAs: 'post'
+  controllerAs: 'comment'
 };
 
 angular

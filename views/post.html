@@ -2,3 +2,7 @@
   <br><a href="{{post.data.url}}">{{post.data.title}}</a>
   <br>{{post.data.score}} points by {{post.data.by}} | {{post.data.descendants}} comments
 </div>
+
+<li ng-repeat="comment in post.data.kids">
+  <comment id="comment"></comment>
+</li>
