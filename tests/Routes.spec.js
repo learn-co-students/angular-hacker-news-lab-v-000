@@ -3,7 +3,7 @@ describe('Routes', function () {
 
 	beforeEach(module('app'));
 
-	beforeEach(inject(function ($injector) {
+	beforeEach(inject(function($injector) {
 		$state = $injector.get('$state');
 	}));
 
@@ -13,7 +13,7 @@ describe('Routes', function () {
 		it('should have the correct URL', function () {
 			state = $state.get('top');
 
-			expect(state.url).toEqual('/top');
+			expect(state.url).toEqual('/top?page');
 		});
 	});
 

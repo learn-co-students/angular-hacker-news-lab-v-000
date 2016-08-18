@@ -11,7 +11,7 @@
           controller: 'TopStoriesController as vm'
         })
         .state('post', {
-          url: '/post?id', 
+          url: '/post/:id', 
           templateUrl: 'views/story-comments.html', 
           controller: 'StoryController as vm',
           resolve: {
