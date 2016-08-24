@@ -1,0 +1,13 @@
+
+<h4>List of Top Stories</h4>
+
+<button ng-click="ctrl.previous()">Previous</button>
+<button ng-click="ctrl.next()">Next</button>
+
+<ul>
+  <li ng-repeat="story in ctrl.stories">
+    <a href="" ui-sref="post({id: story.id})">{{ story.title }}</a> - Score: {{ story.score }}, Number of Comments: {{ story.kids.length }}
+  </li>
+</ul>
+
+

@@ -1,0 +1,10 @@
+<h2 class="item-description">{{ ctrl.story.title }}</h2>
+<a href="" ui-sref="top">Back to List</a>
+
+<p>Score: {{ ctrl.story.score }}</p>
+<p>There are {{ ctrl.story.kids.length }} comments</p>
+
+<ol>
+  <li ng-repeat="id in ctrl.story.kids"><comment id="id"></comment></li>
+</ol>
+
