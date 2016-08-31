@@ -1,0 +1,18 @@
+<div class="post">
+
+  <p>
+    <span class="post__title">{{vm.data.title}}</span>
+    (<a href="{{vm.data.url}}">{{vm.data.url}}</a>)
+  </p>
+
+  <p class="post__description">
+    {{vm.data.score}} points | by {{ vm.data.by }} | {{vm.data.descendants}} comments
+  </p>
+
+  <ul ng-show='"post" | isState '>
+    <li class="comments" ng-if='vm.data.kids.length > 0' ng-repeat='comment in vm.data.kids'>
+      <comment id='comment'></comment>
+    </li>
+  </ul>
+
+</div>
