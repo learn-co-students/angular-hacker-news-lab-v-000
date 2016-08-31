@@ -1,0 +1,27 @@
+<div class="header">
+  <div class="header__fixed">
+    <ul> HackerNews
+      <li><a href="https://news.ycombinator.com/newest">new</a></li>
+      <li><a href="https://news.ycombinator.com/newcomments">comments</a></li>
+      <li><a href="https://news.ycombinator.com/show">show</a></li>
+      <li><a href="https://news.ycombinator.com/ask">ask</a></li>
+      <li><a href="https://news.ycombinator.com/jobs">jobs</a></li>
+      <li><a href="https://news.ycombinator.com/submit">submit</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div>
+  <ol>
+    <li ng-repeat='item in top.limitThirty'>
+      <top-stories-directive id='item'></top-stories-directive>
+    </li>
+  </ol>
+</div>
+
+<div class="pagination">
+  <li><a href="" ng-if='top.currentPage > 1' ng-click='top.prevPage()'>Previous</a></li>
+  <li><a href="" ng-if='top.currentPage < 18' ng-click='top.nextPage()'>Next</a></li>
+</div>

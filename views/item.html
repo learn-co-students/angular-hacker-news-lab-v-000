@@ -1,0 +1,21 @@
+
+<div class="item">
+
+  <li>
+    <span class="item__title">{{ vm.data.by }}</span>
+    <span class="item__description" ng-bind-html='vm.data.text'></span>
+
+    <ul ng-show='"post" | isState '>
+      <li class="comments" ng-if='vm.data.kids.length > 0' ng-repeat='comment in vm.data.kids'>
+        <comment id='comment'></comment>
+      </li>
+    </ul>
+
+  </li>
+
+
+
+
+
+
+</div>
