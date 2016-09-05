@@ -14,7 +14,9 @@
 
       <ul class="comments">
         <li ng-repeat="comment in item.data.kids">
-          <div class="item__title">{{item.data.by}}</div>
+          <div class="item__title">
+            {{item.data.by}} {{ (item.data.time * 1000) | date: 'short'}}
+          </div>
           <item id="comment"></item>
         </li>
     </ul>
