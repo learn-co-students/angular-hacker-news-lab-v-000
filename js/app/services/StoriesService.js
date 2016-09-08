@@ -1,7 +1,6 @@
 function StoriesService($http) {
-  this.getTopStories = function ($http) {
-    debugger;
-    return $http.get('/hacker-news.firebaseio.com/v0/topstories.json')
+  this.getStoryIds= function () {
+    return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json')
   }
 }
 

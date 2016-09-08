@@ -1,6 +1,6 @@
-<div class="">
-  <div ng-controller="StoriesController as ctrl">
-    <div ng-model="ctrl.stories"></div>
+<page-changer pageNum="yes" i="Yes"></page-changer>
+{{storiesCtrl.pageNum}}{{storiesCtrl.pageNum}}
+
+<div class="posts" ng-repeat="id in storiesCtrl.stories">
+  <post-item class="posts" i=$index id=id></post-item>
   </div>
-  Top Stories
-</div>

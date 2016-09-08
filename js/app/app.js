@@ -2,14 +2,19 @@ angular
   .module('app', ['ui.router'])
   .config(function ($stateProvider) {
     $stateProvider
-      .state('top stories', {
-        url: '/topstories',
+      .state('top', {
+        url: '/top',
         templateUrl: 'views/topstories.html',
-        controller: 'StoriesController as ctrl',
+        controller: 'StoriesController',
+        controllerAs: 'storiesCtrl',
         resolve: {
             stories: function (StoriesService) {
-              return StoriesService.getTopStories();
-            }
-          }
+               return StoriesService.getStoryIds();
+             }
+        }
+      })
+      .state('post',{
+        url: '/post/:id',
+        templateUrl: 'views/postitem.html'
       });
   });
