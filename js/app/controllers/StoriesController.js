@@ -9,10 +9,21 @@ function StoriesController(stories, $filter) {
 
   this.stories = stories.data;
 
-  this.filterStories = function () {
-     this.stories = $filter('myPagination')(allStories, this.pageNum)
+   this.increasePage= function () {
+     this.pageNum ++;
+     console.log(ctrl.page);
+   };
+
+   this.decreasePage= function () {
+     this.pageNum --;
+     console.log(ctrl.page);
+   };
+
+
+  this.filterStories = function (stories, page) {
+     this.stories = $filter('myPagination')(stories, page)
   }
-  this.filterStories();
+  this.filterStories(this.stories, this.pageNum);
 }
 
 angular
