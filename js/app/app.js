@@ -15,6 +15,13 @@ angular
       })
       .state('post',{
         url: '/post/:id',
-        templateUrl: 'views/postitem.html'
+        templateUrl: 'views/postitem.html',
+        controller: 'ItemsController',
+        controllerAs: 'postCtrl',
+        resolve: {
+          post: function ($stateParams,PostService) {
+            return PostService.getItem($stateParams.id)
+          }
+        }
       });
   });

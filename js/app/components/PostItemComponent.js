@@ -2,7 +2,7 @@ var PostItem = {
   templateUrl: 'views/postitem.html',
   controller: function (PostService) {
     var ctrl = this
-     PostService.getPost(this.id)
+     PostService.getItem(this.id)
       .then(function (res) {
         ctrl.post=res.data;
       })

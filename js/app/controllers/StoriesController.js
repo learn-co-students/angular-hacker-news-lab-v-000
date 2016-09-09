@@ -18,12 +18,6 @@ function StoriesController(stories, $filter) {
      this.pageNum --;
      console.log(ctrl.page);
    };
-
-
-  this.filterStories = function (stories, page) {
-     this.stories = $filter('myPagination')(stories, page)
-  }
-  this.filterStories(this.stories, this.pageNum);
 }
 
 angular
