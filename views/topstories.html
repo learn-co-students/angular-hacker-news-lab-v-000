@@ -1,0 +1,8 @@
+<button ng-click="storiesCtrl.decreasePage()">Previous</button>
+{{storiesCtrl.pageNum}}
+<button ng-click="storiesCtrl.increasePage()">Next</button>
+
+
+  <div class="posts" ng-if="storiesCtrl.stories" ng-repeat="id in storiesCtrl.stories | myPagination: storiesCtrl.pageNum">
+    <post-item class="posts" i=$index id=id></post-item>
+  </div>
