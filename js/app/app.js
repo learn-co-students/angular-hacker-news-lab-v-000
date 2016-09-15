@@ -12,7 +12,13 @@ function UiRouter($stateProvider) {
     })
     .state('post', {
       url: '/post/:id',
-      templateUrl:'js/app/views/post.html'
+      templateUrl:'js/app/views/post.html',
+      controller: 'PostController',
+      resolve: {
+        post: function($stateParams, PostService) {
+          return PostService.getPost($stateParams.id);
+        }
+      }
     });
 }
 
