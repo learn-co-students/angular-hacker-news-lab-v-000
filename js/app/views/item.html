@@ -2,5 +2,6 @@
   Title: {{ item.data.title }}<br />
   Link: {{ item.data.url }}<br />
   Comments No.: {{ item.data.kids.length.toString() }}<br />
-  Score: {{ item.data.score }}
+  Score: {{ item.data.score }}<br />
+  <a href="" ui-sref="post({ id: item.data.id })">View More!</a>
 </div>
