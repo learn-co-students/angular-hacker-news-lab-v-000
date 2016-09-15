@@ -4,4 +4,10 @@
   Comments No.: {{ item.data.kids.length.toString() }}<br />
   Score: {{ item.data.score }}<br />
   <a href="" ui-sref="post({ id: item.data.id })">View More!</a>
+  <div ng-bind-html="item.data.text"></div>
+  <ul>
+    <li ng-repeat="comment in item.data.kids">
+      <item id="comment"></item>  
+    </li>
+  </ul>
 </div>
