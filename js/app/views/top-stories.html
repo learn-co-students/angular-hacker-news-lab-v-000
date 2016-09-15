@@ -4,3 +4,11 @@
       <item id="post"> {{ post }}</item>
     </li>
   </ul>
+
+  <div ng-if="top.page > 0">
+    <a href="" ng-click="top.previousPage()"><< Previous</a>   
+  </div>
+  <div ng-if="top.page < top.totalPages">
+    <a href="" ng-click="top.nextPage()">Next >></a>  
+  </div>
+  
