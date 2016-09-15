@@ -1,13 +1,20 @@
-<div>
-  Title: {{ item.data.title }}<br />
-  Link: {{ item.data.url }}<br />
-  Comments No.: {{ item.data.kids.length.toString() }}<br />
-  Score: {{ item.data.score }}<br />
-  <a href="" ui-sref="post({ id: item.data.id })">View More!</a>
-  <div ng-bind-html="item.data.text"></div>
-  <ul>
-    <li ng-repeat="comment in item.data.kids">
-      <item id="comment"></item>  
-    </li>
-  </ul>
+<div ng-if="item.data">
+  <div ng-switch="item.data.type">
+    <div ng-switch-when="comment">
+      <div>{{item.data.by}}</div>
+      <div ng-bind-html="item.data.text"></div>
+      <ul>
+        <li ng-repeat="comment in item.data.kids">
+          <item id="comment"></item>
+        </li>
+      </ul>
+    </div>
+    <div ng-switch-when="story">
+      <a href="{{ item.data.url }}" target="_blank">{{ item.data.title }}</a>
+      <a href="" ui-sref="post({ id: item.data.id })">
+        {{ item.data.kids.length.toString() }} comments <br />
+        {{ item.data.score }}
+      </a>
+    </div>
+  </div>
 </div>
