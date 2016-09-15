@@ -15,8 +15,8 @@ function UiRouter($stateProvider) {
       templateUrl:'js/app/views/post.html',
       controller: 'PostController',
       resolve: {
-        post: function($stateParams, PostService) {
-          return PostService.getPost($stateParams.id);
+        post: function($stateParams, StoriesService) {
+          return StoriesService.getStory($stateParams.id);
         }
       }
     });

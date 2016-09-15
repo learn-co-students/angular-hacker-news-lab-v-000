@@ -1,8 +1,8 @@
-function StoriesController(stories, StoriesService) {
+function StoriesController(stories) {
 
   var vm = this;
-  vm.stories = stories.data;
 
+  
 }
 
 angular
