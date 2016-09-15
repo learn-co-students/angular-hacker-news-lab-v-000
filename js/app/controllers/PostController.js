@@ -1,6 +1,5 @@
 function PostController(post) {
-  var vm = this;
-  vm.post = post.data;
+  this.data = post.data;
 }
 
 angular

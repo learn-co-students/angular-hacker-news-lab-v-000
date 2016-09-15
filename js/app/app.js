@@ -2,21 +2,21 @@ function UiRouter($stateProvider) {
   $stateProvider
     .state('top', {
       url: '/top',
-      templateUrl: 'js/app/views/top.html',
-      controller: 'StoriesController',
+      templateUrl: 'js/app/views/top-stories.html',
+      controller: 'TopStoriesController as top',
       resolve: {
-        stories: function(StoriesService) {
-          return StoriesService.getTopStories();
+        posts: function(PostsService) {
+          return PostsService.getTopStories();
         }
       }
     })
     .state('post', {
       url: '/post/:id',
       templateUrl:'js/app/views/post.html',
-      controller: 'PostController',
+      controller: 'PostController as post',
       resolve: {
-        post: function($stateParams, StoriesService) {
-          return StoriesService.getStory($stateParams.id);
+        post: function($stateParams, PostsService) {
+          return PostsService.getPost($stateParams.id);
         }
       }
     });
