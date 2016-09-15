@@ -1,4 +1,4 @@
-function StoriesController(stories) {
+function StoriesController(stories, StoriesService) {
 
   var vm = this;
   vm.stories = stories.data;
