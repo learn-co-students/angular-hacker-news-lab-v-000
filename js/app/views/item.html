@@ -1,1 +1,6 @@
-{{ item.data }}
+<div>
+  Title: {{ item.data.title }}<br />
+  Link: {{ item.data.url }}<br />
+  Comments No.: {{ item.data.kids.length.toString() }}<br />
+  Score: {{ item.data.score }}
+</div>
