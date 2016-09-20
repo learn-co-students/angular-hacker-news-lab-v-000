@@ -1,1 +1,16 @@
 <h1>Top Stories Template</h1>
+
+
+
+
+<div>
+  Page {{ top.page }} of {{ top.total_pages }}
+</div>
+<div>
+  <div ng-if="top.page > 0">
+    <a href="" ng-click="top.previousPage()"><< Previous Page</a>
+  </div>
+  <div ng-if="top.page < (top.total_pages)">
+    <a href="" ng-click="top.nextPage()">Next Page >></a> 
+  </div>
+</div>
