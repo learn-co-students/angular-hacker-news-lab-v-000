@@ -8,6 +8,7 @@ angular
         controller: 'TopStoriesController as top',
         resolve: {
           posts: function(PostService) {
+            debugger;
             return PostService.getTopStories();
           }
         }  
