@@ -9,11 +9,16 @@ Post State Template<br />
       title:"What It Costs to Run Let's Encrypt"
       type:"story"
       url:"https://letsencrypt.org/2016/09/20/what-it-costs-to-run-lets-encrypt.html" -->
-<a href="{{ item.data.url }}" target="_blank">
+<a href="{{ post.data.url }}" target="_blank">
   {{ post.data.title }}
 </a>
 <br />
 More:
-<a href="" ui-sref="post({ id: item.data.id })">
+<a href="" ui-sref="post({ id: post.data.id })">
   {{ post.data.descendants }} comments and {{ post.data.score }} points
-</a>    
+</a>
+<ul>
+  <li ng-repeat="comment in post.data.kids">
+    <item id="comment"></item>
+  </li>
+</ul>    
