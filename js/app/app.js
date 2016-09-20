@@ -11,6 +11,16 @@ angular
             return PostService.getTopStories();
           }
         }  
+      })
+      .state('post', {
+        url: '/post/:id',
+        templateUrl: 'js/app/views/post.html',
+        controller: 'PostController as post',
+        resolve: {
+          post: function(PostService, $stateParams) {
+            return PostService.getPost($stateParams.id);
+          }
+        }
       })  
     }
   );
