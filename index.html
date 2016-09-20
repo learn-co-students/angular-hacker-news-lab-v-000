@@ -8,7 +8,19 @@
 
     <link rel="stylesheet" href="app.css" />
 </head>
-<body>
-
+<body ng-app="app">
+  <a href="" ui-sref="top">Top Stories</a>
+  <div ui-view>
+    <!-- 'top' state template here -->
+  </div>
+  
+  <script src="js/angular.js"></script>
+  <script src="js/angular-ui-router.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/angular-sanitize.js"></script>
+  <script src="js/app/controllers/TopStoriesController.js"></script>
+  <script src="js/app/services/PostService.js"></script>
+  <script src="js/app/components/item.js"></script>
+  <script src="js/app/controllers/PostController.js"></script>
 </body>
 </html>
