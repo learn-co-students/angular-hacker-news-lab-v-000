@@ -12,10 +12,15 @@
     time:1474394419
     type:"comment" 
     -->
-
+    <h4>By: {{ item.data.by }} at {{ (item.data.time * 1000) | date: 'short' }}</h4>
     <div ng-bind-html="item.data.text">
     <!-- insert sanitized data here -->
     </div>
+    <ul>
+      <li ng-repeat="comment in item.data.kids">
+        <item id="comment"></item>
+      </li>
+    </ul>
     
     
   </div>
