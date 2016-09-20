@@ -1,1 +1,19 @@
-Item Component Template
+<!-- switch the live DOM element based on hash information -->
+<div ng-switch="item.data.type">
+
+  <!-- use the below DOM element when item.data.type == story -->
+  <div ng-switch-when="story">
+    <!-- Form of "item" hash:
+      by:"cpeterso"
+      descendants:150
+      id:12541383
+      kids:Array[27]
+      score:210
+      time:1474393105
+      title:"What It Costs to Run Let's Encrypt"
+      type:"story"
+      url:"https://letsencrypt.org/2016/09/20/what-it-costs-to-run-lets-encrypt.html" -->
+      <a href="{{ item.data.url }}" target="_blank">{{ item.data.title }}</a>    
+  </div>  
+</div>
+

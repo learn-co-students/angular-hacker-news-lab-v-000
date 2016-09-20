@@ -5,7 +5,6 @@ var Item = {
   templateUrl: 'js/app/views/item.html',
   controller: function(PostService) {
     var ctrl = this;
-    debugger;
     PostService
       .getPost(ctrl.id)
       .then(function(response) {
