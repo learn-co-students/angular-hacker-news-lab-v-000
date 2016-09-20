@@ -1,9 +1,23 @@
 <!-- switch the live DOM element based on hash information -->
 <div ng-switch="item.data.type">
 
+  <!-- use the below DOM element when item.data.type == comment -->
+  <div ng-switch-when="comment">
+    <!-- form of "item" hash when comment:
+    by: "jedberg"
+    id:12541672
+    kids:Array[17]
+    parent:12541383
+    text:"To everyone complaining about the $250K (see edit, it&#x27;s actually 200K) per person in salary (which seems to be everyone at the moment), a few things to keep in mind:<p>1) That includes benefits<p>2) They are in Silicon Valley and have to compete with everyone else in Silicon Valley<p>3) Given what they have accomplished with such a small team, these are probably high caliber people.<p>4) In SV there is a good 25% premium you pay for engineers with security expertise.<p>As someone who runs a business and has to hire talent, I can say that I&#x27;d consider myself lucky to get such a team for such a great price.<p>Edit:  A bunch of people are saying &quot;why not remote&quot;.  I think they are in fact mostly remote, but they still have to <i>compete</i> with SV wages because really good people command those wages whether they are here or not.<p>Edit2:  As has been pointed out multiple times, the blog post was not clear, and it is actually 200K per person, all in."
+    time:1474394419
+    type:"comment" 
+    -->
+    
+  </div>
+
   <!-- use the below DOM element when item.data.type == story -->
   <div ng-switch-when="story">
-    <!-- Form of "item" hash:
+    <!-- Form of "item" hash when story:
       by:"cpeterso"
       descendants:150
       id:12541383
