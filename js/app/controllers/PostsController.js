@@ -1,5 +1,13 @@
-function PostsController(){
+function PostsController(PostsService){
+  var ctrl = this;
 
+  ctrl.posts = '';
+
+  PostsService
+    .getTopStories()
+    .then(function (res) {
+      console.log(res);
+    });
 }
 
 angular

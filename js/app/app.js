@@ -1,23 +1,31 @@
 angular
-  .module('app', ['ui.router'])
-  .config(function ($stateProvider) {
+  .module('app', ['ui.router', 'ngSanitize'])
+  .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
       .state('post',{
         url: '/post/:id',
         templateUrl: 'views/post.html',
-        controller: 'PostsController'
+        controller: 'PostsController as post',
+        resolve: {
+          post: function ($stateParams, PostsService){
+            return PostsService.getPost($stateParams.id);
+          }
+        }
       })
 
       .state('top', {
         url: '/top',
         templateUrl: 'views/index.html',
-        controller: 'TopStoriesController',
+        controller: 'TopStoriesController as top',
         resolve: {
-          data: function ($http, $stateParams){
-            return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+          posts: function (PostsService){
+            PostsService.getTopStories(); 
           }
         }
       });
+
+    $urlRouterProvider.otherwise('/top');
+    
   });
 

@@ -10,10 +10,30 @@
 </head>
 <body>
 
+<div>
+  <ul class="posts">
+    <li ng-repeat="post in top.posts">
+      <item id="post"></item>
+    </li>
+  </ul>
 
-<div ng-app="app" class="app">
-   
-    <div ui-view>
+  <div>
+    <ul class="pagination">
+      <li ng-if="top.page > 0">
+        <a href="" ng-click="top.previousPage()">
+          << Previous
+        </a>
+      </li>
+      <li ng-if="top.page < top.totalPages - 1">
+        <a href="" ng-click="top.nextPage()">
+          Next >>
+        </a>
+      </li>
+    </ul>
+
+    <div style="clear: both;"></div>
+  </div>
+</div>
 </div>
 
 
@@ -21,7 +41,9 @@
 <script src="js/angular.js"></script>
 <script src="js/angular-ui-router.js"></script>
 <script src="js/app/app.js"></script>
-<script src="js/app/controllers/UserController.js"></script>
+<script src="js/app/controllers/PostsController.js"></script>
+<script src="js/app/controllers/TopStoriesController.js"></script>
+<script src="angular-sanitize/angular-sanitize.js"></script>
 
 </body>
 </html>
