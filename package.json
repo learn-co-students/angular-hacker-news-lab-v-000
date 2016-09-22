@@ -9,6 +9,7 @@
     "karma-spec-reporter": "0.0.23"
   },
   "dependencies": {
+    "angular-ui-router": "^1.0.0-beta.2",
     "express": "^4.13.4"
   }
 }
