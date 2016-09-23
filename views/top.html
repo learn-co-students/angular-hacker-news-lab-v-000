@@ -5,5 +5,14 @@ asdfasfsdafsdafsafsdfasdfsadf
  </div>
 
  -->
+<div ng-controller="TopController as top">
+<ul ng-repeat="post in top.stories" class="posts">
+<div class="item">
 
- /asfasdfasfdsfsadfsdf
+<li class="item__title">{{post.title}} by {{post.by}}</li>
+
+<a ui-sref="post({id: {{post.id}}})" id="{{post.id}}">{{post.url}}</a>
+Comments: {{post.kids.length}}
+</div>
+</ul>
+</div>

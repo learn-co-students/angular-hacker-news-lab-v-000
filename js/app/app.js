@@ -5,16 +5,31 @@ angular
     $stateProvider
     .state('top', {
       url: '/top', 
-      templateURL: 'views/top.html', 
-      controller: 'TopController as top'
+      templateUrl: 'views/top.html', 
+      controller: 'TopController',
+      resolve: {
+      stories: function (TopService) {
+      
+          return TopService.getTop();
+        }
+      }
     })
   
     .state('post', {
       url: '/post/:id', 
       templateUrl: 'views/stories/post.html',
-     controller: 'PostController as post'
-    })
+     controller: 'PostController',
+     resolve: {
+      postData: function (TopService, $stateParams) {
 
+        return TopService.getPost($stateParams.id)
+
+      }
+
+
+     }
+    })
+  
    $urlRouterProvider.otherwise('/top');
 
 
