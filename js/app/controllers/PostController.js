@@ -13,11 +13,9 @@ function PostController(HttpService, $state, $stateParams) {
 
   function getStory(id){
     return HttpService.getStory(id).then(function(data){ 
-      vm.story = data.data;
-      debugger
-    })    
+      return vm.story = data.data;
+    });   
   }
-
 }
 
 angular
