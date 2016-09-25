@@ -1,8 +1,6 @@
 function PostsController(HttpService) {
   var vm = this;
 
-  vm.name = "hello";
-
   vm.topStoryIds;
   vm.topStories = [];
   vm.pages;
