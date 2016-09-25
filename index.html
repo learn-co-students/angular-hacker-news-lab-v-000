@@ -16,12 +16,10 @@
 
   <div ng-controller="PostsController as ctrl">
 
-    {{ctrl.name}}
-
     <div ng-repeat="story in ctrl.topStories">
-      {{story}}
+      <h2>{{$index + 1}} {{story.title}}</h2> <a ng-href="{{story.url}}">Link</a>
+      <p>Score: {{story.score}} | {{story.kids.length}} Comments | By: {{story.by}}</p>
     </div>
-
 
   </div>
 

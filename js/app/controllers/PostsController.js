@@ -3,19 +3,30 @@ function PostsController(HttpService) {
 
   vm.name = "hello";
 
-  vm.topStories;
+  vm.topStoryIds;
+  vm.topStories = [];
 
   activate();
 
   function activate(){
-    getStories();
+    getTopStoryIds();
   }
 
-  function getStories(){
+  function getTopStoryIds(){
     return HttpService.getTopStories().then(function(data){ 
-      debugger
-      return vm.topStories = data.data;
-    })
+      vm.topStoryIds = data.data;
+      getTopStories(vm.topStoryIds);
+    })    
+  }
+
+  function getTopStories(storyIds) {
+    for (var i = 0 ; i < storyIds.length; i++){
+      HttpService.getStory(storyIds[i]).then(function(data){ 
+        vm.topStories.push(data.data);
+      });
+    }
+            
+
   }
 }
 
