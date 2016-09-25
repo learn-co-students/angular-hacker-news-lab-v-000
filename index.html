@@ -9,13 +9,18 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body ng-app="app">
+  <a href="" ui-sref="home">Home</a>
 
   <div ng-controller="PostsController as ctrl">
+
     {{ctrl.name}}
+
+
   </div>
 
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="js/app/app.js"></script>
   <script src="js/app/controllers/PostsController.js"></script>
 </body>
