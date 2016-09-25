@@ -3,7 +3,6 @@ function PostsController(HttpService) {
 
   vm.topStoryIds;
   vm.topStories = [];
-  vm.pages;
   vm.currentPage = 1;
 
   vm.nextPage = function(){
@@ -15,7 +14,6 @@ function PostsController(HttpService) {
       getTopStories(vm.topStoryIds);
     });
   }
-
   vm.previousPage = function(){
     return HttpService.getTopStories().then(function(data){
       var stories = data.data; 
