@@ -1,6 +1,5 @@
 function TestController(test) {
   this.test = test;
-
 }
 
 angular

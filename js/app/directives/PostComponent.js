@@ -1,8 +1,8 @@
 var PostComponent = {
   templateUrl: 'js/app/views/PostComponent.html',
-  controller: "PostController",
+  controllerAs: "ctrl",
   bindings: {
-    test: '='
+    story: '='
   }
 }
 
