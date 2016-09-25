@@ -3,20 +3,14 @@
   <h2>{{ctrl.story.title}}</h2> <a ng-href="{{ctrl.story.url}}">Link</a>
   <p>Score: {{ctrl.story.score}} | {{ctrl.story.kids.length}} Comments | By: {{ctrl.story.by}}</p>
 
-
-  <div ng-repeat="comment in ctrl.comments">
-    hello!
-  </div>
-
 </div>
 
 
 <div ng-controller="CommentsController as ctrl">
 
-{{ctrl.story}}
-
- <div ng-repeat="comment in ctrl.comments">
-    hello!
+ <div ng-repeat="comment in ctrl.comments" >
+    <h4 ng-bind-html="comment.by"></h4>
+    <p ng-bind-html="comment.text"></p>
   </div>
 
 </div>

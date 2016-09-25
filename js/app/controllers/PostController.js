@@ -1,21 +1,18 @@
-function PostController(HttpService, $state, $stateParams) {
+function PostController(HttpService, $state, $stateParams, $sanitize) {
   var vm = this;
 
   vm.story;
+  vm.comments = [];
 
   vm.id = $stateParams.id
-
-  activate();
-
-  function activate(){
-    getStory(vm.id);
-  }
 
   function getStory(id){
     return HttpService.getStory(id).then(function(data){ 
       return vm.story = data.data;
     });   
   }
+
+  getStory(vm.id);
 }
 
 angular
