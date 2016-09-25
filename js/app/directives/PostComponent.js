@@ -1,6 +1,9 @@
 var PostComponent = {
   templateUrl: 'js/app/views/PostComponent.html',
-  controller: "PostController as ctrl"
+  controller: "PostController",
+  bindings: {
+    test: '='
+  }
 }
 
 angular
