@@ -6,7 +6,7 @@ function PostsController(HttpService) {
   vm.currentPage = 1;
 
   vm.nextPage = function(){
-    return HttpService.getTopStories().then(function(data){
+    return HttpService.getTopStoryIds().then(function(data){
       var stories = data.data; 
       vm.currentPage += 1;
       vm.topStoryIds = stories.slice((vm.topStories.length * vm.currentPage),(vm.topStories.length * vm.currentPage) + 30)
@@ -15,7 +15,7 @@ function PostsController(HttpService) {
     });
   }
   vm.previousPage = function(){
-    return HttpService.getTopStories().then(function(data){
+    return HttpService.getTopStoryIds().then(function(data){
       var stories = data.data; 
       if (vm.currentPage > 1) {
         vm.currentPage -= 1
@@ -33,7 +33,7 @@ function PostsController(HttpService) {
   }
 
   function getTopStoryIds(){
-    return HttpService.getTopStories().then(function(data){ 
+    return HttpService.getTopStoryIds().then(function(data){ 
       var stories = data.data;
       vm.pages = Math.ceil(stories.length / 30) ; 
       vm.topStoryIds = stories.slice(0,30)
@@ -43,7 +43,7 @@ function PostsController(HttpService) {
 
   function getTopStories(storyIds) {
     for (var i = 0 ; i < storyIds.length; i++){
-      HttpService.getStory(storyIds[i]).then(function(data){ 
+      HttpService.getItem(storyIds[i]).then(function(data){ 
         vm.topStories.push(data.data);
       });
     }

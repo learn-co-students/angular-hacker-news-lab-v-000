@@ -13,7 +13,7 @@ angular
         controller: 'PostController as ctrl',
         resolve: {
           story: function($stateParams, HttpService){
-            return HttpService.getStory($stateParams.id).then(function(data){
+            return HttpService.getItem($stateParams.id).then(function(data){
               return data.data;
             });
           }
@@ -29,7 +29,7 @@ angular
           }
         }
       });
-  })
-  .config(function ($httpProvider) {
-    $httpProvider.useApplyAsync(true);
   });
+  // .config(function ($httpProvider) {
+  //   $httpProvider.useApplyAsync(true);
+  // });
