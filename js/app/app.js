@@ -12,4 +12,7 @@ angular
         templateUrl: 'js/app/views/post.html',
         controller: 'PostController'
       });
+  })
+  .config(function ($httpProvider) {
+    $httpProvider.useApplyAsync(true);
   });
