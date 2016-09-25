@@ -29,7 +29,7 @@ angular
           }
         }
       });
+  })
+  .config(function ($httpProvider) {
+    $httpProvider.useApplyAsync(true);
   });
-  // .config(function ($httpProvider) {
-  //   $httpProvider.useApplyAsync(true);
-  // });
