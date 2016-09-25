@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body ng-app="app">
-  <a href="" ui-sref="home">Home</a>
+  <a href="" ui-sref="home" ui-sref-active="active">Home</a>
+
+  <ui-view> </ui-view>
 
   <div ng-controller="PostsController as ctrl">
 
