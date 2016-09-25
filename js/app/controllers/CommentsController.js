@@ -18,7 +18,6 @@ function CommentsController(HttpService, $state, $stateParams) {
   function getComments(ids){
     for (var i = 0; i < ids.length; i++ ){
       HttpService.getComment(ids[i]).then(function(data){ 
-        debugger
         vm.comments.push(data.data)
       });  
     }
