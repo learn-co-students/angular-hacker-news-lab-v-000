@@ -1,1 +1,10 @@
-hudson
+<div class="comments">
+
+<li ng-bind-html="comments.commentdata[0].text">{{comments.commentdata[0].text}}
+</li>
+<div>By: {{comments.commentdata[0].by}} at  {{comments.commentdata[0].time * 1000 |  date:'MMMM-dd-yy HH:mm' }}</div>
+
+
+<comments data="{{comments.commentdata[0]}}"></comments>
+
+</div>
