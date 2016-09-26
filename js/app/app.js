@@ -6,7 +6,7 @@ angular
     .state('top', {
       url: '/top', 
       templateUrl: 'views/top.html', 
-      controller: 'TopController',
+      controller: 'TopController as top',
       resolve: {
       stories: function (TopService) {
       
@@ -18,7 +18,7 @@ angular
     .state('post', {
       url: '/post/:id', 
       templateUrl: 'views/stories/post.html',
-     controller: 'PostController',
+     controller: 'PostController as post',
      resolve: {
       postData: function (TopService, $stateParams) {
 

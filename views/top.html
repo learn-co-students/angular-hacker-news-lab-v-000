@@ -9,7 +9,9 @@ asdfasfsdafsdafsafsdfasdfsadf
 <ul ng-repeat="post in top.stories" class="posts">
 <div class="item">
 
-<li class="item__title">{{post.title}} by {{post.by}}</li>
+<li class="item__title">{{post.title}} by {{post.by}}</li><br>
+Score: {{post.score}}<br>
+
 
 <a ui-sref="post({id: {{post.id}}})" id="{{post.id}}">{{post.url}}</a>
 Comments: {{post.kids.length}}

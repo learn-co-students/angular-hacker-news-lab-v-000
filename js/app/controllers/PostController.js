@@ -1,7 +1,8 @@
 function PostController(postData) {
-  var post = this
-  post.data = postData.data
-  debugger
+  
+  this.data = []
+  this.data.push(postData.data)
+
  }
 
 
