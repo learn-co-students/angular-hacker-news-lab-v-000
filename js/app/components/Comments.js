@@ -9,6 +9,7 @@ var comments = {
   controller: function(TopService) {
   
     var comment = []
+    
    TopService.getPost(this.data).then(function(resp){
 
      comment.push(resp.data)
