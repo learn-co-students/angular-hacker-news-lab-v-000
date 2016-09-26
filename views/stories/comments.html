@@ -1,10 +1,12 @@
 <div class="comments">
+<li>
+ <div ng-bind-html="comments.commentdata[0].text">{{comments.commentdata[0].text}}>
+ </div>
+<p>By: {{comments.commentdata[0].by}} at  {{comments.commentdata[0].time * 1000 |  date:'MMMM-dd-yy HH:mm' }}</p>
 
-<li ng-bind-html="comments.commentdata[0].text">{{comments.commentdata[0].text}}
-
-<div>By: {{comments.commentdata[0].by}} at  {{comments.commentdata[0].time * 1000 |  date:'MMMM-dd-yy HH:mm' }}</div></li>
 
 <div ng-repeat="cmt in comments.commentdata[0].kids">
 <comments data="{{cmt}}"></comments>
+</li>
 </div>
 </div>
