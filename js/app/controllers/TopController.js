@@ -6,10 +6,11 @@ function TopController(TopService) {
 
 
 
-
+  this.load = function() {
+   
   TopService.getTop().then(function(posts){
 
-    for (i = 0; i < top.counter; i ++) {
+    for (i = top.counter-30; i < top.counter; i ++) {
    
       top.ids.push(posts.data[i])
       
@@ -23,7 +24,16 @@ function TopController(TopService) {
     
    })
  }})
+}
 
+  this.nextPage = function() {
+   
+    top.counter = top.counter + 30
+    top.ids = []
+    top.stories = []
+    this.load()
+  }
+  this.load()
 }
 
 angular 
