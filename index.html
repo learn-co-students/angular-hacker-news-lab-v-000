@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
-
+<div ng-app='app' class="app">
+Hacker News App
+ <a ui-sref="top" ui-sref-active="active">Top</a>
+<ui-view></ui-view>
+</div>
+<script src="js/angular.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
+<script src="js/app/controllers/TopController.js"></script>
+<script src="js/app/services/TopService.js"></script>
+<script src="js/app/components/Comments.js"></script>
+<script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
 </body>
 </html>

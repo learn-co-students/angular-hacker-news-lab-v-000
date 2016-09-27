@@ -1,0 +1,23 @@
+<!--  <div class="top">this is the hacker news topstory feed
+ {{message}}
+   <a ui-sref="post">Post</a>
+asdfasfsdafsdafsafsdfasdfsadf
+ </div>
+
+ -->
+<div ng-controller="TopController as top">
+  <a href="" ng-click="top.nextPage()">Next</a>
+<a href="" ng-click="top.lastPage()">Previous</a>
+<ul ng-repeat="post in top.stories" class="posts">
+<div class="item">
+
+<li class="item__title">{{post.title}} by {{post.by}}</li><br>
+Score: {{post.score}}<br>
+
+
+<a ui-sref="post({id: {{post.id}}})" id="{{post.id}}">{{post.url}}</a>
+Comments: {{post.kids.length}}
+</div>
+</ul>
+
+</div>

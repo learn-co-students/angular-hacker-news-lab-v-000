@@ -1,0 +1,16 @@
+
+<div class="post">
+
+<div class="item__title">{{post.data[0].title}} by {{post.data[0].by}}</div><br>
+Score: {{post.data[0].score}}<br>
+
+
+
+
+<ul ng-repeat="comment in post.data[0].kids">
+
+<comments data="{{comment}}"></comments>
+</ul>
+
+
+</div>
