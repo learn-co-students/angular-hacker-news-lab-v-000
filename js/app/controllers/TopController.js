@@ -33,6 +33,14 @@ function TopController(TopService) {
     top.stories = []
     this.load()
   }
+
+  this.lastPage = function() {
+   
+    top.counter = top.counter - 30
+    top.ids = []
+    top.stories = []
+    this.load()
+  }
   this.load()
 }
 
