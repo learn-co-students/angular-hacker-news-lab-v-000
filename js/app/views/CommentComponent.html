@@ -1,4 +1,11 @@
-<div ng-repeat="comment in ctrl.comments track by comment.id" >
-  <h4 ng-bind-html="comment.by"></h4>
-  <p ng-bind-html="comment.text"></p>
-</div>
+<ul>
+  <li ng-repeat="comment in ctrl.comments track by comment.id" ng-if="comment">
+    <div ng-if="comment.by">
+    {{$index + 1}} 
+    <h4 ng-bind-html="comment.by"> </h4>
+    <p ng-bind-html="comment.time"> </p>
+    <p ng-bind-html="comment.text"></p>
+    </div>
+  </li>
+</ul>
+

@@ -1,7 +1,7 @@
 function CommentsController(HttpService, $state, $stateParams) {
   var vm = this;
 
-  vm.comments = [];
+  vm.comments = {};
   vm.story;
   vm.id = $stateParams.id
 
@@ -18,8 +18,12 @@ function CommentsController(HttpService, $state, $stateParams) {
   function getComments(ids){
     for (var i = 0; i < ids.length; i++ ){
       HttpService.getItem(ids[i]).then(function(data){ 
-        vm.comments.push(data.data)
-      });  
+        var comment = data.data;
+        vm.comments[comment.id] = comment;
+        if (comment.kids){
+          getComments(comment.kids);
+        }
+      }); 
     }
   }
 

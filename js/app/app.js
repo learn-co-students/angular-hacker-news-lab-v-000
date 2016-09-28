@@ -19,16 +19,6 @@ angular
           }
         }
       })
-      .state('test', {
-        url: '/test',
-        templateUrl: 'js/app/views/test.html',
-        controller: 'TestController as ctrl',
-        resolve: {
-          test: function(){
-            return "hello"
-          }
-        }
-      });
   });
   // .config(function ($httpProvider) {
   //   $httpProvider.useApplyAsync(true);
