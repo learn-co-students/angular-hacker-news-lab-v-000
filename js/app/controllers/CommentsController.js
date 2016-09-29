@@ -19,7 +19,9 @@ function CommentsController(HttpService, $state, $stateParams) {
     for (var i = 0; i < ids.length; i++ ){
       HttpService.getItem(ids[i]).then(function(data){ 
         var comment = data.data;
-        vm.comments[comment.id] = comment;
+        var parent = comment.parent;
+        var id = comment.id;
+        vm.comments = { parent : { id :comment } };
         if (comment.kids){
           getComments(comment.kids);
         }
