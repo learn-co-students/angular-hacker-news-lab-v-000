@@ -1,14 +1,24 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Angular Application</title>
 
-    <link rel="stylesheet" href="app.css" />
+	<link rel="stylesheet" href="app.css" />
 </head>
-<body>
 
+<body ng-app="app">
+	<h1>Hackernews App</h1>
+
+	<input ng-model="name"> {{ name }}
+
+
+	<script src="js/angular.js"></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controllers/AppController.js"></script>
 </body>
+
 </html>
