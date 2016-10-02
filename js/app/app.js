@@ -1,6 +1,6 @@
 angular
   .module('app', ['ui.router', 'ngSanitize'])
-  .config(function($stateProvider){
+  .config(function($stateProvider, $urlRouterProvider ){
     $stateProvider
       .state('top', {
         url: '/top',
@@ -18,7 +18,8 @@ angular
             });
           }
         }
-      })
+      });
+      $urlRouterProvider.when('', '/top');
   });
   // .config(function ($httpProvider) {
   //   $httpProvider.useApplyAsync(true);
