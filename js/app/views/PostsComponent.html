@@ -1,13 +1,25 @@
 <div>
+  <div class="header">
+    <p>{{ctrl.pages}} pages | Page: {{ctrl.currentPage}}  </p>
+    <div class="pagination">
+      <ul>
+      <li><a href='#' ng-click="ctrl.nextPage()">Next Page</a></li>
+      <li><a href='#' ng-click="ctrl.previousPage()">Previous Page</a>
+      <ul>
+    </div>
+  </div>
 
-  <p>{{ctrl.pages}} pages | Page: {{ctrl.currentPage}}  </p>
-  <input value="Next Page" type="button" ng-click="ctrl.nextPage()"/>
-  <input value="Previous Page" type="button" ng-click="ctrl.previousPage()"/>
+  <div class="posts" ng-repeat="story in ctrl.topStories track by story.id">
+    <h2 class="post__title">{{ $index + 1 }} {{ story.title }} <a ng-href="{{story.url}}">Link</a></h2> 
+    <p class="post__description">Score: {{story.score}} | {{story.kids.length}} Comments | By: {{story.by}} | Posted: {{story.time}}  <a ui-sref="post({id: {{story.id}} })">Read More </a>  </p>
+   
+  </div>
 
-  <div ng-repeat="story in ctrl.topStories track by story.id">
-    <h2>{{ $index + 1 }} {{ story.title }} <a ng-href="{{story.url}}">Link</a></h2> 
-    <p>Score: {{story.score}} | {{story.kids.length}} Comments | By: {{story.by}} | Posted: {{story.time}}</p>
-     <a ui-sref="post({id: {{story.id}} })">Read More </a> 
+  <div class="pagination">
+    <ul>
+    <li><a href='#' ng-click="ctrl.nextPage()">Next Page</a></li>
+    <li><a href='#' ng-click="ctrl.previousPage()">Previous Page</a>
+    <ul>
   </div>
 
 </div>
