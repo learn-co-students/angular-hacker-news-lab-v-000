@@ -16,13 +16,14 @@ function PostsController(HttpService) {
     return HttpService.getTopStoryIds().then(function(data){ 
       vm.allStories = data.data;
       vm.pages = Math.ceil(vm.allStories.length / 30) ; 
-      var stories = getStoryPages(vm.allStories);
-      vm.topStoryIds = stories[vm.currentPage-1];
+      vm.allStories = getStoryPages(vm.allStories);
+      vm.topStoryIds = vm.allStories[vm.currentPage-1];
       getTopStories(vm.topStoryIds);
     })    
   }
 
   function getTopStories(storyIds) {
+    vm.topStories = {};
     for (var i = 0 ; i < storyIds.length; i++){
       HttpService.getItem(storyIds[i]).then(function(data){ 
         var story = data.data;
@@ -48,26 +49,23 @@ function PostsController(HttpService) {
   }
 
   vm.nextPage = function(){
-    return HttpService.getTopStoryIds().then(function(data){
-      var stories = data.data; 
+    if (vm.currentPage < vm.allStories.length){
       vm.currentPage += 1;
-      vm.topStoryIds = stories.slice((vm.topStories.length * vm.currentPage),(vm.topStories.length * vm.currentPage) + 30)
-      vm.topStories = [];
-      // console.log(vm.topStoryIds);
-      getTopStories(vm.topStoryIds);
-    });
+      pageChange();
+    }
   }
+
   vm.previousPage = function(){
-    return HttpService.getTopStoryIds().then(function(data){
-      var stories = data.data; 
-      if (vm.currentPage > 1) {
-        vm.currentPage -= 1
-      }
-      vm.topStoryIds = stories.slice((vm.topStories.length * vm.currentPage) - 30,(vm.topStories.length * vm.currentPage))
-      vm.topStories = [];
-      // console.log(vm.topStoryIds);
-      getTopStories(vm.topStoryIds);
-    });
+    if (vm.currentPage > 1){
+      vm.currentPage -= 1;
+      pageChange();
+    }
+  }
+
+  function pageChange(){
+    console.log(vm.currentPage)
+    vm.topStoryIds = vm.allStories[vm.currentPage-1];
+    getTopStories(vm.topStoryIds);
   }
 
 
