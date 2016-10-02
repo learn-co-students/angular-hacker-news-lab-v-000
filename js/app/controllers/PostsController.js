@@ -28,7 +28,7 @@ function PostsController(HttpService, DateService) {
       HttpService.getItem(storyIds[i]).then(function(data){ 
         var story = data.data;
         vm.topStories[story.id] = (story);
-        vm.topStories[story.id].time = DateService.unixTimeConverter(story.time)
+        vm.topStories[story.id]['time'] = DateService.unixTimeConverter(story.time);
       });
     }
   }

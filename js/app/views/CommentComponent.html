@@ -1,8 +1,14 @@
 <ul>
-  <li ng-repeat="comment in ctrl.comments track by comment.id" ng-if="comment">
-      <h4 ng-bind-html="comment.by"> </h4>
-      <p ng-bind-html="comment.time"> </p>
-      <p ng-bind-html="comment.text"></p>
+  <li ng-repeat="comment in ctrl.comments" ng-include="'categoryTree'"> 
   </li>
 </ul>
 
+<script type="text/ng-template" id="categoryTree">
+  <h4 ng-bind-html="comment.by"> </h4>
+  <p ng-bind-html="comment.time"></p>
+  <p ng-bind-html="comment.text"></p>
+  <ul ng-if="comment.kids">
+    <li ng-repeat="comment in comment.kids" ng-include="'categoryTree'">           
+    </li>
+  </ul>
+</script>
