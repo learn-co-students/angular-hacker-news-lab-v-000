@@ -3,20 +3,21 @@ function PostsController(HttpService) {
 
   vm.topStoryIds;
   vm.topStories = {};
+  vm.allStories = {};
   vm.currentPage = 1;
 
   activate();
 
   function activate(){
     getTopStoryIds();
-    console.log(vm.topStories);
   }
 
   function getTopStoryIds(){
     return HttpService.getTopStoryIds().then(function(data){ 
-      var stories = data.data;
-      vm.pages = Math.ceil(stories.length / 30) ; 
-      vm.topStoryIds = stories.slice(0,30)
+      vm.allStories = data.data;
+      vm.pages = Math.ceil(vm.allStories.length / 30) ; 
+      var stories = getStoryPages(vm.allStories);
+      vm.topStoryIds = stories[vm.currentPage-1];
       getTopStories(vm.topStoryIds);
     })    
   }
@@ -34,6 +35,16 @@ function PostsController(HttpService) {
   function unixTimeConverter(unixTime){
     var date = moment.unix(unixTime)
     return date.format("dddd, MMMM Do YYYY, h:mm:ss a")
+  }
+
+  function getStoryPages(storyIds){
+    array = [];
+    for (var i = 0; i < storyIds.length; i += 30 ){
+      var subArray = storyIds.slice(i, i+30)
+      array.push(subArray);
+    }
+    console.log(array)
+    return array;
   }
 
   vm.nextPage = function(){
