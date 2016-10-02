@@ -1,8 +1,8 @@
 function HttpService($http) {
   var service = this;
 
-  service.getTopStoryIds= function(){
-    return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+  service.getTopStoryIds = function(){
+    return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json').then();
   }
 
   service.getItem = function(id){

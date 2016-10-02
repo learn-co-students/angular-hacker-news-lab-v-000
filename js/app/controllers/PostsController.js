@@ -2,34 +2,14 @@ function PostsController(HttpService) {
   var vm = this;
 
   vm.topStoryIds;
-  vm.topStories = [];
+  vm.topStories = {};
   vm.currentPage = 1;
-
-  vm.nextPage = function(){
-    return HttpService.getTopStoryIds().then(function(data){
-      var stories = data.data; 
-      vm.currentPage += 1;
-      vm.topStoryIds = stories.slice((vm.topStories.length * vm.currentPage),(vm.topStories.length * vm.currentPage) + 30)
-      vm.topStories = [];
-      getTopStories(vm.topStoryIds);
-    });
-  }
-  vm.previousPage = function(){
-    return HttpService.getTopStoryIds().then(function(data){
-      var stories = data.data; 
-      if (vm.currentPage > 1) {
-        vm.currentPage -= 1
-      }
-      vm.topStoryIds = stories.slice((vm.topStories.length * vm.currentPage) - 30,(vm.topStories.length * vm.currentPage))
-      vm.topStories = [];
-      getTopStories(vm.topStoryIds);
-    });
-  }
 
   activate();
 
   function activate(){
     getTopStoryIds();
+    console.log(vm.topStories);
   }
 
   function getTopStoryIds(){
@@ -44,10 +24,41 @@ function PostsController(HttpService) {
   function getTopStories(storyIds) {
     for (var i = 0 ; i < storyIds.length; i++){
       HttpService.getItem(storyIds[i]).then(function(data){ 
-        vm.topStories.push(data.data);
+        var story = data.data;
+        vm.topStories[story.id] = (story);
+        vm.topStories[story.id].time = unixTimeConverter(story.time)
       });
     }
   }
+
+  function unixTimeConverter(unixTime){
+    var date = moment.unix(unixTime)
+    return date.format("dddd, MMMM Do YYYY, h:mm:ss a")
+  }
+
+  vm.nextPage = function(){
+    return HttpService.getTopStoryIds().then(function(data){
+      var stories = data.data; 
+      vm.currentPage += 1;
+      vm.topStoryIds = stories.slice((vm.topStories.length * vm.currentPage),(vm.topStories.length * vm.currentPage) + 30)
+      vm.topStories = [];
+      // console.log(vm.topStoryIds);
+      getTopStories(vm.topStoryIds);
+    });
+  }
+  vm.previousPage = function(){
+    return HttpService.getTopStoryIds().then(function(data){
+      var stories = data.data; 
+      if (vm.currentPage > 1) {
+        vm.currentPage -= 1
+      }
+      vm.topStoryIds = stories.slice((vm.topStories.length * vm.currentPage) - 30,(vm.topStories.length * vm.currentPage))
+      vm.topStories = [];
+      // console.log(vm.topStoryIds);
+      getTopStories(vm.topStoryIds);
+    });
+  }
+
 
 }
 
