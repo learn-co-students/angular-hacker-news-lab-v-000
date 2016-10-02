@@ -1,4 +1,4 @@
-function PostsController(HttpService) {
+function PostsController(HttpService, DateService) {
   var vm = this;
 
   vm.topStoryIds;
@@ -28,14 +28,9 @@ function PostsController(HttpService) {
       HttpService.getItem(storyIds[i]).then(function(data){ 
         var story = data.data;
         vm.topStories[story.id] = (story);
-        vm.topStories[story.id].time = unixTimeConverter(story.time)
+        vm.topStories[story.id].time = DateService.unixTimeConverter(story.time)
       });
     }
-  }
-
-  function unixTimeConverter(unixTime){
-    var date = moment.unix(unixTime)
-    return date.format("dddd, MMMM Do YYYY, h:mm:ss a")
   }
 
   function getStoryPages(storyIds){
