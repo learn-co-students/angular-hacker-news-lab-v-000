@@ -1,0 +1,7 @@
+<!--this goes inside view-->
+<ul class="list-group">
+    <li class="list-group-item" dir-paginate="post in vm.posts | itemsPerPage: 30 track by post.id">{{ post.title }}</li>
+</ul>
+
+<dir-pagination-controls></dir-pagination-controls>
+<!--inside view-->

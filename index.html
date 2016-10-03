@@ -6,21 +6,34 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Angular Application</title>
-
+	<!-- CSS (load bootstrap) -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- CSS Stylesheet -->
 	<link rel="stylesheet" href="app.css" />
 </head>
 
+<!-- apply our angular app to our site -->
+
 <body ng-app="app">
-	<h1>Hackernews App</h1>
 
-	<input ng-model="name"> {{ name }}
-	<ui-view></ui-view>
+	<ul class="nav nav-tabs">
+		<li role="presentation"><a href="" ui-sref="top">Home</a></li>
+		<li role="presentation"><a href="" ui-sref="post({id: 3})">post id</a></li>
+	</ul>
 
+	<div class="container">
+		<h1>Hackernews App</h1>
+		<ui-view></ui-view>
+	</div>
 
 	<script src="js/angular.js"></script>
 	<script src="js/angular-ui-router.js"></script>
+	<script src="js/angular-sanitize.js"></script>
+	<script src="js/app/directives/dirPagination.js"></script>
 	<script src="js/app/app.js"></script>
-	<script src="js/app/controllers/AppController.js"></script>
+	<script src="js/app/factories/PostFactory.js"></script>
+	<script src="js/app/controllers/HomeController.js"></script>
+	<script src="js/app/controllers/PostController.js"></script>
 </body>
 
 </html>

@@ -1,13 +1,16 @@
 angular
-    .module('app', ['ui.router'])
+    .module('app', ['ui.router', 'ngSanitize', 'angularUtils.directives.dirPagination'])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('top', {
                 url: '/top',
-                template: '<h1>Hello World!</h1>'
+                templateUrl: 'views/posts.html',
+                controller: 'HomeController as vm'
             })
             .state('post', {
                 url: '/post/:id',
-                template: '<h1>Post :id contente here <h1>'
+                templateUrl: 'views/post.html',
+                controller: 'PostController as vm'
             })
+        $urlRouterProvider.otherwise('/top')
     });
