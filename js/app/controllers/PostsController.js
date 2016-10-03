@@ -1,50 +1,50 @@
 function PostsController(HttpService, DateService) {
   var vm = this;
 
-  vm.topStoryIds;
-  vm.topStories = {};
-  vm.allStories = {};
+  vm.postIds;
+  vm.pages;
+  vm.posts = {};
+  vm.allPosts;
   vm.currentPage = 1;
 
   activate();
 
   function activate(){
-    getTopStoryIds();
+    getPostIds();
   }
 
-  function getTopStoryIds(){
-    return HttpService.getTopStoryIds().then(function(data){ 
-      vm.allStories = data.data;
-      vm.pages = Math.ceil(vm.allStories.length / 30) ; 
-      vm.allStories = getStoryPages(vm.allStories);
-      vm.topStoryIds = vm.allStories[vm.currentPage-1];
-      getTopStories(vm.topStoryIds);
+  function getPostIds(){
+    return HttpService.getPostIds().then(function(data){ 
+      var postIds = data.data; //list of post Ids
+      vm.pages = Math.ceil(postIds.length / 30) ; //page count
+      vm.allPosts = getPostPages(postIds); //Array of all posts, divided into sub arrays
+      vm.postIds = vm.allPosts[vm.currentPage-1]; //get the post Ids of the current page
+      getPosts(vm.postIds); // fetch the posts 
     })    
   }
 
-  function getTopStories(storyIds) {
-    vm.topStories = {};
-    for (var i = 0 ; i < storyIds.length; i++){
-      HttpService.getItem(storyIds[i]).then(function(data){ 
-        var story = data.data;
-        vm.topStories[story.id] = (story);
-        vm.topStories[story.id]['time'] = DateService.unixTimeConverter(story.time);
+  function getPosts(postIds) {
+    vm.posts = {}; //clear out our posts object
+    for (var i = 0 ; i < postIds.length; i++){
+      HttpService.getItem(postIds[i]).then(function(data){ 
+        var post = data.data;
+        vm.posts[post.id] = (post);
+        vm.posts[post.id]['time'] = DateService.unixTimeConverter(post.time);
       });
     }
   }
 
-  function getStoryPages(storyIds){
-    array = [];
-    for (var i = 0; i < storyIds.length; i += 30 ){
-      var subArray = storyIds.slice(i, i+30)
-      array.push(subArray);
+  function getPostPages(postIds){
+    pages = [];
+    for (var i = 0; i < postIds.length; i += 30 ){
+      var posts = postIds.slice(i, i+30)
+      pages.push(posts);
     }
-    console.log(array)
-    return array;
+    return pages;
   }
 
   vm.nextPage = function(){
-    if (vm.currentPage < vm.allStories.length){
+    if (vm.currentPage < vm.allPosts.length){
       vm.currentPage += 1;
       pageChange();
     }
@@ -58,11 +58,9 @@ function PostsController(HttpService, DateService) {
   }
 
   function pageChange(){
-    console.log(vm.currentPage)
-    vm.topStoryIds = vm.allStories[vm.currentPage-1];
-    getTopStories(vm.topStoryIds);
+    vm.postIds = vm.allPosts[vm.currentPage-1];
+    getPosts(vm.postIds);
   }
-
 
 }
 

@@ -1,8 +1,8 @@
-function PostController(story, DateService) {
-  this.story = story;
+function PostController(post, DateService) {
+  this.post = post;
 
   function activate(){
-    story.time = DateService.unixTimeConverter(story.time);
+    post.time = DateService.unixTimeConverter(post.time);
   }
 
   activate();

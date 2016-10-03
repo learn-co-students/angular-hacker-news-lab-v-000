@@ -2,16 +2,16 @@ function CommentsController(HttpService, DateService, $state, $stateParams) {
   var vm = this;
 
   vm.comments = {};
-  vm.story;
+  vm.post;
   vm.id = $stateParams.id
 
   activate();
 
   function activate(){
     HttpService.getItem(vm.id).then(function(data){ 
-      vm.story = data.data;
-      vm.story.time = DateService.unixTimeConverter(vm.story.time);
-      vm.comments = getComments(vm.story.kids); 
+      vm.post = data.data;
+      vm.post.time = DateService.unixTimeConverter(vm.post.time);
+      vm.comments = getComments(vm.post.kids); 
     });
   }
 
