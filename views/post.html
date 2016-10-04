@@ -1,0 +1,11 @@
+<h1>{{vm.post.title}}</h1>
+<small>By: {{vm.post.by}} on {{vm.post.time | date}}</small><br />
+
+<a href=""><small>{{ vm.post.descendants }} comments</small></a>
+<p>{{ vm.post.score }} points</p>
+
+<ul class="comments">
+    <li ng-repeat="comment in vm.post.kids">
+        <item id="comment"></item>
+    </li>
+</ul>
