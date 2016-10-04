@@ -2,8 +2,8 @@ angular
     .module('app', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
-			.state('home', {
-				url: '/',
+			.state('top', {
+				url: '/top',
 				template: '<div ng-repeat="story in vm.stories"><story id="{{story}}"></story></div>',
 				controller: 'StoryController as vm',
 				resolve: {
@@ -17,9 +17,9 @@ angular
 					}
 				}
 			)
-			.state('away', {
-				url: '/:id',
-				template: '{{vm.stories}}',
+			.state('post', {
+				url: '/post/:id',
+				template: '{{vm.stories}} <br><div ng-repeat="comment in vm.stories.kids"><comment id="{{comment}}"></comment><br></div>',
 				controller: 'StoryController as vm',
 				resolve: {
 					stories: function ($http, $stateParams) {
@@ -31,7 +31,7 @@ angular
 					}
 				}
 			);
-			$urlRouterProvider.otherwise('/');
+			$urlRouterProvider.otherwise('top');
 	})
 
 	.controller('StoryController', function(stories){
@@ -40,7 +40,7 @@ angular
 
 	.directive("story", function() {
 	    return {
-	        template : "<a href='#/{{id}}'>{{info.title}}</a><br>",
+	        template : "<a href='#/post/{{id}}'>({{info.score}}) {{info.title}} ({{info.kids.length}} comments)</a><br>",
 	        scope: {
 				id: '@'
 			},
@@ -51,13 +51,12 @@ angular
 	  					$scope.info = response.data;
 	  				});
 
-			},
-			controllerAs: 'item' 
+			}
 	    };
 	})
-	.directive("comments", function() {
+	.directive("comment", function() {
 	    return {
-	        template : "<a href='#/{{id}}'>{{info.title}}</a><br>",
+	        template : "<b>comment:</b> {{commentdata.text}}",
 	        scope: {
 				id: '@'
 			},
@@ -65,10 +64,8 @@ angular
 				console.log($scope.id);
 				$http.get("https://hacker-news.firebaseio.com/v0/item/"+$scope.id+".json")
 	  				.then(function(response) {
-	  					$scope.info = response.data;
+	  					$scope.commentdata = response.data;
 	  				});
-
-			},
-			controllerAs: 'item' 
+			}
 	    };
 	});
