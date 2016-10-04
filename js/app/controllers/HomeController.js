@@ -1,26 +1,29 @@
 function HomeController(PostFactory) {
     vm = this;
 
-    vm.getPostsIds = getPostsIds;
-
     // Instantiated Info
     activate();
 
+    // ########## Defined Methods ########## //
 
-    // Defined Methods
+    // Initiates App
     function activate() {
-        getPostsIds()
+        getPosts()
     }
 
-    function getPostsIds() {
+    // Fetches Post Ids Using PostFactory.getPostsIds()
+    function getPosts() {
         return PostFactory.getPostsIds()
             .then(setPosts)
     }
 
+    // Returns Individual Post Object Promise using PostFactory.getPost()
     function getPost(id) {
         return PostFactory.getPost(id)
     }
 
+    // Iterates over PostsIds array fetches Post Objects and
+    // Add them to vm.posts
     function setPosts(data) {
         var posts = [];
         var post;

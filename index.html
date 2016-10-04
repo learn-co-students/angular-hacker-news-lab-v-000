@@ -17,12 +17,11 @@
 <body ng-app="app">
 
 	<ul class="nav nav-tabs">
-		<li role="presentation"><a href="" ui-sref="top">Home</a></li>
-		<li role="presentation"><a href="" ui-sref="post({id: 3})">post id</a></li>
+		<li role="presentation"><a href="" ui-sref="top" ui-sref-active="active">Home</a></li>
 	</ul>
 
 	<div class="container">
-		<h1>Hackernews App</h1>
+		<h4>Hacker News</h4>
 		<ui-view></ui-view>
 	</div>
 
@@ -32,6 +31,7 @@
 	<script src="js/app/directives/dirPagination.js"></script>
 	<script src="js/app/app.js"></script>
 	<script src="js/app/factories/PostFactory.js"></script>
+	<script src="js/app/components/Item.js"></script>
 	<script src="js/app/controllers/HomeController.js"></script>
 	<script src="js/app/controllers/PostController.js"></script>
 </body>

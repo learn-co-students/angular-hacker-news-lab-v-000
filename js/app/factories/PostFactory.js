@@ -1,7 +1,6 @@
 function PostFactory($http) {
     return {
         getPostsIds: getPostsIds,
-        getPosts: getPosts,
         getPost: getPost
     }
 
@@ -18,12 +17,6 @@ function PostFactory($http) {
             .then(handleResponse)
             .catch(handleError);
     }
-
-    // Returns an array of posts Objects
-    function getPosts() {
-
-    }
-
 
     function handleResponse(response) {
         console.log(response.data);

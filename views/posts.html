@@ -1,6 +1,9 @@
 <!--this goes inside view-->
 <ul class="list-group">
-    <li class="list-group-item" dir-paginate="post in vm.posts | itemsPerPage: 30 track by post.id">{{ post.title }}</li>
+    <li class="list-group-item" dir-paginate="post in vm.posts | itemsPerPage: 30 track by post.id">
+        <p>{{$index + 1}}. <a href="" ui-sref="post({id: post.id})">{{ post.title }}</a></p>
+        <small>Score: {{post.score}} | <a ng-href="{{post.url}}">Original Post Link</a> | comments: {{post.descendants}}</small>
+    </li>
 </ul>
 
 <dir-pagination-controls></dir-pagination-controls>

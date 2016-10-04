@@ -1,13 +1,20 @@
-function PostController() {
+function PostController(PostFactory, $stateParams) {
     vm = this;
 
-    vm.name = "Adrian is in the house"
+    // Instantiated Info
+    getPost();
 
-    getPost()
+    // ########## Defined Methods ########## //
 
     function getPost() {
-
+        return PostFactory.getPost($stateParams.id)
+            .then(setPost)
     }
+
+    function setPost(data) {
+        vm.post = data;
+    }
+
 }
 
 angular
