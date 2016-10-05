@@ -4,14 +4,14 @@ angular
 		$stateProvider
 			.state('top', {
 				url: '/top',
-				template: '<div ng-repeat="story in vm.stories"><story id="{{story}}"></story></div>',
+				template: '<button ng-click="vm.nextPage()">next</button>{{vm.page}}<div ng-repeat="story in vm.stories"><story id="{{story}}"></story></div>',
 				controller: 'StoryController as vm',
 				resolve: {
 					stories: function ($http) {
 						return $http.get("https://hacker-news.firebaseio.com/v0/topstories.json")
 	  						.then(function(response) {
 	      						console.log(response);
-						    	return response.data.slice(1, 10);
+						    	return response.data;
 						  });
 						}
 					}
@@ -35,7 +35,12 @@ angular
 	})
 
 	.controller('StoryController', function(stories){
-		this.stories = stories
+		this.stories = stories.slice(0,10);
+		this.page = 0;
+		this.nextPage = function () {
+			this.page++;
+			this.stories = stories.slice(this.page*10, (this.page*10)+10 );
+		};
 	})
 
 	.directive("story", function() {
