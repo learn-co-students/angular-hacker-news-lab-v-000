@@ -6,9 +6,29 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Angular Application</title>
 
-    <link rel="stylesheet" href="app.css" />
-</head>
-<body>
+  <link rel="stylesheet" href="app.css" />
 
+</head>
+<body ng-app="HackerNews">
+	
+	<div class="main">
+		<div class="container">
+			<div ng-view>
+				
+			</div>
+		</div>
+	</div>
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.js"></script>
+	
+	<!-- Modules -->
+	<script src="js/app/app.js"></script>
+	
+	<!-- Controllers -->
+	<script src="js/app/controllers/StoriesController.js"></script>
+
+	<!-- Services -->
+	<script src="js/app/services/top_stories.js"></script>
 </body>
 </html>
