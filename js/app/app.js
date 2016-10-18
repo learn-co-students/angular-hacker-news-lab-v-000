@@ -4,6 +4,8 @@ angular
     $stateProvider
       .state('root', {
         url: '/',
-        templateUrl: 'views/home.html'
+        templateUrl: 'views/home.html',
+        controller: 'rootController',
+        controllerAs: 'ctrl'
       });
   });
