@@ -11,12 +11,12 @@ html, body {
 }
 
 .header {
-	height: 47px;
+	height: 37px;
 }
 
 .header__fixed {
-	background: #3661A2;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background: #ff6600;
+	/*border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
 	position: fixed;
 	height: inherit;
 	top: 0;
@@ -32,16 +32,17 @@ html, body {
 
 .header a {
 	display: block;
-	padding: 14px 15px;
+	padding: 10px 10px;
 	text-decoration: none;
 	color: rgba(255, 255, 255, 0.5);
 	float: left;
 }
 
 .header a.active {
-	background: #2C538C;
+	background: #ff6600;
 	font-weight: 700;
-	color: #fff;
+	font-size: 10pt;
+	color: #000;
 }
 
 .item {
