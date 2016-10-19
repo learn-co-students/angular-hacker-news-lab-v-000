@@ -14,7 +14,24 @@ function TopStories($http){
     }
   }
 
-  return { getStories: getStories }
+  function getStory(id){
+    return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json')
+      .then(handleResponse)
+      .catch(handleError);
+
+    function handleResponse(response){
+      return response.data;
+    }
+
+    function handleError(error){
+      console.log(error);
+    }
+  }
+
+  return {
+    getStories: getStories,
+    getStory: getStory
+  }
 }
 
 angular
