@@ -21,4 +21,4 @@ var Comment = {
 
 angular
   .module('app')
-  .component('comment', Comment);
+  .component('Comment', Comment);
