@@ -1,14 +1,14 @@
-<div class="comment" ng-if="comment.data">
-  <h2 ng-bind-html="comment.data.text">
-    {{comment.data.text}}
-  </h2>
+<div class="comment" >
+  <h5 ng-bind-html="comment.data.text">
+    {{ comment.data.text }}
+  </h5>
   <p class="comment">
-    {{comment.data.by}}
-    {{(comment.data.time * 1000) | data: 'medium'}}
+    {{ comment.data.by }}
+  {{ (comment.data.time * 1000) | date: 'short' }}
   </p>
+</div>
   <ul class="comments">
-    <li ng-repeat="comment in story.data.kids">
+    <li ng-repeat="comment in post.data.kids">
       <comment id="comment"></comment>
     </li>
   </ul>
-</div>

@@ -1,22 +1,26 @@
-function TopStoryController (TopStoryService){
+function TopStoryController(posts) {
   var ctrl = this;
 
-  ctrl.storyId = [];
-  ctrl.stories = [];
+  ctrl.page = 0;
+  var storiesPerPage = 30;
+  ctrl.totalStories = posts.data.length;
+  ctrl.totalPages = Math.ceil(ctrl.totalStories / storiesPerPage);
 
-  TopStoryService
-    .getTopStories('')
-    .then(function (res){
-      ctrl.storyId = res.data;
+  ctrl.getStories = function () {
+    ctrl.posts = posts.data.slice(ctrl.page * storiesPerPage, (ctrl.page + 1) * storiesPerPage);
+  };
 
-      for(var i = 0; i < ctrl.storyId.length; i++) {
-        TopStoryService
-          .getPost(ctrl.storyId[i])
-          .then(function(res){
-            ctrl.stories.push(res.data);
-          });
-      }
-    });
+  ctrl.nextPage = function () {
+    ctrl.page++;
+    ctrl.getStories()
+  };
+
+  ctrl.previousPage = function () {
+    ctrl.page--;
+    ctrl.getStories();
+  };
+
+  ctrl.getStories();
 }
 
 angular
