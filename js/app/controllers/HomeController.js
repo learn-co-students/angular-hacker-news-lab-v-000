@@ -1,7 +1,8 @@
-function HomeController(stories){
+function HomeController(stories, $filter, $http){
   var ctrl = this;
   ctrl.stories = stories.data;
-  console.log(ctrl.stories);
+
+
   // getStories();
   // getStory(1273640);
 
@@ -23,9 +24,18 @@ function HomeController(stories){
 //someFilter => takes page number from pagination button and slices array based on that number
     //(ex. 3 we want index 59-89... pgNum (1  * 30) - 30 => starting index, slice 30) array.slice(index, index + 30)
   // this.collection = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-  // var pageNum = 1;
-  // ctrl.filteredList = $filter('paginationFilter')(this.stories, pageNum, 2);
 
+  var pageNum = 1;
+  ctrl.filteredList = $filter('paginationFilter')(this.stories, pageNum, 2);
+  ctrl.filteredStories = [];
+
+  function populateStories(){
+    ctrl.filteredStories = [];
+
+    ctrl.filteredList.forEach(function(item, index){
+      getStory(item);
+    });
+  }
 
   // function getStories(){
   //   return TopStories.getStories()
@@ -34,15 +44,13 @@ function HomeController(stories){
   //     });
   // }
 
-  // function getStory(id){
-  //   return TopStories.getStory(id)
-  //     .then(function(data){
-  //       console.log(data);
-  //       return ctrl.story = data;
-  //     });
-  // }
-}
+  function getStory(id){
+    $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json')
+      .then(function(data){
+        console.log(data);
+        ctrl.filteredStories.push(data);
+      });
+  }
 
-angular
-  .module('app')
-  .controller('HomeController', HomeController);
+  populateStories();
+}

@@ -6,6 +6,6 @@ function PaginationFilter(){
   }
 }
 
-angular
-  .module('app')
-  .filter('paginationFilter', PaginationFilter);
+// angular
+//   .module('app')
+//   .filter('paginationFilter', PaginationFilter);
