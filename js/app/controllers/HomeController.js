@@ -27,10 +27,10 @@ function HomeController(stories, $filter, $http){
 
   var pageNum = 1;
   ctrl.filteredList = $filter('paginationFilter')(this.stories, pageNum, 2);
-  ctrl.filteredStories = [];
+  // ctrl.pageOfStories = [];
 
   function populateStories(){
-    ctrl.filteredStories = [];
+    ctrl.pageOfStories = [];
 
     ctrl.filteredList.forEach(function(item, index){
       getStory(item);
@@ -47,8 +47,7 @@ function HomeController(stories, $filter, $http){
   function getStory(id){
     $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json')
       .then(function(data){
-        console.log(data);
-        ctrl.filteredStories.push(data);
+        ctrl.pageOfStories.push(data);
       });
   }
 
