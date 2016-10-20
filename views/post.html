@@ -1,0 +1,10 @@
+<h2>
+  Score: {{post.data.score}} - <a href="{{post.data.url}}">{{post.data.title}}</a>
+</h2>
+<h2>by {{post.data.text}} - {{post.data.descendants}} Comments</h2>
+
+<ul class="comments">
+  <li ng-repeat="comment in post.data.kids">
+    <comment id="comment"></comment>
+  </li>
+</ul>
