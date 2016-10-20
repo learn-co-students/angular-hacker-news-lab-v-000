@@ -1,9 +1,11 @@
-function RootController(TopStories, $filter){
+function HomeController(stories){
   var ctrl = this;
-  getStories();
+  ctrl.stories = stories.data;
+  console.log(ctrl.stories);
+  // getStories();
   // getStory(1273640);
 
-
+  // console.log(ctrl.stories);
 
 
 
@@ -20,27 +22,27 @@ function RootController(TopStories, $filter){
 //filteredList = $filter('someFilter')(ctrl.stories, pageNum)
 //someFilter => takes page number from pagination button and slices array based on that number
     //(ex. 3 we want index 59-89... pgNum (1  * 30) - 30 => starting index, slice 30) array.slice(index, index + 30)
-  this.collection = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-  var pageNum = 1;
-  ctrl.filteredList = $filter('paginationFilter')(this.collection, pageNum, 2);
+  // this.collection = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+  // var pageNum = 1;
+  // ctrl.filteredList = $filter('paginationFilter')(this.stories, pageNum, 2);
 
 
-  function getStories(){
-    return TopStories.getStories()
-      .then(function(data){
-        return ctrl.stories = data;
-      });
-  }
+  // function getStories(){
+  //   return TopStories.getStories()
+  //     .then(function(data){
+  //       return ctrl.stories = data;
+  //     });
+  // }
 
-  function getStory(id){
-    return TopStories.getStory(id)
-      .then(function(data){
-        console.log(data);
-        return ctrl.story = data;
-      });
-  }
+  // function getStory(id){
+  //   return TopStories.getStory(id)
+  //     .then(function(data){
+  //       console.log(data);
+  //       return ctrl.story = data;
+  //     });
+  // }
 }
 
 angular
   .module('app')
-  .controller('rootController', RootController);
+  .controller('HomeController', HomeController);

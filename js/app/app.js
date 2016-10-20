@@ -2,10 +2,14 @@ angular
   .module('app', ['ui.router'])
   .config(function($stateProvider){
     $stateProvider
-      .state('root', {
+      .state('home', {
         url: '/',
         templateUrl: 'views/home.html',
-        controller: 'rootController',
-        controllerAs: 'ctrl'
+        controller: 'HomeController as ctrl',
+        resolve: {
+          stories: function($http){
+            return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+          }
+        }
       });
   });
