@@ -1,8 +1,10 @@
 <h1>This is the home template.</h1>
 <div>
-  <ul>
-    <li ng-repeat="story in ctrl.pageOfStories">
-      {{ story }}
+  <ol>
+    <li ng-repeat="story in ctrl.pageOfStories" class="item">
+      <a class="item__title" href="{{ story.url }}" target="_blank">
+				{{ story.title }}
+			</a>
     </li>
-  </ul>
+  </ol>
 </div>
