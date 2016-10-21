@@ -1,44 +1,16 @@
 function TopStories($http){
+  var baseUrl = 'https://hacker-news.firebaseio.com/v0/';
 
-  this.getStories = function(){
-    return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json')
-    console.log('hit');
+  var getStories = function(){
+    return $http.get(baseUrl + 'topstories.json', {cache: true})
   }
 
-  // function getStories(){
-  //   return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json')
-  //     .then(handleResponse)
-  //     .catch(handleError);
-  //
-  //   function handleResponse(response) {
-  //     return response.data;
-  //   }
-  //
-  //   function handleError(error) {
-  //     console.log(error);
-  //   }
-  // }
-
-  this.getStory = function(id){
-    return $http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json')
-    //   .then(handleResponse)
-    //   .catch(handleError);
-    //
-    // function handleResponse(response){
-    //   return response.data;
-    // }
-    //
-    // function handleError(error){
-    //   console.log(error);
-    // }
+  var getStory = function(id){
+    return $http.get(baseUrl + 'item/' + id + '.json');
   }
 
-  // return {
-  //   getStories: getStories,
-  //   getStory: getStory
-  // }
+  return {
+    getStories: getStories,
+    getStory: getStory
+  }
 }
-
-// angular
-//   .module('app')
-//   .factory('TopStories', TopStories);

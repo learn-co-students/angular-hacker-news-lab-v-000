@@ -5,7 +5,3 @@ function PaginationFilter(){
     return collection.slice(index, index + pageSize);
   }
 }
-
-// angular
-//   .module('app')
-//   .filter('paginationFilter', PaginationFilter);
