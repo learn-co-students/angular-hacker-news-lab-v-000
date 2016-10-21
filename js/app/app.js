@@ -11,9 +11,18 @@ var app = angular.module('app', ['ui.router']);
         templateUrl: 'views/home.html',
         controller: 'HomeController as ctrl',
         resolve: {
-          stories: function($http){
-            //need to replace this with factory call.
-            return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+          stories: function(TopStories){
+            return TopStories.getStories();
+          }
+        }
+      })
+      .state('story', {
+        url: '/story/:id',
+        templateUrl: 'views/story.html',
+        controller: 'StoryController',
+        resolve: {
+          story: function(TopStories, $stateParams){
+            return TopStories.getStory($stateParams.id);
           }
         }
       });
