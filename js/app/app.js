@@ -1,6 +1,7 @@
 var app = angular.module('app', ['ui.router']);
 
   app.controller('HomeController', HomeController);
+  app.controller('StoryController', StoryController);
   app.factory('TopStories', TopStories);
   app.filter('paginationFilter', PaginationFilter);
   app.component('story', Story);
