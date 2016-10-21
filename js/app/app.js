@@ -23,6 +23,7 @@ var app = angular.module('app', ['ui.router']);
         controller: 'StoryController',
         resolve: {
           story: function(TopStories, $stateParams){
+            console.log($stateParams.id);
             return TopStories.getStory($stateParams.id);
           }
         }
