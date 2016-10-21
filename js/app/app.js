@@ -5,6 +5,7 @@ var app = angular.module('app', ['ui.router']);
   app.factory('TopStories', TopStories);
   app.filter('paginationFilter', PaginationFilter);
   app.component('story', Story);
+  app.component('comment', Comment);
 
   app.config(function($stateProvider,  $urlRouterProvider){
     $stateProvider
