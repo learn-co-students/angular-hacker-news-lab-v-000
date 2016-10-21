@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router','ngSanitize']);
 
   app.controller('HomeController', HomeController);
   app.controller('StoryController', StoryController);
