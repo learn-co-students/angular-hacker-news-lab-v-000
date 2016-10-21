@@ -20,8 +20,9 @@ var app = angular.module('app', ['ui.router']);
       })
       .state('story', {
         url: '/story/:id',
-        templateUrl: 'views/story.html',
+        templateUrl: 'views/comments.html',
         controller: 'StoryController',
+        controllerAs: 'story',
         resolve: {
           story: function(TopStories, $stateParams){
             console.log($stateParams.id);
