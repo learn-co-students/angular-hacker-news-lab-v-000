@@ -3,6 +3,7 @@ var app = angular.module('app', ['ui.router']);
   app.controller('HomeController', HomeController);
   app.factory('TopStories', TopStories);
   app.filter('paginationFilter', PaginationFilter);
+  app.component('story', Story);
 
   app.config(function($stateProvider,  $urlRouterProvider){
     $stateProvider

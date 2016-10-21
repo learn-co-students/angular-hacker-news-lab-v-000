@@ -1,7 +1,14 @@
 function HomeController(stories, $filter, $http){
   var ctrl = this;
-  ctrl.stories = stories.data;
-  console.log(ctrl.stories);
+  ctrl.storyIDs = stories.data;
+
+
+
+
+
+
+
+  
   // ctrl.getStory = getStory;
   // ctrl.filteredList = $filter('paginationFilter')(this.stories, pageNum, 30);
 
