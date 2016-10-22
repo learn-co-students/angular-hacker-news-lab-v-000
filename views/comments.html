@@ -1,10 +1,8 @@
-<h1>This is the comments template.</h1>
 <a class="item__title" href="{{ story.data.url }}" target="_blank">
   {{ story.data.title }}
 </a>
 <div class="item__description">Score: {{ story.data.score }}</div>
 
 <div ng-repeat="commentID in story.data.kids" class="item">
-  <p>Comment Here.</p>
   <comment id="commentID" class="comments"></comment>
 </div>
