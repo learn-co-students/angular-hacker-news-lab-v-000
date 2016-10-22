@@ -1,2 +1,12 @@
 <h1>This is the comment.html partial for the comment component.</h1>
+<p>{{ comment.data.by }} says: </p>
 <p ng-bind-html="comment.data.text"></p>
+<div ng-repeat="commentID in comment.data.kids" class="item">
+  <p>Child Comment Here.</p>
+  <ul>
+    <li>
+      <comment id="commentID" class="comments"></comment>
+    </li>
+  </ul>
+
+</div>
