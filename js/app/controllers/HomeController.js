@@ -1,6 +1,8 @@
-function HomeController(stories, $filter, $http){
+function HomeController(stories, $filter){
   var ctrl = this;
+  var pageNum = 1;
   ctrl.storyIDs = stories.data;
+  ctrl.pageOfStoryIDs = $filter('paginationFilter')(ctrl.storyIDs, pageNum, 30);
 
 
 
@@ -8,7 +10,7 @@ function HomeController(stories, $filter, $http){
 
 
 
-  
+
   // ctrl.getStory = getStory;
   // ctrl.filteredList = $filter('paginationFilter')(this.stories, pageNum, 30);
 
