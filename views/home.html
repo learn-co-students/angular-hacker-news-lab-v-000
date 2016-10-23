@@ -1,6 +1,6 @@
 <ul class="posts">
 	<li ng-repeat="post in top.posts">
-		<item id="post"></item>
+		<item id="post"><a ui-sref="post({id: post})">{{post}}</a></item>
 	</li>
 </ul>
 
@@ -17,6 +17,4 @@
 			</a>
 		</li>
 	</ul>
-
-	<div style="clear: both;"></div>
 </div>
