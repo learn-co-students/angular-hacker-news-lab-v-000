@@ -1,8 +1,16 @@
 function HomeController(stories, $filter){
   var ctrl = this;
-  var pageNum = 1;
+  var storiesPerPage = 30;
+
+  ctrl.pageNum = 1;
   ctrl.storyIDs = stories.data;
-  ctrl.pageOfStoryIDs = $filter('paginationFilter')(ctrl.storyIDs, pageNum, 30);
+
+
+  function setPage(){
+    ctrl.pageOfStoryIDs = $filter('paginationFilter')(ctrl.storyIDs, ctrl.pageNum, storiesPerPage);
+  }
+
+  setPage();
 
 
 
@@ -59,12 +67,20 @@ function HomeController(stories, $filter){
 
   // populateStories();
 
-  // this.previous = function(){
-  //   if(pageNum > 1){
-  //     pageNum -= 1;
-  //   }
-  //
-  //   paginateStories(pageNum);
-  // }
+  this.previous = function(){
+    if(ctrl.pageNum > 1){
+      ctrl.pageNum -= 1;
+    }
+    setPage();
+    console.log('Hey');
+  }
+
+  this.next = function(){
+    if(ctrl.pageNum < (ctrl.storyIDs.length / storiesPerPage)){
+      ctrl.pageNum += 1;
+    }
+    setPage();
+    console.log('Hey!');
+  }
 
 }
