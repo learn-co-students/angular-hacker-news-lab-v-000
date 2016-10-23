@@ -2,6 +2,5 @@
   {{ story.data.title }}
 </a>
 <a class="item__description" ui-sref="story({id: story.data.id})">
-  <h5>Score: {{ story.data.score }}</h5>
-  <h5>Comments: {{ story.data.kids.length }}</h5>
+  <h5>Score: {{ story.data.score }}, Date: {{ story.data.time | date: "short" }}, Comments: {{ story.data.kids.length }}</h5>
 </a>
