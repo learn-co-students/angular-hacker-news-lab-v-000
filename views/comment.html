@@ -1,0 +1,10 @@
+<p class="description">{{ comment.data.by }} says: </p>
+<p ng-bind-html="comment.data.text"></p>
+<div ng-repeat="commentID in comment.data.kids" class="item">
+  <ul>
+    <li>
+      <comment id="commentID" class="comments"></comment>
+    </li>
+  </ul>
+
+</div>

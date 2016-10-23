@@ -8,7 +8,27 @@
 
     <link rel="stylesheet" href="app.css" />
 </head>
-<body>
+<body ng-app="app">
+	<header class="header">
+	 <div class="header__fixed">
+	   <ul>
+	     <li>
+	       <a ui-sref="home" ui-sref-active="active">Hacker News Stories</a>
+	     </li>
+	   </ul>
+	 </div>
+	</header>
+	<ui-view></ui-view>
 
+	<script src="js/angular.js" charset="utf-8"></script>
+	<script src="js/angular-ui-router.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js" charset="utf-8"></script>
+	<script src="js/app/factories/TopStories.js" charset="utf-8"></script>
+	<script src="js/app/controllers/HomeController.js" charset="utf-8"></script>
+	<script src="js/app/controllers/StoryController.js" charset="utf-8"></script>
+	<script src="js/app/filters/paginationFilter.js" charset="utf-8"></script>
+	<script src="js/app/components/story.js" charset="utf-8"></script>
+	<script src="js/app/components/comment.js" charset="utf-8"></script>
+	<script src="js/app/app.js" charset="utf-8"></script>
 </body>
 </html>

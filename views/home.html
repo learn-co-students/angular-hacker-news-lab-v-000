@@ -1,0 +1,16 @@
+<div>
+		<ul class="pagination">
+			<li><a href="" ng-click="ctrl.previous()">Previous</a></li>
+      <li><a>Page: {{ ctrl.pageNum }}</a></li>
+			<li><a href="" ng-click="ctrl.next()">Next</a></li>
+		</ul>
+		<div style="clear: both;"></div>
+	</div>
+
+<div>
+  <ol>
+    <li ng-repeat="storyID in ctrl.pageOfStoryIDs" class="item">
+      <story id="storyID"></story>
+    </li>
+  </ol>
+</div>
