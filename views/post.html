@@ -1,0 +1,11 @@
+<div ng-controller="PostInfoCtrl" class="">
+  <div class="posts col-md-8 col-md-offset-2 well">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.kids.length + " comments"}} | {{ post.score + " points"}}</p>
+    <ul class="comments">
+      <li> ng-repeat="comment in post.kids">
+        <comment id="comment"></comment>
+      </li>
+    </ul>
+  </div>
+</div>
