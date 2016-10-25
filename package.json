@@ -9,6 +9,7 @@
     "karma-spec-reporter": "0.0.23"
   },
   "dependencies": {
+    "angular-timeago": "^0.4.3",
     "express": "^4.13.4"
   }
 }
