@@ -1,0 +1,14 @@
+<div class="header">
+	<h3>Top Posts</h3>
+</div>
+
+<pagination obj="vm_top"></pagination>
+
+
+<ul class="posts">
+	<li ng-repeat="post in vm_top.posts">	
+		<item obj="post"></item>
+	</li>
+</ul>
+
+<pagination obj="vm_top"></pagination>

@@ -82,6 +82,9 @@ html, body {
 	margin-right: 10px;
 }
 
+.pagination a:hover {
+    cursor: default;
+}
 
 .posts {
 	list-style: none;

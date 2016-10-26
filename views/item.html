@@ -1,0 +1,6 @@
+<div class="post">
+	<a class="post__title" ui-sref="post({id: {{vm_item.obj}} })" ng-bind="vm_item.data.title"></a>
+	<a ng-href="{{vm_item.data.url}}" ng-bind="vm_item.data.url" target="_blank"></a><br />
+	<span>Comments: {{vm_item.commentCount}}</span><br />
+	<span>Score: {{vm_item.data.score}}</span>
+</div>

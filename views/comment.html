@@ -1,0 +1,9 @@
+<div>	
+	<h4 ng-bind="vm_comment.author"></h4>
+	<span ng-bind-html="vm_comment.data.text"></span>
+	
+	<li class="comments" ng-repeat="nested_kid in vm_comment.data.kids" ng-if="vm_comment.data.kids">
+		<comment obj="nested_kid"></comment>
+	</li>
+
+</div>
