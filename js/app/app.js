@@ -22,4 +22,7 @@ angular
         }
       }
     });
-  })
+
+    $urlRouterProvider.otherwise('/top');
+    
+  });
