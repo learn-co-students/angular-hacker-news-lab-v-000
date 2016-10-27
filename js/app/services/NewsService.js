@@ -1,7 +1,9 @@
 function NewsService($http) {
   this.getNews = function() {
     debugger
-    return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+    $http.get('https://hacker-news.firebaseio.com/v0/topstories.json').then(function(data){
+      console.log(data);
+    });
   }
 
   this.getPost = function(id) {
