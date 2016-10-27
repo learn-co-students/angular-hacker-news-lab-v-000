@@ -6,9 +6,11 @@ angular
         url: '/top',
         templateUrl: 'index.html',
         controller: 'NewsController as news',
+        // posts: "NewsService",
         resolve: {
-          news: function (NewsService) {
-            return NewsService.getNews()
+          news: function ($http) {
+            return $http.get('http://localhost:8080/top');
+            // return posts.getNews()
             // return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
           }
         }
@@ -18,7 +20,7 @@ angular
         templateUrl: 'index.html',
         controller: 'NewsController as news',
         resolve: {
-          news: function ($http, $stateParams) {
+          news: function (NewsService, $stateParams) {
             return $http.get('https://hacker-news.firebaseio.com/v0/item/'+$stateParams.id+'.json');
           }
         }          
