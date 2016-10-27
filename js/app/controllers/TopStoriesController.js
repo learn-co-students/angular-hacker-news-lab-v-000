@@ -12,11 +12,13 @@ function TopStoriesController(posts) {
   };
 
   ctrl.nextPage = function () {
-
+    ctrl.page++;
+    ctrl.paginatePosts()
   };
 
   ctrl.previousPage = function () {
-
+    ctrl.page--;
+    ctrl.paginatePosts()
   };
 
   ctrl.paginatePosts();
