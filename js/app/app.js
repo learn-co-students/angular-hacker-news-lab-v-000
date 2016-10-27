@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'ngSantize'])
+  .module('app', ['ui.router', 'ngSanitize'])
   .config(function($stateProvider) {
     $stateProvider
       .state('top', {
@@ -7,10 +7,9 @@ angular
         templateUrl: 'index.html',
         controller: 'NewsController as news',
         resolve: {
-          news: function ($http) {
-            debugger
-            return NewsService.getNews();
-            // var stories = $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
+          news: function (NewsService) {
+            return NewsService.getNews()
+            // return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
           }
         }
       })
