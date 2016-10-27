@@ -1,6 +1,6 @@
-function NewsController(data) {
+function NewsController(news) {
   debugger
-  this.data = data;
+  this.posts = news;
 }
 
 angular

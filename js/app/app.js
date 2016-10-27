@@ -4,25 +4,22 @@ angular
     $stateProvider
       .state('top', {
         url: '/top',
-        templateUrl: 'index.html',
+        templateUrl: 'views/posts.html',
         controller: 'NewsController as news',
         resolve: {
           news: function (NewsService) {
-            debugger
+            console.log(NewsService.getNews());
             return NewsService.getNews();
-            // return $http.get('http://localhost:8080/top');
-            // return posts.getNews()
-            // return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
           }
         }
       })
       .state('post', {
         url: '/post/:id',
-        templateUrl: 'index.html',
+        templateUrl: '<div></div>',
         controller: 'NewsController as news',
         resolve: {
-          news: function ($http, $stateParams) {
-            return $http.get('https://hacker-news.firebaseio.com/v0/item/'+$stateParams.id+'.json');
+          news: function (NewsService, $stateParams) {
+            return NewsService.getPost($stateParams.id);
           }
         }          
       })
