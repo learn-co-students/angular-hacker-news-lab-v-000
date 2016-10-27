@@ -15,7 +15,7 @@ angular
       templateUrl: 'views/post.html',
       controller: 'PostController as post',
       resolve: {
-        
+
       }
     });
   })
