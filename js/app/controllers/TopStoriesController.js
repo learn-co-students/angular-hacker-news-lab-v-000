@@ -11,6 +11,15 @@ function TopStoriesController(posts) {
     ctrl.posts = posts.data.slice(ctrl.page * post_limit, (ctrl.page + 1) * post_limit);
   };
 
+  ctrl.nextPage = function () {
+
+  };
+
+  ctrl.previousPage = function () {
+
+  };
+
+  ctrl.paginatePosts();
 };
 
 
