@@ -5,20 +5,20 @@ angular
       .state('top', {
         url: '/top',
         templateUrl: 'views/posts.html',
-        controller: 'NewsController',
+        controller: 'NewsController as news',
         resolve: {
           news: function (NewsService) {
-            debugger
             return NewsService.getNews();
           }
         }
       })
       .state('post', {
         url: '/post/:id',
-        templateUrl: '<div></div>',
+        templateUrl: '/views/post.html',
         controller: 'PostController as post',
         resolve: {
           post: function (NewsService, $stateParams) {
+            debugger
             return NewsService.getPost($stateParams.id);
           }
         }          

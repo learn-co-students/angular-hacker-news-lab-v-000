@@ -1,11 +1,8 @@
 function NewsController(news) {
-  debugger
-  vm = this;
-  vm.posts = news;
+  var vm     = this;
+  vm.posts   = news;
   
-  // this.posts = news;
-  // this.posts = ["blah", "b", "a"];
-  this.call  = function() {
+  vm.call    = function() {
     debugger
     alert("Bang!");
   }

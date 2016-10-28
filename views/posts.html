@@ -1,6 +1,5 @@
-<div ng-controller="NewsController">
 <h4>Here they are:</h4>
-  <ul>
-    <li ng-repeat="post in NewsController.posts">Post: {{post}}, {{$index}}</li>
+  <ul ng-repeat="post in news.posts">
+  <!-- iterating everything inside so creating more li elements -->
+    <li>Post: <a ng-app="app" href="" ui-sref-active="active" class="active" ui-sref='post({id: {{post}} })'>{{post}}</a>, {{$index}}</li>
   </ul>
-</div>

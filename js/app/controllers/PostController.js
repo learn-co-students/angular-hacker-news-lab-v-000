@@ -1,7 +1,12 @@
 function PostController(post) {
-  this.comments = post.comments;
+  debugger
+  var vm      = this;
+  vm.author   = post.by;
+  vm.title    = post.title;
+  vm.url      = post.url;
+  vm.comments = post.kids;
 
-  this.call = function() {
+  vm.call     = function() {
     alert("Bang!");
   }
 }
