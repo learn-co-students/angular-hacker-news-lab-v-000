@@ -15,7 +15,7 @@ angular
             .state('post', {
                 url: '/post/:id',
                 templateUrl: 'views/post.html',
-                controller: 'PostController as post',
+                controller: 'PostsController as post',
                 resolve: {
                     post: function($stateParams, PostsService) {
                         return PostsService.getPost($stateParams.id);
