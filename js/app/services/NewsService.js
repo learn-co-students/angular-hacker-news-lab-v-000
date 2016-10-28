@@ -1,13 +1,13 @@
 function NewsService($http) {
   this.getNews = function() {
-    return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json')
-      .then(function(data){
-        return data.data;
+    debugger
+    $http.get('https://hacker-news.firebaseio.com/v0/topstories.json').then(function(data){
+      console.log(data);
+      return data;
     });
   }
 
   this.getPost = function(id) {
-    debugger
     return $http.get('https://hacker-news.firebaseio.com/v0/item/'+id+'.json');
   }
 }
