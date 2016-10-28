@@ -7,7 +7,7 @@ function NewsService($http) {
     });
   }
 
-  this.getPost = function(id) {
+  this.getPostDetails = function(id) {
     debugger
     return $http.get('https://hacker-news.firebaseio.com/v0/item/'+id+'.json')
       .then(function(res){

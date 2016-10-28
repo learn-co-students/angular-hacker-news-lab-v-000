@@ -1,3 +1,13 @@
-<div ng-app="app" ui-sref-active="active" ng-controller="post">
-  by: {{post.author}}
+<div ng-app="app" ui-sref-active="active">
+<h4>Post: {{post.title}}</h4>
+<p>score = {{post.score}}</p>
+<!-- <button ng-click="call">click</button> -->
+<p>by: {{post.author}}</p>
+<a href="{{post.url}}">{{post.url}}</a>
+<p>Comments:</p>
+<ul ng-repeat="comment in post.comments">
+  <li>Comment: <a ng-app="app" href="" ui-sref-active="active" class="active" ui-sref='post.comment ({id: {{comment}} })'>{{comment}}</a>, {{$index}}</li>
+</ul>
 </div>
+
+<!-- <li>Post: <a ng-app="app" href="" ui-sref-active="active" class="active" ui-sref='post({id: {{post.id}} , comment_id: {{comment}} })'>{{post}}</a>, {{$index}}</li> -->
