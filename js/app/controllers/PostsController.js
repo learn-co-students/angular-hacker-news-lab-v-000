@@ -5,8 +5,8 @@ function PostsContoller(PostsService) {
 
   PostsService
     .getTopStories()
-    .then(function (data) {
-      console.log(data);
+    .then(function (res) {
+      console.log(res);
     });
 }
 
