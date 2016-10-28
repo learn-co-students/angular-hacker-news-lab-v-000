@@ -1,6 +1,6 @@
 var Item = {
-    templateUrl = 'views/item.html',
-    bindings = {
+    templateUrl: 'views/item.html',
+    bindings: {
         id: '='
     },
     controller: function(PostsService) {
