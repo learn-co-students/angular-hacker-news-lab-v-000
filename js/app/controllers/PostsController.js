@@ -1,16 +1,11 @@
-function PostsContoller(PostsService) {
-  var ctrl = this;
+function PostsContoller(post) {
+    var ctrl = this;
 
-  ctrl.posts = '';
+    ctrl.post = post.data;
 
-  PostsService
-    .getTopStories()
-    .then(function (res) {
-      console.log(res);
-    });
 }
 
 
 angular
-  .module('app')
-  .controller('PostsContoller', PostsContoller)
+    .module('app')
+    .controller('PostsContoller', PostsContoller)
