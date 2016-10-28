@@ -1,6 +1,6 @@
-<div ng-controller="NewsController as vm">
+<div ng-controller="news">
 <h4>Here they are:</h4>
   <ul>
-    <li ng-repeat="post in vm.posts" ng-show="">Post: {{ post }} {{$index}}</li>
+    <li ng-repeat="post in news.posts">Post: {{$index}}</li>
   </ul>
 </div>

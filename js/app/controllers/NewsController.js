@@ -1,7 +1,10 @@
 function NewsController(news) {
-  this.posts = news;
-
-  this.call = function() {
+  debugger
+  this.posts = [];
+  // this.posts = news;
+  // this.posts = ["blah", "b", "a"];
+  this.call  = function() {
+    debugger
     alert("Bang!");
   }
 }
