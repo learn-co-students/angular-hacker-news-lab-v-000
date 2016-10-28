@@ -6,7 +6,7 @@
 <a href="{{post.url}}">{{post.url}}</a>
 <p>Comments:</p>
 <ul ng-repeat="comment in post.comments">
-  <li>Comment: <a ng-app="app" href="" ui-sref-active="active" class="active" ui-sref='post.comment ({id: {{comment}} })'>{{comment}}</a>, {{$index}}</li>
+  <li>Comment: <a ng-app="app" href="" ui-sref-active="active" class="active" ui-sref='post ({id: {{comment}} })'>{{comment}}</a>, {{$index}}</li>
 </ul>
 </div>
 
