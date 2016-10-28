@@ -1,5 +1,9 @@
 var Item = {
-
+    templateUrl = 'views/item.html',
+    bindings = {
+        id: '='
+    },
+    
 
 }
 
