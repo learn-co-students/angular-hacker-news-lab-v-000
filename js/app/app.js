@@ -16,9 +16,9 @@ angular
       .state('post', {
         url: '/post/:id',
         templateUrl: '<div></div>',
-        controller: 'NewsController as news',
+        controller: 'PostController as post',
         resolve: {
-          news: function (NewsService, $stateParams) {
+          post: function (NewsService, $stateParams) {
             return NewsService.getPost($stateParams.id);
           }
         }          

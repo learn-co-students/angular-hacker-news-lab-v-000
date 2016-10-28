@@ -1,6 +1,9 @@
 function NewsController(news) {
-  debugger
   this.posts = news;
+
+  this.call = function() {
+    alert("Bang!");
+  }
 }
 
 angular
