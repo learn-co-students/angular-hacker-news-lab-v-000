@@ -1,6 +1,8 @@
 function NewsController(news) {
   debugger
-  this.posts = [];
+  vm = this;
+  vm.posts = news;
+  
   // this.posts = news;
   // this.posts = ["blah", "b", "a"];
   this.call  = function() {

@@ -1,6 +1,6 @@
-<div ng-controller="news">
+<div ng-controller="NewsController">
 <h4>Here they are:</h4>
   <ul>
-    <li ng-repeat="post in news.posts">Post: {{$index}}</li>
+    <li ng-repeat="post in NewsController.posts">Post: {{post}}, {{$index}}</li>
   </ul>
 </div>
