@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+  <h1>Mini Hacker News!</h1>
+  <div ng-app="app" ui-sref-active="active" class="active">
+    <a href="" ui-sref="top" ui-sref-active="active">Posts</a>
+    
+    <!-- post.html and posts.html get rendered in here -->
+    <ui-view></ui-view>
+  </div>
+
+<script src="js/angular.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="tests/angular-sanitize.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/controllers/NewsController.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
+<script src="js/app/controllers/CommentController.js"></script>
+<script src="js/app/directives/Comment.js"></script>
+<script src="js/app/directives/Post.js"></script>
+<script src="js/app/services/NewsService.js"></script>
 
 </body>
 </html>
+

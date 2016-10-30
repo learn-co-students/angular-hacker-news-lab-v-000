@@ -1,0 +1,11 @@
+<div class="post" ng-app="app" ui-sref-active="active">
+  <h4 class="post__title">Post: {{post.data.title}}</h4>
+    <p>score = {{ post.data.score }}</p>
+    <p>by: {{ post.data.by }}</p>
+    <a href="{{post.url}}">{{ post.data.url }}</a>
+    <p>Comments:</p>
+  <ul class="comments" ng-repeat="comment in post.data.kids">
+    <li><comment id="comment"/></li>
+<!-- using comment component on every comment in post.data.kids -->
+  </ul>
+</div>
