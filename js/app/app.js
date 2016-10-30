@@ -1,6 +1,6 @@
 var newsApp = angular.module('app', ['ui.router', 'ngSanitize']);
     // newsApp.component()
-    newsApp.config(function($stateProvider) {
+    newsApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('top', {
         url: '/top',
@@ -22,5 +22,7 @@ var newsApp = angular.module('app', ['ui.router', 'ngSanitize']);
             return NewsService.getPostDetails($stateParams.id);
           }
         }          
-      })
+      });
+      
+      $urlRouterProvider.otherwise('/top');
     })

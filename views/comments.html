@@ -1,6 +1,8 @@
-<div ng-bind-html="comment">
-<comment comment="post.comment" />
-
-
-{{comment}}
+<div class="item" ng-if="item.data">
+  <p>{{item.data.by}} said:</p>
+  <p ng-bind-html="item.data.text"></p>
+  <ul class="comments" ng-repeat="reply in item.data.kids">
+    <li><comment id="reply"/></li>
+    <!-- using same comment component to display comment responses -->
+  </ul>
 </div>

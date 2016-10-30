@@ -1,11 +1,9 @@
-var Comment = {
+var Post = {
   bindings: {
     id:  '=',
   },
-  templateUrl: 'views/comments.html',
+  templateUrl: 'views/item.html',
   controller: function(NewsService) {
-    // do something
-    // debugger
     NewsService.getPostDetails(this.id)
       .then(res => this.data = res);
   },
@@ -14,5 +12,5 @@ var Comment = {
 
 angular
   .module('app')
-  .component('comment', Comment);
+  .component('post', Post);
   // string version is lowercase, that way the tag is reflected like <comment>
