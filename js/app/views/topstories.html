@@ -1,7 +1,22 @@
-<h1>Top Stories</h1>
+  <div>
+    <ul class="posts">
+      <li ng-repeat="post in top.posts">
+        <item id="post"></item>
+      </li>
+    </ul>
 
-<div>
-  <ul>
-    <li ng-repeat=""></li>
-  </ul>
-</div>
+    <div>
+      <ul class="pagination">
+        <li ng-if="top.page > 0">
+          <a href="" ng-click="top.previousPage()">
+            << Previous
+          </a>
+        </li>
+        <li>
+         <a href="" ng-click="top.nextPage()">
+            Next >>
+          </a>
+        </li>
+      </ul>
+    </div>   
+  </div>
