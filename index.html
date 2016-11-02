@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body ng-app="app" class="app">
-Test
+<a ui-sref="top" ui-sref-active="active">Top Stories</a>
+
+<div ui-view></div>
 
   <script src="js/angular.js"></script>
   <script src="js/angular-ui-router.js"></script> 
   <script src="js/app/app.js"></script>
   <script src="js/app/services/TopStoriesService.js"></script>
+  <script src="js/app/controllers/TopStoriesController.js"></script>
+  <script src="js/app/controllers/PostController.js"></script>
 </body>
 </html>
