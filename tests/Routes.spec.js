@@ -11,9 +11,10 @@ describe('Routes', function () {
 		var state;
 
 		it('should have the correct URL', function () {
-			state = $state.get('top');
+			state = $state.get('post');
 
-			expect(state.url).toEqual('/top');
+			expect(state.url).toEqual('/post/:id');
+
 		});
 	});
 
@@ -21,9 +22,10 @@ describe('Routes', function () {
 		var state;
 
 		it('should have the correct URL', function () {
-			state = $state.get('post');
+			state = $state.get('top');
+			
 
-			expect(state.url).toEqual('/post/:id');
+			expect(state.url).toEqual('/top');
 		});
 	});
 });
