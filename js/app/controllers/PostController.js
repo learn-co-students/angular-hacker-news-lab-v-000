@@ -1,7 +1,7 @@
 function PostsContoller(PostsService) {
   var ctrl = this;
 
-  ctrl.posts = '';
+  ctrl.post = post.data;
 
 
 
