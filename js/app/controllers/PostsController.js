@@ -1,11 +1,7 @@
-function PostsContoller(PostsService) {
-  var ctrl = this;
-
-  ctrl.post = post.data;
-
-
-
+function PostsController(post) {
+ this.data = post.data;
+}
 
 angular
   .module('app')
-.controller('PostsContoller', PostsContoller)
+  .controller('PostsController', PostsController);

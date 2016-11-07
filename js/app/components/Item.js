@@ -3,7 +3,7 @@ var Item = {
   bindings: {
         id: '='
   },
-  controller: function(PostsService) {
+  controller: function (PostsService) {
       var ctrl = this;
 
       PostsService
