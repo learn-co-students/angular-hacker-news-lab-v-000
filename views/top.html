@@ -1,5 +1,13 @@
+<div ng-controller="TopController as top">
 <div class="top">
   <h4>Top Stories</h4>
-    <p>{{top.top}}</p>
-    <div ui-view></div>
+  <div ng-repeat="post in top.top">
+    <p>{{post.url}}</p>
+    <p>{{post.comments.count}}</p>
+    <p>{{post.score}}</p>
+  </div>
 </div>
+</div>
+
+
+<script src="js/app/controllers/TopController.js"></script>

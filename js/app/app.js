@@ -1,20 +1,21 @@
 angular
     .module('app', ['ui.router'])
+    .controller('TopController', ['TopService', function (TopService) {}])
     .config(function ($stateProvider) {
         $stateProvider
             .state('top', {
                 url: '/top',
                 templateUrl: '/views/top.html',
-                controller: 'StoryController as top',
+                controller: 'TopController as stories',
                 resolve: {
-                  top: function ($routeParams, TopService) {
+                  stories: function ($routeParams, TopService) {
                     return TopService.getStories();
                     }
                 }
             })
-            .state('top.post', {
+            .state('post', {
                 url: '/post/:id',
-                templateUrl: '/views/top/post.html',
+                templateUrl: '/views/post.html',
                 controller: 'PostController as ctrl',
                 resolve: {
                     posts: function ($routeParams, TopService) {
