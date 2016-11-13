@@ -1,6 +1,6 @@
-function PostController(posts) {
+function PostController(post) {
   var ctrl = this;
-  ctrl.posts = posts;
+  ctrl.data = post.data;
 }
 
 angular

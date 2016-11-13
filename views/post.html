@@ -1,10 +1,14 @@
-<div ng-controller="PostController as ctrl">
-  <div ng-repeat="post in ctrl.posts">
-    <p>{{post}}</p>
-    <a ui-sref="post/{{post.id}}">More Detail</a>
-  </div>
+<div class="post" ng-if="post.data">
+  <a class="post__title" href="{{ post.data.url }}" target="_blank">
+    {{ post.data.title }}
+  </a>
+  <a class="post__description">
+    {{ post.data.descendants }} comments {{ post.data.score }} points
+  </a>
+
+  <ul class="comments" ng-if="post.data.kids">
+    <li ng-repeat="comment in post.data.kids">
+      <item id="comment"></item>
+    </li>
+  </ul>
 </div>
-
-
-
-<script src="js/app/controllers/PostController.js"></script>
