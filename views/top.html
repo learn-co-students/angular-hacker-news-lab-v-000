@@ -1,0 +1,31 @@
+<div>
+<h4>Top Stories</h4>
+<ul class="top">
+  <li ng-repeat="post in top.detail">
+    <a class="post__title" href="{{ post.value.data.url }}" target="_blank">
+    {{ post.value.data.title }}
+  </a>
+  <a class="post__description">
+    {{ post.value.data.descendants }} comments {{ post.value.data.score }} points
+  </a>
+    <item id="post"></item>
+  </li>
+</ul>
+
+<div>
+    <ul class="pagination">
+      <li ng-if="top.page > 0">
+        <a href="" ng-click="top.previousPage()">
+          << Previous
+        </a>
+      </li>
+      <li ng-if="top.page < top.totalPages - 1">
+        <a href="" ng-click="top.nextPage()">
+          Next >>
+        </a>
+      </li>
+    </ul>
+
+    <div style="clear: both;"></div>
+  </div>
+</div>

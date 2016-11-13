@@ -7,7 +7,7 @@ describe('Routes', function () {
 		$state = $injector.get('$state');
 	}));
 
-	describe('Post', function () {
+	describe('Top Stories', function () {
 		var state;
 
 		it('should have the correct URL', function () {
@@ -17,7 +17,7 @@ describe('Routes', function () {
 		});
 	});
 
-	describe('Top Stories', function () {
+	describe('Post', function () {
 		var state;
 
 		it('should have the correct URL', function () {
