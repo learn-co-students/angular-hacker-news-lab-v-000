@@ -1,0 +1,6 @@
+<div ng-controller="PostController as ctrl">
+  <div ng-repeat="post in ctrl.posts">
+    <p>{{post}}</p>
+    <a ui-sref="post/{{post.id}}">More Detail</a>
+  </div>
+</div>
