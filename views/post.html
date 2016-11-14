@@ -1,5 +1,18 @@
-<div>
-  post id: <span ng-bind="postctrl.post.id"></span><br>
-  post title: <span ng-bind="postctrl.post.title"></span><br>
-  post url: <span ng-bind="postctrl.post.url"></span>
+Hacker News new | comments | show | ask | jobs | submit
+<br>
+<br>
+<story id="postctrl.post.id"></story>
+<textarea rows="4" cols="50"></textarea>
+<br>
+<input type="submit" value="add comment">
+<br>
+<br>
+<br>
+<div ng-repeat="comment_id in postctrl.post.kids">
+  <comment id="comment_id"></comment>
 </div>
+<a href="#/top">back to top stories</a><br>
+
+Guidelines | FAQ | Support | API | Security | Lists | Bookmarklet | DMCA | Apply to YC | Contact
+<br>
+search <input type="text" />

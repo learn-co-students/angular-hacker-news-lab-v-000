@@ -1,1 +1,6 @@
-hi
+<span class="comment" ng-transclude></span>
+<span ng-bind="topComp.story.title"></span> <a href="{{topComp.story.url}}">link to article</a> <a href="#/post/{{topComp.id}}">link to show page</a>
+<br>
+<sub class="comment" ng-bind="(topComp.story.score) + ' points, posted by ' + (topComp.story.by) + ' on ' + (topComp.story.time * 1000 | date:'yy-MMM-dd HH:mm') + ' | ' + (topComp.story.descendants) + ' comments'"></sub>
+<br>
+<br>

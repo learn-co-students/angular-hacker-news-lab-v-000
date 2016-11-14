@@ -1,0 +1,6 @@
+<sub ng-bind="comCtrl.comment.by + ' ' + (comCtrl.comment.time * 1000 | date:'yy-MMM-dd HH:mm')"></sub>
+<p ng-bind-html="comCtrl.comment.text"></p>
+
+<div ng-if="comCtrl.comment.kids" ng-repeat="kid_id in comCtrl.comment.kids" ng-class="{'comment':comCtrl.comment.parent}">
+  <comment id="kid_id"></comment>
+</div>

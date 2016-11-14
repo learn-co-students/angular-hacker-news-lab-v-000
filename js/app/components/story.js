@@ -1,12 +1,13 @@
-var topStoriesComponent = {
+var story = {
   templateUrl: 'views/storyTemplate.html',
   bindings: {
-    id: '='
+    id: '=',
   },
+  transclude: true,
   controller: function(PostService){
     var ctrl = this;
     PostService.getPost(ctrl.id).then(function(data){
-      ctrl.story = data;
+      ctrl.story = data.data;
     });
   },
   controllerAs: 'topComp'
@@ -14,4 +15,4 @@ var topStoriesComponent = {
 
 angular
   .module('app')
-  .component('topStoriesComponent', topStoriesComponent);
+  .component('story', story);

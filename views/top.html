@@ -1,10 +1,13 @@
 Hacker News new | comments | show | ask | jobs | submit
-<ul>
-  <li ng-repeat="storyId in topstoriesctrl.stories_id_array">
-    <topStoriesComponent id="{{storyId}}"></topStoriesComponent>
-  </li>
-</ul>
-
+<br>
+<br>
+<story ng-repeat="storyId in topstoriesctrl.stories_id_array" id="storyId">{{($index + 1) + topstoriesctrl.currentPage * 30 - 30}}
+</story>
+<button ng-click="topstoriesctrl.prevPage()"><- previous</button>
+<span ng-bind="topstoriesctrl.currentPage"></span>
+<button ng-click="topstoriesctrl.nextPage()">next-></button>
+<br>
+<br>
 Guidelines | FAQ | Support | API | Security | Lists | Bookmarklet | DMCA | Apply to YC | Contact
 <br>
 search <input type="text" />
