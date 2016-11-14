@@ -130,3 +130,7 @@ html, body {
 .comments li + li {
 	margin-top: 20px;
 }
+
+.comment {
+	margin-left: 50px;
+}
