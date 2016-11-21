@@ -1,0 +1,14 @@
+<a class="post__title" href="{{ post.data.url }}" target="_blank">
+  {{ post.data.title }}
+</a>
+<br />
+
+{{ post.data.score }} points by {{ post.data.by }} | 
+<a href="" ui-sref="post({ id: post.data.id })">
+  {{ post.data.descendants }} comments
+</a>
+<ul>
+  <li ng-repeat="comment in post.data.kids">
+    <item id="comment"></item>
+  </li>
+</ul> 
