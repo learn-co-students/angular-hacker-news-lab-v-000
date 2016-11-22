@@ -11,7 +11,9 @@ html, body {
 }
 
 .header {
-	height: 47px;
+	padding: 5px;
+	color: white;
+	background-color: orange;
 }
 
 .header__fixed {
@@ -50,13 +52,13 @@ html, body {
 
 .item__title {
 	font-size: 20px;
-	margin-bottom: 5px;
 	text-decoration: none;
-	color: #3D77CB;
+	color: black;
 }
 
 .item__description {
 	color: rgba(0, 0, 0, 0.4);
+	margin-bottom: 5px;
 }
 
 .pagination {

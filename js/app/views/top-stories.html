@@ -1,0 +1,21 @@
+<h1 class="header">Hacker News</h1>
+
+<div>
+	<table>
+		<tr ng-repeat="post in top.posts">
+			<td>
+				<item id="post"></item>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div>
+	Page {{ top.page }} of {{ top.total_pages }}
+	<div ng-if="top.page > 0">
+		<a href="" ng-click="top.previous()">Previous</a>
+	</div>
+	<div ng-if="top.page < top.total_pages">
+		<a href="" ng-click="top.next()">Next</a>
+	</div>
+</div>
