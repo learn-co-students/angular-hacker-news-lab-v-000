@@ -1,2 +1,2 @@
 angular
-  .module('myApp', []);
+  .module('app', []);
