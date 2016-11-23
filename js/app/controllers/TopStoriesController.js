@@ -1,11 +1,7 @@
-function TopStoriesController (TopStoriesService) {
+function TopStoriesController (topstories) {
   var ctrl = this;
+	ctrl.topstories = topstories;
 
-  TopStoriesService
-    .getStories()
-    .then(function(res) {
-      debugger;
-    })
 }
 angular
   .module('app')
