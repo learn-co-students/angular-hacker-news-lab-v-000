@@ -2,13 +2,46 @@
 <html>
 <head>
 	<meta charset="utf-8">
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Angular Application</title>
 
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+	<div ng-app="app" class="app">
+		<header class="header">
+			<div class="header__fixed">
+				+<ul class="posts">
+ 	<li ng-repeat="post in top.posts">
+ 		<item id="post"></item>
+ 	</li>
+ </ul>
+ 
+ <div>
+ 	<ul class="pagination">
+ 		<li ng-if="top.page > 0">
+ 			<a href="" ng-click="top.previousPage()">
+ 				<< Previous
+ 			</a>
+ 		</li>
+ 		<li ng-if="top.page < top.totalPages - 1">
+ 			<a href="" ng-click="top.nextPage()">
+ 				Next >>
+ 			</a>
+ 		</li>
+ 	</ul>
+ 
+ 	<div style="clear: both;"></div>
+ </div>
+
+<script src="js/angular.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="js/angular-sanitize.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/components/Item.js"></script>
+<script src="js/app/controllers/TopStoriesController.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
+<script src="js/app/services/PostsService.js"></script>
 
 </body>
 </html>
