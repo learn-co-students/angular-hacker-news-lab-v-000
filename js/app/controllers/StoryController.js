@@ -1,4 +1,4 @@
-function StoryController($scope) {
+function StoryController($scope, StoriesService) {
   var ctrl = this;
   ctrl.stories = '';
 

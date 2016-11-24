@@ -6,6 +6,7 @@ angular
       .state('top', {
         url: '/top',
         templateUrl: '/views/top-stories.html',
+        controller: 'StoryController'
       })
       .state('post', {
         url: '/post/:id',
