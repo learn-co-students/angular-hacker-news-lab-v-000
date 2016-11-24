@@ -1,14 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Angular Application</title>
 
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+	<div ng-app="app" class="app">
+			<title>Top Stories!</title>
+				<ul ng-repeat="story in ctrl.stories">
+					<li>{{story}}</li>
+				</ul>
+	</div>
+
+<script src="/js/angular.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/controllers/StoryController.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
 
 </body>
 </html>
