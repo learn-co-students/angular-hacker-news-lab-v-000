@@ -9,14 +9,19 @@
 </head>
 <body>
 	<div ng-app="app" class="app">
-			<title>Top Stories!</title>
-				<ul ng-repeat="story in ctrl.stories">
-					<li>{{story}}</li>
-				</ul>
+		<a href="" ui-sref="top">Top Stories!</a>
+		<ul>
+			<li ng-repeat="story in ctrl.stories">{{story}}</li>
+		</ul>
+		<div ui-view>
+
+		</div>
+
 	</div>
 
 <script src="/js/angular.js"></script>
 <script src="js/app/app.js"></script>
+<script src="/js/angular-ui-router.js"></script>
 <script src="js/app/controllers/StoryController.js"></script>
 <script src="js/app/controllers/PostController.js"></script>
 
