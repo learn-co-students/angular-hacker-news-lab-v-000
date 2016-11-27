@@ -1,5 +1,5 @@
 function PostController (post) {
- this.post = post
+ this.post = post;
 }
 angular
   .module('app')

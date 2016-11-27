@@ -24,16 +24,14 @@ angular
   .state('post', {
     url: '/post/:id',
     templateUrl: 'views/post.html',
-    controller: 'PostController as post',
+    controller: 'PostController as pctrl',
     resolve: {
       post: function(TopStoriesService, $stateParams) {
         return TopStoriesService.getDetail($stateParams.id).then(function(detail){
-// debugger;
           return detail.data;
-
-      });
+        });
+      }
     }
-  }
   });
-    $urlRouterProvider.otherwise('/top');
+  $urlRouterProvider.otherwise('/top');
 });
