@@ -4,23 +4,28 @@
 	<meta charset="utf-8">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Angular Application</title>
+	<title>HackerNews</title>
 
-    <link rel="stylesheet" href="app.css" />
+	<link rel="stylesheet" href="app.css" />
 </head>
 <body>
 	<div ng-app="app" class="app">
-		test
-    <ui-view></ui-view>
-</div>
+		<div class="header">
+			<div class="header__fixed">
+				<a ui-sref="top">HackerNews</a>
+			</div>
+		</div>
+		<ui-view></ui-view>
+	</div>
 
-<script src="js/angular/angular.js"></script>
-<script src="js/angular-ui-router.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
-<script src="js/app/app.js"></script>
-<script src="js/app/controllers/PostController.js"></script>
-<script src="js/app/controllers/TopStoriesController.js"></script>
-<script src="js/app/services/TopStoriesService.js"></script>
-<script src="js/app/filters/filter.js"></script>
+	<script src="js/angular/angular.js"></script>
+	<script src="js/angular/angular-ui-router.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controllers/PostController.js"></script>
+	<script src="js/app/controllers/TopStoriesController.js"></script>
+	<script src="js/app/services/TopStoriesService.js"></script>
+	<script src="js/app/components/comment.js"></script>
+	<script src="js/app/filters/filter.js"></script>
 </body>
 </html>

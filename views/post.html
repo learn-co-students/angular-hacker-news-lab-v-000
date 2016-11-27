@@ -1,3 +1,10 @@
-<div>
-  {{ post }}
+<div class="post">
+  <a href="{{ pctrl.post.url }}" class="post__title">{{ pctrl.post.title }}</a>
+  <span class="post__description">by {{ pctrl.post.by }} | Posted: {{ pctrl.post.time*1000 | date: 'MM/dd/yyyy hh:mm:ss' }} | Score: {{ pctrl.post.score }}</span>
+
+  <ul class="comments">
+    <li ng-repeat="comment in pctrl.post.kids">
+      <comment id="comment"></comment>
+    </li>
+  </ul>
 </div>
