@@ -11,13 +11,16 @@
 <body>
 	<div ng-app="app" class="app">
 		test
-    <div ui-view></div>
+    <ui-view></ui-view>
 </div>
 
-<script src="js/angular.js"></script>
+<script src="js/angular/angular.js"></script>
 <script src="js/angular-ui-router.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
 <script src="js/app/app.js"></script>
+<script src="js/app/controllers/PostController.js"></script>
 <script src="js/app/controllers/TopStoriesController.js"></script>
 <script src="js/app/services/TopStoriesService.js"></script>
+<script src="js/app/filters/filter.js"></script>
 </body>
 </html>
