@@ -1,0 +1,20 @@
+<div>
+  <ul class="posts">
+    <li ng-repeat="story in ctrl.topstories | startFrom: ctrl.startingStoryNumber | limitTo: ctrl.pageSize">
+      <div class="post__title">{{ story.title }} - <a ui-sref="post({id: story.id})">View Story</a></div>
+    </li>
+  </ul>
+  <div>
+    <ul class="pagination">
+      <li>
+        <button ng-disabled="ctrl.startingStoryNumber == 0" ng-click="ctrl.startingStoryNumber = ctrl.startingStoryNumber-ctrl.pageSize">
+          Previous
+        </button></li>
+        <li>
+          <button ng-click="ctrl.startingStoryNumber = ctrl.startingStoryNumber+ctrl.pageSize">
+            Next
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>

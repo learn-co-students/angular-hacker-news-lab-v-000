@@ -1,0 +1,10 @@
+<div class="comments">
+  <div ng-bind-html="comment.data.text"></div><br />
+  by: {{ comment.data.by }} at {{ comment.data.time*1000 | date: 'MM/dd/yyyy hh:mm:ss' }}
+
+  <ul class="comments">
+    <li ng-repeat="comment in comment.data.kids" class="comments">
+      <comment id="comment"></comment>
+    </li>
+  </ul>
+</div>
