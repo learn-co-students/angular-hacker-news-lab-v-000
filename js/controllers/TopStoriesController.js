@@ -1,21 +1,21 @@
-function TopStoriesController(PostService) {
+function TopStoriesController(PostService, PostsService) {
   var ctrl = this;
 
-  ctrl.posts = function() {
-    PostService
-      .getAllPosts()
-      .then(function(res) {
-        console.log(res);
-      });
-  };
+  ctrl.posts = [];
 
-  ctrl.post = function(id) {
-    PostService
-    .getSinglePost(id)
+  PostsService
+    .getAllPosts()
     .then(function(res) {
-      console.log(res);
+      ctrl.posts = res.data;
+      console.log(res.data);
     });
-  };
+
+  // PostService
+  //   .getSinglePost(id)
+  //   .then(function(res) {
+  //     ctrl.post = res.data;
+  //     console.log(res.data);
+  //   })
 
 }
 
