@@ -3,24 +3,31 @@ function TopStoriesController(PostService, PostsService) {
 
   ctrl.posts = [];
 
-  ctrl.completePosts = [];
+  // ctrl.completePosts = [];
 
-  ctrl.getPostData = function() {
-    ctrl.posts.forEach(function(post) {
-      PostService
-        .getSinglePost(post)
-        .then(function(res) {
-          ctrl.completePosts.push(res.data);
-        })
-    });
-  }
+  // ctrl.getPostData = function() {
+  //   ctrl.posts.forEach(function(post) {
+  //     PostService
+  //       .getSinglePost(post)
+  //       .then(function(res) {
+  //         ctrl.completePosts.push(res.data);
+  //       })
+  //   });
+  // }
 
-  ctrl.getPostData();
+  // ctrl.getPostData();
 
   PostsService
     .getAllPosts()
     .then(function(res) {
-      ctrl.posts = res.data;
+      res.data.forEach(function(post) {
+        PostService
+          .getSinglePost(post)
+          .then(function(res) {
+            ctrl.posts.push(res.data);
+          })
+      });
+
     });
 }
 
