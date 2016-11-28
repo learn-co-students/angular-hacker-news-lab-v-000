@@ -22,7 +22,7 @@ describe('Routes', function () {
 
 		it('should have the correct URL', function () {
 			state = $state.get('post');
-
+			
 			expect(state.url).toEqual('/post/:id');
 		});
 	});

@@ -1,0 +1,12 @@
+
+<a ng-href={{list.post.url}} class="post__title">{{ list.post.title}}</a>
+<tr>
+  <td colspan="2"></td>
+  <td class="subtext">
+    <span class="score" id="score_{{list.post.id}}">{{ list.post.score }}</span>
+    by <a href="#" class="hnuser">{{list.post.by}}</a>
+    <span class="age"><a href="item?id={{list.post.id}}">{{list.post.time | date }}</a></span>
+    <span id="unv_{{list.post.id}}}"></span> |
+    <a href="item?id=13048248">5&nbsp;comments</a>
+  </td>
+</tr>
