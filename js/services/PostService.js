@@ -1,8 +1,4 @@
-function PostService($http, $resource) {
-  var Post = $resource('/posts/:postId');
-
-  this.getPost
-
+function PostService($http) {
   this.getAllPosts = function() {
     return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
   };
