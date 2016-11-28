@@ -3,20 +3,25 @@ function TopStoriesController(PostService, PostsService) {
 
   ctrl.posts = [];
 
+  ctrl.completePosts = [];
+
+  ctrl.getPostData = function() {
+    ctrl.posts.forEach(function(post) {
+      PostService
+        .getSinglePost(post)
+        .then(function(res) {
+          ctrl.completePosts.push(res.data);
+        })
+    });
+  }
+
+  ctrl.getPostData();
+
   PostsService
     .getAllPosts()
     .then(function(res) {
       ctrl.posts = res.data;
-      console.log(res.data);
     });
-
-  // PostService
-  //   .getSinglePost(id)
-  //   .then(function(res) {
-  //     ctrl.post = res.data;
-  //     console.log(res.data);
-  //   })
-
 }
 
 angular

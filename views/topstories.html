@@ -1,12 +1,3 @@
-<!-- {{ topStories.posts }}
-
-Hello
-
-<ul>
-  <li ng-repeat="post in topStories.posts"></li>
-    {{ topStories.post(post) }}
-</ul> -->
-
 <ul>
   <li>Story, its # of comments, its score <a href="" ui-sref="post">View Story</a></li>
   <li>Story, its # of comments, its score  <a href="" ui-sref="post">View Story</a></li>
@@ -14,7 +5,7 @@ Hello
 </ul>
 
 <ul>
-  <li ng-repeat="post in topStories.posts">
-    <h1>{{ post }}</h1>
+  <li ng-repeat="post in topStories.completePosts">
+    {{ post }}
   </li>
 </ul>
