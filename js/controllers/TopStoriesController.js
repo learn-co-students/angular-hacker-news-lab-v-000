@@ -1,7 +1,8 @@
 function TopStoriesController(posts) {
   var ctrl = this;
 
-  ctrl.posts = posts.data
+  ctrl.posts = posts.data;
+  console.log(posts.data);
 }
 
 angular
