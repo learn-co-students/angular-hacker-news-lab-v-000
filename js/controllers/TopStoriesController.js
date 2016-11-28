@@ -1,14 +1,8 @@
-function TopStoriesController() {
+function TopStoriesController(posts) {
   var ctrl = this;
 
-  PostService
-    .getAllPosts()
-    .then(function(res) {
-      ctrl.posts = res.data;
-    });
+  ctrl.posts = posts.data
 }
-
-TopStoriesController.$inject = ['$scope', PostService]
 
 angular
   .module('app')

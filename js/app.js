@@ -1,6 +1,6 @@
 angular
   .module('app', ['ui.router', 'ngSanitize'])
-  .config(function($stateProvider, $urlRouteProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('topStories', {
         url: '/topstories',
@@ -23,5 +23,5 @@ angular
         }
       });
 
-    $urlRouteProvider.otherwise('/topstories');
+    $urlRouterProvider.otherwise('/topstories');
   });
