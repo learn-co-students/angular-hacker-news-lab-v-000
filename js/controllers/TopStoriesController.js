@@ -6,7 +6,6 @@ function TopStoriesController(PostService, PostsService) {
   PostsService
     .getAllPosts()
     .then(function(res) {
-      console.log(res.data);
       res.data.forEach(function(post) {
         PostService
           .getSinglePost(post)
