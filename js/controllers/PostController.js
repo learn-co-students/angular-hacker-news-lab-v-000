@@ -3,6 +3,8 @@ function PostController(post) {
 
   ctrl.post = post.data;
 
+  console.log(post.data);
+
   ctrl.by = post.data.by;
   ctrl.title = post.data.title;
   ctrl.url = post.data.url;

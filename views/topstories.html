@@ -1,11 +1,9 @@
-<ul>
-  <li>Story, its # of comments, its score <a href="" ui-sref="post">View Story</a></li>
-  <li>Story, its # of comments, its score  <a href="" ui-sref="post">View Story</a></li>
-  <li>etc <a href="" ui-sref="post">View Story</a></li>
-</ul>
+<h2>Top Stories</h2>
 
 <ul>
   <li ng-repeat="post in topStories.posts">
-    {{ post }}
+    <h4><a ui-sref="post({ id: post.id })">{{ post.title }}</a></h4>
+    <p>Score: {{ post.score }}</p>
+    <p>Comments: {{ post.kids.length }}</p>
   </li>
 </ul>

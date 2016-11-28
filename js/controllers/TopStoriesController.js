@@ -3,23 +3,10 @@ function TopStoriesController(PostService, PostsService) {
 
   ctrl.posts = [];
 
-  // ctrl.completePosts = [];
-
-  // ctrl.getPostData = function() {
-  //   ctrl.posts.forEach(function(post) {
-  //     PostService
-  //       .getSinglePost(post)
-  //       .then(function(res) {
-  //         ctrl.completePosts.push(res.data);
-  //       })
-  //   });
-  // }
-
-  // ctrl.getPostData();
-
   PostsService
     .getAllPosts()
     .then(function(res) {
+      console.log(res.data);
       res.data.forEach(function(post) {
         PostService
           .getSinglePost(post)
