@@ -2,7 +2,6 @@ function PostController(post) {
   var ctrl = this;
 
   ctrl.post = post.data;
-  console.log(post.data);
 
   ctrl.by = post.data.by;
   ctrl.title = post.data.title;
