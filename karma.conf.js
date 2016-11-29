@@ -7,7 +7,7 @@ module.exports = function (config) {
             'tests/angular-ui-router.js',
             'tests/angular-mocks.js',
             'tests/angular-sanitize.js',
-            'js/app/**/*.js',
+            'js/**/*.js',
             'tests/*.spec.js'
         ],
         exclude: [],
