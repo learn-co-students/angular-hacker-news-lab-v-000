@@ -2,6 +2,11 @@
   <h1>{{ post.title }}</h1>
   <h4>By {{ post.by }}</h4>
   <p>Score: {{ post.score }}</p>
-  <p>Comments: {{ post.kids.length }}</p>
   <a href="{{ post.url }}">{{ post.url }}</a>
+  <p>Comments: {{ post.descendants }}</p>
+  <ul>
+    <li ng-repeat="comment in post.kids">
+      <comment id="comment" />
+    </li>
+  </ul>
 </div>
