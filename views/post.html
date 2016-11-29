@@ -1,12 +1,14 @@
-<div>
-  <h1>{{ post.title }}</h1>
-  <h4>By {{ post.by }}</h4>
-  <p>Score: {{ post.score }}</p>
-  <a href="{{ post.url }}">{{ post.url }}</a>
-  <p>Comments: {{ post.descendants }}</p>
-  <ul>
-    <li ng-repeat="comment in post.kids">
-      <comment id="comment" />
-    </li>
-  </ul>
+<div class="post">
+  <h1 class="item__title">{{ post.title }}</h1>
+    <div class="item__description">
+      <h4>By {{ post.by }}</h4>
+      <p>Score: {{ post.score }}</p>
+      <a href="{{ post.url }}">{{ post.url }}</a>
+      <p>Comments: {{ post.descendants }}</p>
+      <ul class="comments">
+        <li ng-repeat="comment in post.kids">
+          <comment id="comment" />
+        </li>
+      </ul>
+    </div>
 </div>

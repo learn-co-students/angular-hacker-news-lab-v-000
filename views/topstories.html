@@ -1,20 +1,22 @@
-<h2>Top Stories</h2>
+<h2 class="header__fixed">Top Stories</h2>
 
-<ul>
+<ul class="posts">
   <li ng-repeat="post in topStories.posts">
-    <h4><a ui-sref="post({ id: post.id })">{{ post.title }}</a></h4>
-    <p>Score: {{ post.score }}</p>
-    <p>Comments: {{ post.descendants }}</p>
-    <a href="{{ post.url }}">{{ post.url }}</a>
+    <h4><a class="post__title" ui-sref="post({ id: post.id })">{{ post.title }}</a></h4>
+    <div class="post__description">
+      <p>Score: {{ post.score }}</p>
+      <p>Comments: {{ post.descendants }}</p>
+      <a class="post__description" href="{{ post.url }}">{{ post.url }}</a>
+    </div>
   </li>
 </ul>
 
 <h4>Page {{ topStories.pageCount }}</h4>
 
-<div ng-if="topStories.pageCount > 1">
+<div class="pagination"  ng-if="topStories.pageCount > 1">
   <a href="" ng-click="topStories.previousPage()">Previous</a>
 </div>
 
-<div ng-if="topStories.pageCount < 17">
+<div class="pagination" ng-if="topStories.pageCount < 17">
   <a href="" ng-click="topStories.nextPage()">Next</a>
 </div>
