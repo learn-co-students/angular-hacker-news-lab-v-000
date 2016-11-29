@@ -17,11 +17,7 @@ html, body {
 .header__fixed {
 	background: #3661A2;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	position: fixed;
-	height: inherit;
-	top: 0;
-	left: 0;
-	right: 0;
+	text-align: center;
 }
 
 .header ul {
@@ -102,11 +98,13 @@ html, body {
 	text-decoration: none;
 	display: block;
 	color: #3D77CB;
+	margin-bottom: 5px;
 }
 
 .post__description {
 	display: block;
 	margin-bottom: 30px;
+	color: rgba(0, 0, 0, 0.4);
 }
 
 
