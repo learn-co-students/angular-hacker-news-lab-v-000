@@ -1,8 +1,8 @@
 angular
-  .module('app', ['ui.router'])
+  .module('app', ['ui.router', 'ngSanitize'])
   .config(function($stateProvider){
     $stateProvider
-      .state('topStories', {
+      .state('top', {
         url: '/top',
         component: 'topStories',
         resolve: {
@@ -10,5 +10,13 @@ angular
             return storiesService.getTopStories()
           }
         }
-    })
+    }).state('post', {
+      url: '/post/:id',
+      component: 'post',
+      resolve: {
+        story: function($stateParams, storiesService) {
+          return storiesService.getStory($stateParams.id)
+        }
+      }
+  })
   })

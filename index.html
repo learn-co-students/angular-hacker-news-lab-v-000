@@ -4,19 +4,24 @@
 	<meta charset="utf-8">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Angular Application</title>
+	<title>Angular HackerNews Clone</title>
 
     <link rel="stylesheet" href="app.css" />
 		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="js//angular-sanitize.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.3/angular-ui-router.js"></script>
 		<script src="js/app/app.js"></script>
 		<script src="js/app/services/storiesService.js"></script>
 		<script src="js/app/components/topStories.js"></script>
+		<script src="js/app/components/post.js"></script>
+		<script src="js/app/components/comment.js"></script>
+
+
 </head>
 <body>
-	<div ng-app="app" class="app">
+	<div class="header header__fixed"> HackerNews Clone </div>
+	<div class="push__down" ng-app="app" class="app">
 		<ui-view></ui-view>
-		index
 	</div>
 </body>
 </html>
