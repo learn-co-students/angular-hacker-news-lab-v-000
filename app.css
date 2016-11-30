@@ -2,7 +2,9 @@ html, body {
 	background: #fff;
 	font-family: "Helvetica Neue", Verdana, sans-serif;
 }
-
+.push__down {
+	margin-top: 40px;
+}
 .item {
 
 }
@@ -49,8 +51,8 @@ html, body {
 }
 
 .item__title {
-	font-size: 20px;
-	margin-bottom: 5px;
+	font-size: 18px;
+	margin-bottom: 1px;
 	text-decoration: none;
 	color: #3D77CB;
 }
@@ -118,6 +120,10 @@ html, body {
 
 .comments .comments {
 	margin-top: 20px;
+}
+
+.comments__child {
+	margin-left: 20px;
 }
 
 .comments li {
