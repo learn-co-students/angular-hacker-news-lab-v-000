@@ -1,0 +1,41 @@
+<!-- <!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Angular Application</title>
+    <link rel="stylesheet" href="app.css" />
+</head>
+<body> -->
+
+	    <div>
+	        <div ng-app="app" ng-controller="MainController as main">
+						<ul ng-repeat="story in main.stories | limitTo: limit:start " >
+							<li> Title: {{story.title}} </li>
+							<li> By: {{story.by}} </li>
+							<li> Link: {{story.url }} </li>
+							<li> Score: {{story.score}} </li>
+							<li> Comments: {{story.descendants}} </li>
+							<a href="/#/post/{{story.id}}">see more</a>
+						</ul>
+						<br>
+						<button ng-disabled="start == 0" ng-click="decrement()">previous</button>
+						<button ng-disabled="start >= main.stories.length - 30" ng-click="increment()">next</button>
+
+					</div>
+
+			</div>
+
+
+
+
+	    <!-- <script src="js/angular.js"></script>
+	    <script src="js/angular-route.js"></script>
+	    <script src="js/app/app.js"></script>
+	    <script src="js/app/controllers/MainController.js"></script>
+			<script src="js/app/services/StoryService.js"></script>
+			<script src="js/app/services/IndividualStoryService.js"></script>
+			<script src="js/app/filters/ResultFilter.js"></script>
+
+</body>
+</html> -->

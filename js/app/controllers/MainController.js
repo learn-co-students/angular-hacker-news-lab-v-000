@@ -21,8 +21,6 @@ function MainController(StoryService, IndividualStoryService, $scope) {
         });
       })
 
-
-
   $scope.increment = function() {
       $scope.start += limitStep;
   }
