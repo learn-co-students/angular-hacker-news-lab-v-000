@@ -13,7 +13,7 @@ describe('Routes', function () {
 		it('should have the correct URL', function () {
 			state = $state.get('top');
 
-			expect(state.url).toEqual('/top');
+			expect(state.url).toEqual('/#/top');
 		});
 	});
 
@@ -23,7 +23,7 @@ describe('Routes', function () {
 		it('should have the correct URL', function () {
 			state = $state.get('post');
 
-			expect(state.url).toEqual('/post/:id');
+			expect(state.url).toEqual('/#/post/:id');
 		});
 	});
 });

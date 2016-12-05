@@ -1,0 +1,12 @@
+<h3>By: {{ usercomment.data.by }} on {{ (usercomment.data.time * 1000) | date: 'shortDate' }} at {{ (usercomment.data.time * 1000) | date: 'shortTime' }}</h3>
+<p>{{ usercomment.data.text}}</p>
+
+  <button ng-style="!usercomment.data.kids && {'visibility':'hidden'}" ng-click="usercomment.buttonClick()">{{ usercomment.buttonText }}</button>
+
+  <div id="moreCommentsBox" style="{{ usercomment.divStyle}}">
+  <ul ng-repeat="comment in usercomment.data.kids">
+       <li>
+         <usercomment id="comment"></item>
+       </li>
+     </ul>
+   </div>

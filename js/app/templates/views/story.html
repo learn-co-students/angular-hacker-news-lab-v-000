@@ -1,0 +1,18 @@
+
+<div>
+  <h1>Title: {{ story.data.title }} </h1>
+  <h2>Posted By: {{ story.data.by }}</h2>
+  <h3>Link: {{ story.data.url }}</h3>
+  <p>Score: {{ story.data.score }}</p>
+  <p>Comments: {{ story.data.descendants }}</p>
+
+<button ng-style="story.data.kids.length < 1 && {'visibility':'hidden'}" ng-click="showComments()">{{ buttonText }}</button>
+
+
+<div id="commentBox" style="{{ commentStyle}}">
+  <ul ng-repeat="comment in story.data.kids">
+       <li><usercomment id="comment"></item></li>
+     </ul>
+ </div>
+
+</div>
