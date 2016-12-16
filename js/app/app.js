@@ -1,13 +1,13 @@
 angular
-    .module('app', ['ui.router'])
+    .module('app', ['ui.router', 'ngSanitize'])
     .config(function ($stateProvider) {
         $stateProvider
           .state('top', {
               url: '/top',
               templateUrl: 'views/top-stories.html',
-              controller: 'TopStoriesController as topStories',
+              controller: 'TopStoriesController as top',
               resolve: {
-                  topStories: function (PostService) {
+                  posts: function (PostService) {
                     return PostService.getTopStories();
                   }
               }
