@@ -1,5 +1,5 @@
-function PostSevice($http){
-  this.getTopStories = function(){
+function PostService($http){
+  this.getTopStories = function(id){
     return $http.get('https://hacker-news.firebaseio.com/v0/topstories.json');
   };
 
@@ -9,4 +9,4 @@ function PostSevice($http){
 }
 angular
     .module('app')
-    .service('PostSevice', PostSevice);
+    .service('PostService', PostService);
