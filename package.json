@@ -9,6 +9,9 @@
     "karma-spec-reporter": "0.0.23"
   },
   "dependencies": {
+    "angular": "^1.6.0",
+    "angular-sanitize": "^1.6.0",
+    "angular-ui-router": "^0.3.2",    
     "express": "^4.13.4"
   }
 }
