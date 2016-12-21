@@ -1,12 +1,12 @@
-function PostsService($http) {
-  var url = 'https://hacker-news.firebaseio.com/v0';
+var API_URL = 'https://hacker-news.firebaseio.com/v0';
 
-  this.getTopStories = function() {
-    return $http.get(url + '/topstories.json');
+function PostsService($http) {
+  this.getTopStories = function () {
+    return $http.get(API_URL + '/topstories.json');
   };
 
-  this.getPost = function(id) {
-    return $http.get(url + '/item/' + id + '.json');
+  this.getPost = function (id) {
+    return $http.get(API_URL + '/item/' + id + '.json');
   };
 }
 

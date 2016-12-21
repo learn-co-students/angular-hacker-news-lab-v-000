@@ -1,7 +1,8 @@
+var postPerPage = 30;
+
 function TopStoriesController(posts) {
   var ctrl = this;
-  var postPerPage = 30;
-
+  
   ctrl.page = 0;
   ctrl.totalPosts = posts.data.length;
   ctrl.totalPages = Math.ceil(ctrl.totalPosts / postPerPage);

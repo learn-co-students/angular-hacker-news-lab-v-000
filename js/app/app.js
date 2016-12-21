@@ -8,7 +8,7 @@ angular
         controller: 'TopStoriesController as top',
         resolve: {
           posts: function(PostsService) {
-            return PostService.getTopStories();
+            return PostsService.getTopStories();
           }
         }
       })
@@ -24,4 +24,4 @@ angular
       });
 
     $urlRouterProvider.otherwise('/top');
-  })
+  });
