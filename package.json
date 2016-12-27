@@ -9,6 +9,7 @@
     "karma-spec-reporter": "0.0.23"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "semantic-ui": "^2.2.7"
   }
 }
