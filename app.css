@@ -1,6 +1,16 @@
-html, body {
-	background: #fff;
-	font-family: "Helvetica Neue", Verdana, sans-serif;
+body {
+	background-color: #fff;
+}
+
+h2 {
+	font-family: Tahoma, Geneva, sans-serif;
+	color: crimson;
+	padding: 20px;
+
+}
+
+p {
+	font-family: "Times New Roman", Times, serif;
 }
 
 .item {
