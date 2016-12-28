@@ -1,6 +1,8 @@
 <h2>Hacker News Stories</h2>
-<ol>
-    <li ng-repeat="story in vm.stories" >
+<ol start="{{ vm.start }}">
+    <li dir-paginate="story in vm.stories | itemsPerPage: 30" >
       <story id="story"></story>
     </li>
 </ol>
+
+<dir-pagination-controls on-page-change="updatePage(newPageNumber, oldPageNumber)"></dir-pagination-controls>
