@@ -1,6 +1,11 @@
 body {
+	background-color: #fff;
+}
+
+#wrapper {
 	background-color: #fbfbf0;
 	font-size: 0.875em;
+	margin: 0 100px 0 100px;
 }
 
 h2 {
