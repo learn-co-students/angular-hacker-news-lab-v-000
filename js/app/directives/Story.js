@@ -40,8 +40,13 @@ angular
 
     function getTime(seconds) {
     var secondDifference = (Date.now()/1000) - seconds;
-    var hoursAgo = secondDifference/3600;
-    return Math.floor(hoursAgo);
+    if (secondDifference < 3600) {
+      var minutesAgo = secondDifference/60;
+      return Math.floor(minutesAgo) + ' minutes ago';
+    } else {
+      var hoursAgo = secondDifference/3600;
+      return Math.floor(hoursAgo) + ' hours ago';
+    }
   }
 
     TopStoriesService
