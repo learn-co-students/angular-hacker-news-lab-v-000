@@ -62,6 +62,7 @@ angular
         vm.score = vm.story.score;
         vm.author = vm.story.by;
         vm.time = getTime(vm.story.time);
+        vm.commentsCount = vm.story.descendants;
 
       })
   }
