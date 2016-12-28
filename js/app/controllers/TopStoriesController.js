@@ -5,17 +5,20 @@
     .module('app')
     .controller('TopStoriesController', TopStoriesController);
 
-  TopStoriesController.$inject = [];
-  function TopStoriesController() {
-    var vm = this;
-    
+  TopStoriesController.$inject = ['TopStoriesService'];
+    function TopStoriesController(TopStoriesService) {
+      var vm = this;
+        vm.stories = [];
 
     activate();
 
 
     function activate() {
-      vm.stories = ['Story 1, by Jbok', 'Story 2, by JCiringione']
-
+      TopStoriesService 
+        .getStories()
+        .then(function(res) {
+          vm.stories = res.data;
+        });
     }
   }
 
