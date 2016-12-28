@@ -9,10 +9,7 @@
     by {{ vm.author }}, {{ vm.time }} | <a href="#">Hide</a> | 
 
   <ng-pluralize count="vm.commentsCount"
-    when="{
-    '1': '1 comment',
-    'other': '{} comments'
-    }">    
+    when="{ '1': '1 comment', 'other': '{} comments' }">    
   </ng-pluralize>
 
 </div>

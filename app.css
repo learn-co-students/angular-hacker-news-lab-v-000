@@ -1,16 +1,23 @@
 body {
-	background-color: #fff;
+	background-color: #fbfbf0;
+	font-size: 0.875em;
 }
 
 h2 {
 	font-family: Tahoma, Geneva, sans-serif;
-	color: crimson;
-	padding: 20px;
+/*	padding: 20px;*/
+	background-color: #f67324;
 
 }
 
 p {
 	font-family: "Times New Roman", Times, serif;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+	font-size: 1.1em;
 }
 
 .item {
