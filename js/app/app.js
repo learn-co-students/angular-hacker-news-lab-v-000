@@ -1,10 +1,15 @@
-angular
-.module('app', ['ui.router', 'angularUtils.directives.dirPagination'])
-.config(function($stateProvider){
-  $stateProvider
-  .state('top', {
-    url: '',
-    templateUrl: 'views/top-stories.html',
-    controller: 'TopStoriesController as vm'
-  })
-})
+(function() {
+'use strict';
+
+  angular
+  .module('app', ['ui.router', 'angularUtils.directives.dirPagination'])
+  .config(function($stateProvider, $urlRouterProvider){
+    $stateProvider
+    .state('top', {
+      url: '/top?page',
+      templateUrl: 'views/top-stories.html',
+      controller: 'TopStoriesController as vm'
+    })
+    $urlRouterProvider.otherwise('/top');
+  });
+})();
