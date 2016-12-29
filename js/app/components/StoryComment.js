@@ -10,13 +10,15 @@
     controllerAs: 'vm'
   };
   
-  StoryCommentController.$inject = ['TopStoriesService'];
-  function StoryCommentController (TopStoriesService) {
+  StoryCommentController.$inject = ['TopStoriesService', 'getTimeFilter'];
+  function StoryCommentController (TopStoriesService, getTimeFilter) {
     var vm = this;
     TopStoriesService 
       .getStory(vm.id)
       .then(function(res){
-        vm.comment = res.data;
+        vm.commentText = res.data.text;
+        vm.commentAuthor = res.data.by;
+        vm.commentTime = getTimeFilter(res.data.time);
     });
   }
 

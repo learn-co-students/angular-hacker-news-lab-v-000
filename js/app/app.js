@@ -2,7 +2,7 @@
 'use strict';
 
   angular
-  .module('app', ['ui.router', 'angularUtils.directives.dirPagination'])
+  .module('app', ['ui.router', 'angularUtils.directives.dirPagination', 'ngSanitize'])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
     .state('top', {
