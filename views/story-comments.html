@@ -1,4 +1,4 @@
-<h2>Comments Section</h2>
+<h2>Hacker News Comments Section</h2>
 <story id="vm.id"></story>
 
 <form>
@@ -6,6 +6,10 @@
   <p><button>Add Comment</button></p>
 </form>
 
-{{ vm.story }}
+
 <h3>Comments</h3>
-<story-comment id="15"></story-comment>
+<ul>
+  <li ng-repeat="commentId in vm.comments">
+    <story-comment id="commentId"></story-comment> 
+  </li>
+</ul>
