@@ -1,14 +1,40 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
+  <head>
+  	<meta charset="utf-8">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Angular Application</title>
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Hacker News API</title>
 
     <link rel="stylesheet" href="app.css" />
-</head>
-<body>
 
-</body>
+  </head>
+
+  <body>
+
+  <div id="wrapper">
+
+    <div ng-app="app">
+      <div ui-view></div>
+
+    </div>
+  </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+    <script src="node_modules/angular-utils-pagination/dirPagination.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/controllers/StoryController.js"></script>
+    <script src="js/app/services/TopStoriesService.js"></script>
+    <script src="js/app/controllers/TopStoriesController.js"></script>
+    <script src="js/app/directives/Story.js"></script>
+    <script src="js/app/components/StoryComment.js"></script>
+    <script src="js/app/filters/getDomainUrl.js"></script>
+    <script src="js/app/filters/getTime.js"></script>
+
+
+
+
+  </body>
 </html>

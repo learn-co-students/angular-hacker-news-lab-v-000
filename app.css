@@ -1,6 +1,28 @@
-html, body {
-	background: #fff;
-	font-family: "Helvetica Neue", Verdana, sans-serif;
+body {
+	background-color: #fff;
+}
+
+#wrapper {
+	background-color: #fbfbf0;
+	font-size: 0.875em;
+	margin: 0 100px 0 100px;
+}
+
+h2 {
+	font-family: Tahoma, Geneva, sans-serif;
+/*	padding: 20px;*/
+	background-color: #f67324;
+
+}
+
+p {
+	font-family: "Times New Roman", Times, serif;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+	font-size: 1.1em;
 }
 
 .item {

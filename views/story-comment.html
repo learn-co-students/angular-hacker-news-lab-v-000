@@ -1,0 +1,8 @@
+<div>{{ vm.commentAuthor }}, {{ vm.commentTime }}</div>
+<div ng-bind-html="vm.commentText"></div>
+
+<ul>
+  <li ng-repeat="commentId in vm.commentKids">
+    <story-comment id="commentId"></story-comment>
+  </li>
+</ul>

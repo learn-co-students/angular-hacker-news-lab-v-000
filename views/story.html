@@ -1,0 +1,15 @@
+<div>
+  <strong><a href="{{vm.url}}">{{ vm.title }}</a></strong> {{ vm.domain }}
+</div>
+<div>
+  <ng-pluralize count="vm.score"
+    when="{ '1': '1 point', 'other': '{} points'}">
+  </ng-pluralize>
+
+    by {{ vm.author }}, {{ vm.time }} | <a href="#">Hide</a> | 
+
+  <a href="" ui-sref="post({ id:{{vm.id}} })"><ng-pluralize count="vm.commentsCount"
+    when="{ '1': '1 comment', 'other': '{} comments' }">    
+  </ng-pluralize></a>
+
+</div>
