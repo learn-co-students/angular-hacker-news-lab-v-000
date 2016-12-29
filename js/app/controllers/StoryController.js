@@ -15,6 +15,13 @@
 
     function activate() {
       vm.id = $stateParams.id;
+
+      TopStoriesService
+      .getStory(vm.id)
+      .then(function(res) {
+        vm.story = res.data;
+      })
+
   }
 }
 })();

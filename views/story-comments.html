@@ -1,2 +1,11 @@
 <h2>Comments Section</h2>
-Story #{{ vm.id }}
+<story id="vm.id"></story>
+
+<form>
+  <p><textarea name="comment" id="comment" cols="50" rows="6"></textarea></p>
+  <p><button>Add Comment</button></p>
+</form>
+
+{{ vm.story }}
+<h3>Comments</h3>
+<story-comment id="15"></story-comment>
