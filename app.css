@@ -130,8 +130,3 @@ html, body {
 .comments li + li {
 	margin-top: 20px;
 }
-
-.active {
-	color: red;
-	background-color: #ececec;
-}
