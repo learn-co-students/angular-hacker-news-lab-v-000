@@ -1,5 +1,31 @@
 # Recreating HackerNews in Angular
 
+Procedure:
+
+1. set up scaffold
+js
+  app
+    /controller
+      PostController.js                                   (X)
+      TopStoriesController.js                             (X)
+    /services
+      PostService.js
+    /components
+      item.js
+    app.js
+  angular-ui-router.js                                    (X)
+  angular-sanitize.js                                     (X)
+  angular.js                                              (X)
+    (set up state and urlRouter providers here)
+views
+   post.HTML
+   item.HTML                                                
+   top-stories.HTML                                        (X)
+
+
+
+
+
 ## Objectives
 
 - Use the HackerNews API to create a clone app
