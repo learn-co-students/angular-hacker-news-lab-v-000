@@ -21,7 +21,6 @@ function TopStoriesController(topStories) {
   }
 
   ctrl.paginate();
-  console.log(ctrl.posts);
 }
 
 angular
