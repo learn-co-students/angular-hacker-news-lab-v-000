@@ -1,0 +1,13 @@
+<div class="item">
+  <div ng-switch="item.data.type">
+    <div ng-switch-when="story">
+      <a class="item__title" href="{{ item.data.url }}" target="_blank">
+        {{ item.data.title }}
+      </a>
+    </div>
+    <div ng-switch-when="comment">
+      {{ item.data.text }}
+    </div>
+  </div>
+
+</div>

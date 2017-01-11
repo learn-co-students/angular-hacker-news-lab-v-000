@@ -6,7 +6,7 @@ angular
         templateUrl: 'js/app/views/top_stories.html',
         controller: 'TopStoriesController as top',
         resolve: {
-          posts: function (PostsService) {
+          topStories: function (PostsService) {
             return PostsService.getTopStories();
           }
         }
