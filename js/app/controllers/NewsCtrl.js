@@ -7,10 +7,11 @@ function NewsCtrl($scope, NewsService) {
       console.log(res.data)
     });
 
-  // NewsService
-  //   .getNews(13430222, function (news) {
-  //     console.log(news);
-  //   })
+  NewsService
+    .getNews(13437905)
+    .then(function (news) {
+      console.log(news.data.title);
+    })
 }
 
 angular
