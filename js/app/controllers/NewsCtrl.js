@@ -1,7 +1,7 @@
-function NewsCtrl($scope) {//newsList) {
-  $scope.text = 'Hello, testing';
-  // console.log(this);
-  // this.stories = newsList.data;
+function NewsCtrl(newsList) {
+  // $scope.text = 'Hello, testing';
+  console.log(this);
+  this.stories = newsList.data;
 
 
 
