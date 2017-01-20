@@ -4,14 +4,14 @@ function NewsCtrl($scope, NewsService) {
   NewsService
     .getNewsId()
     .then(function (res) {
-      console.log(res.data)
+      // console.log(res.data)
     });
 
   NewsService
-    .getNews(13437905)
-    .then(function (news) {
-      console.log(news.data.title);
-    })
+    .getNews(13439828)
+    .then( function (news) {
+      console.log(news.data);
+    });
 }
 
 angular
