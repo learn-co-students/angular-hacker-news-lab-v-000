@@ -10,8 +10,9 @@
 </head>
 <body>
 		<div ng-app="app">
-			<div ng-controller="NewsCtrl">
+			<div ng-controller="NewsCtrl as ctrl">
 				{{ text }}
+				<div ui-view></div>
 			</div>
 
 		</div>
