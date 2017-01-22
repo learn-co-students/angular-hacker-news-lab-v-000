@@ -1,6 +1,6 @@
-function NewsCtrl(newsList) {
+function PostCtrl(postData) {
   // $scope.text = 'Hello, testing';
-  this.stories = newsList.data;
+  console.log(postData.data);
 
 
 
@@ -13,4 +13,4 @@ function NewsCtrl(newsList) {
 
 angular
 	.module('app')
-	.controller('NewsCtrl', NewsCtrl);
+	.controller('PostCtrl', PostCtrl);

@@ -11,7 +11,19 @@ angular
                       return NewsService.getNewsId();
                   }
                 }
-            });
+            })
+            .state('post', {
+              url: '/post/:id', //localhost:8080/#/post/{id}
+              templateUrl: 'views/post.html',
+              controller: 'PostCtrl as post',
+              resolve: {
+                  postData: function ($stateParams, newsService) {
+                    console.log('hello');
+                    console.log($stateParams.id);
+                    return UserService.getNews($stateParams.id);
+                  }
+              }
+            })
     });
 
 // angular
