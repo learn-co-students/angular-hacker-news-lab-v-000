@@ -7,7 +7,7 @@ function NewsService($http) {
 
 	this.getNews = function (newsId) {
 		var newsUrl = 'https://hacker-news.firebaseio.com/v0/item/'+ newsId + '.json'
-		console.log(newsUrl);
+		// console.log(newsUrl);
 		return $http.get(newsUrl);
 	};
 }
