@@ -1,14 +1,12 @@
 function NewsCtrl(newsList) {
   // $scope.text = 'Hello, testing';
-  this.stories = newsList.data;
+  // this.stories = newsList.data;
 
+ var noStoriesPerPage = 30;
 
+ this.stories = newsList.data.slice(0, noStoriesPerPage);
+ console.log(this.stories);
 
-  // NewsService
-  //   .getNews(13439828)
-  //   .then( function (news) {
-  //     console.log(news.data);
-  //   });
 }
 
 angular
