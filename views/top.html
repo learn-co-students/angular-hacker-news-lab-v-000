@@ -1,7 +1,11 @@
 <div ng-repeat="story in news.stories">
   <!-- {{ story }} -->
   <br>
-  {{news.startStoryNo}}
+  {{news.startStoryNo + $index}}
   <story storynb="story">
   </story>
 </div>
+
+<br>
+<a ng-click="previous()" href="#">previous</a>
+<a ng-click="next()" href="#">next</a>
