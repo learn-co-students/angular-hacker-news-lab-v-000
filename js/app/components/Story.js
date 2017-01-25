@@ -9,7 +9,7 @@ var Story = {
     NewsService
       .getNews(ctrl.storynb)
       .then( function (news) {
-        // console.log(news.data);
+        console.log(news.data);
         ctrl.data = news.data;
       });
   },

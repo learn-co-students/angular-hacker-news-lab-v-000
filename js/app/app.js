@@ -18,7 +18,7 @@ angular
               controller: 'PostCtrl as post',
               resolve: {
                   postData: function ($stateParams, newsService) {
-                    console.log('hello');
+                    console.log('got to state post');
                     console.log($stateParams.id);
                     return UserService.getNews($stateParams.id);
                   }
