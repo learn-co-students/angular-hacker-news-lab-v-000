@@ -1,1 +1,9 @@
-comment.html
+<div class="item__title">
+  by {{comment.data.by}}</a>
+</div>
+<div class="item__description">
+  <p ng-bind-html="comment.data.text"></p> 
+  <!-- {{comment.data.text}} -->
+  <!-- <a ui-sref="post({id: comment.data.id})">More ...</a>
+  <div ui-view></div>  -->
+</div>

@@ -1,5 +1,5 @@
 angular
-    .module('app', ['ui.router'])
+    .module('app', ['ui.router', 'ngSanitize'])
     .config(function ($stateProvider) {
         $stateProvider
             .state('top', {
@@ -22,7 +22,7 @@ angular
                   }
               }
             });
-            
+
     });
 
 // angular
