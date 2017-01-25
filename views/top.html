@@ -7,7 +7,9 @@
 </div>
 
 <br>
-<!-- ng-show="news.currentPage < 10" -->
-<a ng-click="vm.previous()" href="#" ng-show="vm.page > 1">previous</a>
-<span> | </span>
-<a ng-click="vm.next()" href="#" ng-show="vm.page < 17">next</a>
+
+<div class="pagination">
+  <a ng-click="vm.previous()" href="#" ng-show="vm.page > 1">previous</a>
+  <span> | </span>
+  <a ng-click="vm.next()" href="#" ng-show="vm.page < 17">next</a>
+</div>

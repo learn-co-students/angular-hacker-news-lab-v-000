@@ -1,5 +1,6 @@
 function PostCtrl(postData) {
   // $scope.text = 'Hello, testing';
+  this.data = postData.data;
   console.log(postData.data);
 
 

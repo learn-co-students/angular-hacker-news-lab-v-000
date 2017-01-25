@@ -10,10 +10,15 @@
 </head>
 <body>
 		<div ng-app="app">
-			<a href="#/top">Top stories</a>
-			<!-- <div ng-controller="NewsCtrl as ctrl"> -->
-			<!-- </div> -->
-				<div ui-view></div>
+			<!-- <a href="#/top">Top stories</a> -->
+			<div class="header">
+				<div class="header__fixed">
+					<a ui-sref="top">Top stories</a>
+				</div>
+			</div>
+
+			<div ui-view></div>
+
 		</div>
 	  <script src="js/angular.js"></script>
 		<script src="js/app/app.js"></script>
