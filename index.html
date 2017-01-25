@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+		<div ng-app="app">
+			<!-- <a href="#/top">Top stories</a> -->
+			<div class="header">
+				<div class="header__fixed">
+					<a ui-sref="top">Top stories</a>
+				</div>
+			</div>
 
+			<div ui-view></div>
+
+		</div>
+	  <script src="js/angular.js"></script>
+		<script src="js/app/app.js"></script>
+		<script src="js/app/controllers/NewsCtrl.js"></script>
+		<script src="js/app/controllers/PostCtrl.js"></script>
+		<script src="js/app/components/Story.js"></script>
+		<script src="js/app/components/Comment.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<script src="js/app/services/NewsService.js"></script>
 </body>
 </html>

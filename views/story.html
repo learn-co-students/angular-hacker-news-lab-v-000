@@ -1,0 +1,10 @@
+<div class="item__title">
+  <a href="{{story.data.url}}" class="item__title">{{story.data.title}}</a>
+</div>
+<div class="item__description">
+  {{story.data.score}} points
+  by {{story.data.by}} |
+  {{story.data.kids.length}} comments
+  <a ui-sref="post({id: story.data.id})">Comments ...</a>
+  <div ui-view></div>
+</div>

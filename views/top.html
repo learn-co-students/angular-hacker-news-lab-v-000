@@ -1,0 +1,15 @@
+<div ng-repeat="story in vm.stories">
+  <!-- {{ story }} -->
+  <br>
+  {{vm.startStoryNo + $index}}
+  <story storynb="story">
+  </story>
+</div>
+
+<br>
+
+<div class="pagination">
+  <a ng-click="vm.previous()" href="#" ng-show="vm.page > 1">previous</a>
+  <span> | </span>
+  <a ng-click="vm.next()" href="#" ng-show="vm.page < 17">next</a>
+</div>
