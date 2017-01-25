@@ -5,4 +5,13 @@
   {{vm.data.score}} points
   by {{vm.data.by}} |
   {{vm.data.kids.length}} comments
+
+  <div ng-repeat="comment in vm.data.kids">
+    {{ comment }}
+    <br>
+
+    <comment commentnb="comment">
+    </comment>
+  </div>
+
 </div>
