@@ -5,7 +5,7 @@ angular
             .state('top', {
                 url: '/top',  //localhost:8080/#/top
                 templateUrl: 'views/top.html',
-                controller: 'NewsCtrl as news',
+                controller: 'NewsCtrl as vm',
                 resolve: {
                   newsList: function (NewsService) {
                       return NewsService.getNewsId();

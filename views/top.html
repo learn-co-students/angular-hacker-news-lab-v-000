@@ -1,13 +1,13 @@
-<div ng-repeat="story in news.stories">
+<div ng-repeat="story in vm.stories">
   <!-- {{ story }} -->
   <br>
-  {{news.startStoryNo + $index}}
+  {{vm.startStoryNo + $index}}
   <story storynb="story">
   </story>
 </div>
 
 <br>
 <!-- ng-show="news.currentPage < 10" -->
-<a ng-click="previous()" href="#" ng-show="currentPage > 1">previous</a>
+<a ng-click="vm.previous()" href="#" ng-show="vm.page > 1">previous</a>
 <span> | </span>
-<a ng-click="next()" href="#" ng-show="true">next</a>
+<a ng-click="vm.next()" href="#" ng-show="vm.page < 17">next</a>

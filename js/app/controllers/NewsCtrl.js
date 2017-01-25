@@ -1,25 +1,25 @@
-function NewsCtrl($scope, newsList) {
+function NewsCtrl(newsList) {
 
-  var ctrl = this;
+  var vm = this;
   var nbStoryPerPage = 30;
-  $scope.currPage = 1;
+  vm.page = 1; // currPage won't work (no camelcase for ng-show)
 
 
-  ctrl.displayPage = function() {
-    ctrl.startStoryNo = $scope.currPage*nbStoryPerPage - nbStoryPerPage + 1;
-    ctrl.stories = newsList.data.slice(ctrl.startStoryNo - 1, ctrl.startStoryNo + nbStoryPerPage - 1);
+  vm.displayPage = function() {
+    vm.startStoryNo = vm.page*nbStoryPerPage - nbStoryPerPage + 1;
+    vm.stories = newsList.data.slice(vm.startStoryNo - 1, vm.startStoryNo + nbStoryPerPage - 1);
   };
-  $scope.next = function() {
-    $scope.currPage++;
-    console.log($scope.currPage);
-    ctrl.displayPage();
+  vm.next = function() {
+    vm.page++;
+    console.log(vm.page);
+    vm.displayPage();
   };
-  $scope.previous = function() {
-    $scope.currPage--;
-    ctrl.displayPage();
+  vm.previous = function() {
+    vm.page--;
+    vm.displayPage();
   };
 
-  ctrl.displayPage();
+  vm.displayPage();
 }
 
 angular
