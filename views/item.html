@@ -1,0 +1,30 @@
+<div class="item" ng-if="item.data"> <!-- only display this div if item has data -->
+  
+  <!-- we can tell stories and comments apart by the "type" property -->
+  <div ng-switch="item.data.type">
+    <!-- when the "type" is "comment" display this div -->
+    <div ng-switch-when="comment">
+      <div class="item__author">
+        <a href=""> {{ item.data.by }}</a>
+        {{ (item.data.time * 1000) | date: 'short' }}
+      </div>
+      <div ng-bind-html="item.data.text"></div>
+
+      <ul class="comments">
+        <li ng-repeat="comment in item.data.kids">
+          <item id="comment"></item>
+        </li>
+      </ul>
+    </div>
+    <!-- -->
+    <div ng-switch-when="story">
+      <a href="{{ item.data.url }}" class="item__title" target="_blank">
+        {{ item.data.title }}
+      </a>
+      <a ui-sref="post({id: item.data.id})" class="item__description">
+        {{ item.data.descendants }} comments {{ item.data.score }} points
+      </a>
+    </div>
+    
+  </div>
+</div>
