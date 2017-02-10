@@ -1,0 +1,17 @@
+<div class="posts">
+  <ul>
+    <li ng-repeat="post in top.posts">
+      <item id="post"></item>
+    </li>
+  </ul>
+
+<div class="paginate">
+  <div ng-if="top.page > 0">
+    <a href="" ng-click="top.previousPage()">Prev..</a>
+  </div>
+  <div ng-if="top.page < top.pageCount">
+    <a href="" ng-click='top.nextPage()'>Next..</a>
+  </div>
+</div>
+
+</div>

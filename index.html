@@ -10,5 +10,18 @@
 </head>
 <body>
 
+	<div class="app" ng-app="app">
+		<a ui-sref='top'>Top Stories</a>
+		<div ui-view></div>
+
+	</div>
+
+	<script src="js/angular.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controllers/PostController.js"></script>
+	<script src="js/app/controllers/TopStoriesController.js"></script>
+	<script src="js/app/services/PostsService.js"></script>
+	<script src="js/app/components/Item.js"></script>
 </body>
 </html>
