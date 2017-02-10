@@ -14,8 +14,8 @@ angular
         })
         .state('post', {
           url: '/post/:id',
-          templateUrl: 'views/story.html',
-          controller: 'PostsController as post',
+          templateUrl: 'views/post.html',
+          controller: 'PostController as post',
           resolve: {
             post: function($stateParams, PostsService){
               return PostsService.getStory($stateParams.id);
@@ -23,5 +23,5 @@ angular
           }
         })
 
-        $urlRouterProvider.otherwise('/home')
+        $urlRouterProvider.otherwise('/top')
     })
