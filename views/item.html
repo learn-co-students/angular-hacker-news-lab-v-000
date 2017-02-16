@@ -7,7 +7,7 @@
         </a>
         {{ (item.data.time * 1000) | date: 'short' }}
       </div>
-      
+
       <div ng-bind-html="item.data.text"></div>
 
       <ul class="comments">
@@ -21,6 +21,7 @@
       <a class="item__title" href="{{ item.data.url }}" target="_blank">
         {{ item.data.title }}
       </a>
+      
       <a class="item__description" ui-sref="post({ id: item.data.id })">
         {{ item.data.descendants }} comments {{ item.data.score }} points
       </a>
