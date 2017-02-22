@@ -1,0 +1,29 @@
+<div>
+  <ul class="posts">
+    <li ng-repeat="item in topStories.topStories">
+      <item id="item">
+        {{ item.title }}
+      </item>
+    </li>
+  </ul>
+
+  <div class="pagination">
+  Page {{ topStories.currentPage }} of {{ topStories.totalPages }}
+  </div>
+
+  <div>
+    <ul class="pagination">
+      <li ng-if="topStories.page > 0">
+        <a ng-click="topStories.previousPage()">
+          Previous page
+        </a>
+      </li>
+
+      <li ng-if="topStories.page < topStories.totalPages - 1">
+        <a ng-click="topStories.nextPage()">
+          Next page
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
