@@ -9,5 +9,12 @@
   - also shows comment threads for the post
 
 [x] basic setup
-[] inspect API data with Postman
+[x] inspect API data with Postman
+    https://hacker-news.firebaseio.com/v0/topstories.json
+      -list of IDs
+      -need to request info separately
+    https://hacker-news.firebaseio.com/v0/item/{id}.json
+      -has 'kids' property which is another list of IDs
+      -need to make a call for each kid ID and its kid IDs (if present) until the full comment thread is displayed
+      -comments come through containing HTML so special handling is required (ngSanitize, ng-bind-html)
 [] consider structure (controller for fetching data, and... component for the ng-repeat? Where does pagination live?)
