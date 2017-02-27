@@ -1,0 +1,13 @@
+<div>
+  <h3 ng-if='item.data.type==="story"'><a href="#/post/{{item.data.id}}">{{item.data.title}}</a></h3>
+  <div ng-if='item.data.type==="comment"' ng-bind-html='item.data.text'></div>
+
+  <p>Published {{item.data.time | date: longDate}}</p>
+  <p>Score: {{item.data.score}}</p>
+  <p>Has {{item.data.kids.length}} comments</p>
+  <div ng-if='item.data.type === "comment" && item.data.kids'>
+    <ul class="comment">
+      <li ng-repeat='comment in item.data.kids'><item id='comment'></item></li>
+    </ul>
+  </div>
+</div>
