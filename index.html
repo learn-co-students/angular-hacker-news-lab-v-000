@@ -11,6 +11,10 @@
 <body>
 
 	<div ng-app="app" class="app">
+		<div>
+			<h1>Slacker News</h1>
+			<a href="" ui-sref="top">Top Stories</a>
+		</div>
 		<div ui-view></div>
 	</div>
 
@@ -18,6 +22,7 @@
 	<script src="js/angular.js"></script>
 	<script src="js/angular-ui-router.js"></script>
 	<script src="js/app/app.js"></script>
-	<!-- <script src="js/app/controllers/UserController.js"></script> -->
+	<script src="js/app/controllers/TopStoriesController.js"></script>
+	<script src="js/app/services/StoriesService.js"></script>
 </body>
 </html>

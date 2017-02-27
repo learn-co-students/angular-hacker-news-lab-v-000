@@ -4,7 +4,7 @@ angular
     $stateProvider
       .state('top', {
         url: '/top',
-        templateUrl: '',
+        templateUrl: 'views/top.html',
         controller: ''
       })
       .state('post', {
