@@ -1,16 +1,16 @@
 var Item = {
-  templateUrl: 'views/item.html',
   bindings: {
-    id: '='
+    id: "="
   },
+  templateUrl: 'views/item.html',
   controller: function (PostsService) {
-    var ctrl = this;
+    var ctrl = this
     PostsService
-      .getPost(this.id)
+      .getPost(ctrl.id)
       .then(function (res) {
         ctrl.data = res.data
       })
-  },
+  }, 
   controllerAs: 'item'
 }
 

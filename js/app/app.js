@@ -8,7 +8,7 @@ angular
       .state('top', {
         url: '/top',
         templateUrl: 'views/top.html',
-        controller: 'TopStoriesController as top',
+        controller: 'TopPostsController as top',
         resolve: {
           posts: function (PostsService) {
             return PostsService.getTopPosts();
