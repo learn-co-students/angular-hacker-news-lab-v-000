@@ -1,4 +1,11 @@
 <div ng-controller="TopStoriesController as vm">
-    <p>{{ vm.aStory }}</p>
-    
+
+    <ul>
+      <li ng-repeat="story in vm.thisPage">
+        <h4>{{ story.rank + 1 }}: {{ story.title}}</h4>
+        <p><a href="{{ story.url }}">{{ story.url }}</a></p>
+        <p>{{ story.score }} points | {{ story.descendants }} comments</p>
+      </li>
+    </ul>
+
 </div>

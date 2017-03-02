@@ -1,21 +1,27 @@
 function TopStoriesController(StoriesService) {
     var vm = this;
     vm.topStoriesIDs = [];
-    vm.topStoriesInfo = [];
-    vm.aStory;
-    
+    vm.thisPageIDs = [];
+    vm.thisPage = [];
+    vm.counter = 31;
+
     StoriesService
         .getTopStoriesIDs()
         .then(function(res) {
             vm.topStoriesIDs = res.data;
-            var one = vm.topStoriesIDs[0]
-            vm.topStoriesIDs.forEach(function(id) {
-                StoriesService.getStoryByID(id).then(function(res) {
-                    vm.topStoriesInfo.push(res.data);
-                });
+            vm.thisPageIDs = vm.topStoriesIDs.slice(0,30);
+            vm.thisPageIDs.forEach(function(id, index) {
+              StoriesService.getStoryByID(id).then(function(res) {
+                var data = res.data;
+                data.rank = index;
+                vm.thisPage.push(data);
+              });
             });
-            console.log(vm.topStoriesInfo);
-        });
+          });
+
+    vm.getPage = function() {
+
+    };
 }
 
 angular

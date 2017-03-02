@@ -5,7 +5,7 @@ angular
       .state('top', {
         url: '/top',
         templateUrl: 'views/top.html',
-        controller: ''
+        controller: 'TopStoriesController'
       })
       .state('post', {
         url: '/post/:id'
