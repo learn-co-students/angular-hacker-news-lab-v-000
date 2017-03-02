@@ -1,11 +1,14 @@
 <div ng-controller="TopStoriesController as vm">
 
-    <ul>
-      <li ng-repeat="story in vm.thisPage">
-        <h4>{{ story.rank + 1 }}: {{ story.title}}</h4>
+    <ol start="{{ vm.counter }}">
+      <li ng-repeat="story in vm.thisPage | orderBy: 'rank' ">
+        <h4>{{ story.title}}</h4>
         <p><a href="{{ story.url }}">{{ story.url }}</a></p>
         <p>{{ story.score }} points | {{ story.descendants }} comments</p>
       </li>
-    </ul>
+    </ol>
+
+    <p><a href="" ng-if="vm.counter > 30" ng-click="vm.getPreviousPage()">Previous</a> | 
+      <a href="" ng-click="vm.getNextPage()">Next</a></p>
 
 </div>

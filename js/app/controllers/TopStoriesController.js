@@ -3,7 +3,7 @@ function TopStoriesController(StoriesService) {
     vm.topStoriesIDs = [];
     vm.thisPageIDs = [];
     vm.thisPage = [];
-    vm.counter = 31;
+    vm.counter = 1;
 
     StoriesService
         .getTopStoriesIDs()
@@ -19,8 +19,30 @@ function TopStoriesController(StoriesService) {
             });
           });
 
-    vm.getPage = function() {
+    vm.getNextPage = function() {
+      vm.counter += 30;
+      vm.thisPage = [];
+      vm.thisPageIDs = vm.topStoriesIDs.slice(vm.counter, vm.counter + 29);
+      vm.thisPageIDs.forEach(function(id, index) {
+        StoriesService.getStoryByID(id).then(function(res) {
+          var data = res.data;
+          data.rank = index;
+          vm.thisPage.push(data);
+        });
+      });
+    };
 
+    vm.getPreviousPage = function() {
+      vm.counter -= 30;
+      vm.thisPage = [];
+      vm.thisPageIDs = vm.topStoriesIDs.slice(vm.counter, vm.counter + 29);
+      vm.thisPageIDs.forEach(function(id, index) {
+        StoriesService.getStoryByID(id).then(function(res) {
+          var data = res.data;
+          data.rank = index;
+          vm.thisPage.push(data);
+        });
+      });
     };
 }
 
