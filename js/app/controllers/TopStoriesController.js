@@ -12,14 +12,13 @@ function TopStoriesController(StoriesService) {
             loadPage(0, 30);
           });
 
-    vm.getNextPage = function() {
-      vm.counter += 30;
-      vm.thisPage = [];
-      loadPage(vm.counter, vm.counter + 29);
-    };
+    vm.navigate = function(which) {
+      if (which === 'next') {
+        vm.counter += 30;
+      } else {
+        vm.counter -= 30;
+      }
 
-    vm.getPreviousPage = function() {
-      vm.counter -= 30;
       vm.thisPage = [];
       loadPage(vm.counter, vm.counter + 29);
     };

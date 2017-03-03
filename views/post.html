@@ -1,9 +1,9 @@
-<div ng-controller="TopStoriesController as vm">
+<div ng-controller="PostController as vm">
 
     <ol start="{{ vm.counter }}">
       <li ng-repeat="story in vm.thisPage | orderBy: 'rank' ">
         <p><a href="{{ story.url }}">{{ story.title }}</a></p>
-        <p>{{ story.score }} points | <a ui-sref="post({id: {{ story.id}} })">{{ story.descendants }} comments</a></p>
+        <p>{{ story.score }} points | <a ui-sref="post(story.id)">{{ story.descendants }} comments</a></p>
       </li>
     </ol>
 
