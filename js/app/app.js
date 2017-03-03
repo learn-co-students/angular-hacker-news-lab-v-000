@@ -10,6 +10,8 @@ angular
         controller: 'TopStoriesController'
       })
       .state('post', {
-        url: '/post/:id'
+        url: '/post/:id',
+        templateUrl: 'views/post.html',
+        controller: 'StoryController'
       });
   });

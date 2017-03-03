@@ -1,13 +1,8 @@
-<div ng-controller="PostController as vm">
+<div ng-controller="StoryController as vm">
 
-    <ol start="{{ vm.counter }}">
-      <li ng-repeat="story in vm.thisPage | orderBy: 'rank' ">
-        <p><a href="{{ story.url }}">{{ story.title }}</a></p>
-        <p>{{ story.score }} points | <a ui-sref="post(story.id)">{{ story.descendants }} comments</a></p>
-      </li>
-    </ol>
+  <p><a href="{{ vm.url }}">{{ vm.title }}</a></p>
+  <p>{{ vm.score }} points | <a ui-sref="post({id: {{ vm.id}} })">{{ vm.descendants }} comments</a></p>
 
-    <p><a href="" ng-if="vm.counter > 30" ng-click="vm.navigate('previous')">Previous</a> |
-      <a href="" ng-click="vm.navigate('next')">Next</a></p>
+  <div ui-view></div>
 
 </div>
