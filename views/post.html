@@ -1,7 +1,7 @@
 <div ng-controller="StoryController as vm">
 
-  <p><a href="{{ vm.url }}">{{ vm.title }}</a></p>
-  <p>{{ vm.score }} points | <a ui-sref="post({id: {{ vm.id}} })">{{ vm.descendants }} comments</a></p>
+  <p><a href="{{ vm.data.url }}">{{ vm.data.title }}</a></p>
+  <p>{{ vm.data.score }} points | <a ui-sref="post({id: {{ vm.id}} })">{{ vm.data.descendants }} comments</a></p>
 
   <div ui-view></div>
 
