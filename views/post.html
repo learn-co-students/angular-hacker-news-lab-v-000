@@ -1,8 +1,12 @@
-<div ng-controller="StoryController as vm">
+<div>
 
-  <p><a href="{{ vm.data.url }}">{{ vm.data.title }}</a></p>
-  <p>{{ vm.data.score }} points | <a ui-sref="post({id: {{ vm.id}} })">{{ vm.data.descendants }} comments</a></p>
+  <p><a href="{{ story.data.url }}">{{ story.data.title }}</a></p>
+  <p>{{ story.data.score }} points | <a ui-sref="post({id: {{ story.id}} })">{{ story.data.descendants }} comments</a></p>
 
-  <div ui-view></div>
+  <ul class="comments">
+    <li ng-repeat="kid in story.data.kids">
+      <comment id="kid"></comment>
+    </li>
+  </ul>
 
 </div>

@@ -1,13 +1,13 @@
 function StoryController($stateParams, StoriesService) {
-  var vm = this;
+  var top = this;
 
-  vm.id = $stateParams.id;
-  vm.data;
+  top.id = $stateParams.id;
+  top.data;
 
   StoriesService
-    .getStoryByID(vm.id)
+    .getStoryByID(top.id)
     .then(function(res) {
-      vm.data = res.data;
+      top.data = res.data;
     })
 }
 

@@ -1,38 +1,33 @@
-function TopStoriesController(StoriesService) {
-    var vm = this;
-    vm.topStoriesIDs = [];
-    vm.thisPageIDs = [];
-    vm.thisPage = [];
-    vm.counter = 1;
+function TopStoriesController(stories, StoriesService) {
+    var top = this;
+    top.topStoriesIDs = stories.data;
+    top.thisPageIDs = [];
+    top.thisPage = [];
+    top.counter = 1;
 
-    StoriesService
-        .getTopStoriesIDs()
-        .then(function(res) {
-            vm.topStoriesIDs = res.data;
-            loadPage(0, 30);
-          });
-
-    vm.navigate = function(which) {
+    top.navigate = function(which) {
       if (which === 'next') {
-        vm.counter += 30;
+        top.counter += 30;
       } else {
-        vm.counter -= 30;
+        top.counter -= 30;
       }
 
-      vm.thisPage = [];
-      loadPage(vm.counter, vm.counter + 29);
+      top.thisPage = [];
+      loadPage(top.counter, top.counter + 30);
     };
 
     function loadPage(start, end) {
-      vm.thisPageIDs = vm.topStoriesIDs.slice(start,end);
-      vm.thisPageIDs.forEach(function(id, index) {
+      top.thisPageIDs = top.topStoriesIDs.slice(start,end);
+      top.thisPageIDs.forEach(function(id, index) {
         StoriesService.getStoryByID(id).then(function(res) {
           var data = res.data;
           data.rank = index;
-          vm.thisPage.push(data);
+          top.thisPage.push(data);
         });
       });
     };
+
+    loadPage(0, 30);
 }
 
 angular

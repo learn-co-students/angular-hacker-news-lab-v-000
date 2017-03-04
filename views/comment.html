@@ -1,0 +1,15 @@
+<div class="item" ng-if="comment.data">
+  <div class="item__author">
+    <a href="" ui-sref="user({id: comment.data.by})">
+      {{ comment.data.by }}
+    </a>
+    {{ (comment.data.time * 1000) | date: 'short' }}
+  </div>
+  <div ng-bind-html="comment.data.text"></div>
+
+  <ul class="comments">
+    <li ng-repeat="kid in comment.data.kids">
+      <comment id="kid"></comment>
+    </li>
+  </ul>
+</div>
