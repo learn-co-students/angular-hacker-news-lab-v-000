@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
+	<div ng-app='app'>
+		<ui-view></ui-view>
+	</div>
 
+	<script src='js/angular.js'></script>
+	<script src='js/angular-ui-router.js'></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controllers/TopStoriesController.js"></script>
+	<script src="js/app/controllers/SingleStoryController.js"></script>
+	<script src="js/app/services/NewsIdsService.js"></script>
+	<script src="js/app/components/TopStories.js"></script>
+	<script src="js/app/components/Comments.js"></script>
+	<script src="js/app/components/Comment.js"></script>
+	<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
 </body>
 </html>
