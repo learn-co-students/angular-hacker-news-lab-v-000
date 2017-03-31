@@ -1,0 +1,14 @@
+<h1>Top Stories:</h1>
+<button ng-click="previous()">Previous</button><button ng-click="next()">Next</button>
+<h3 ng-show="loading">Loading....</h3>
+<ul class="top__stories__list">
+		<li ng-repeat="item in topStoriesList">
+		<h5>{{firstSlice + $index + 1}}. <a ui-sref="post({id: item.id})">{{item.title}}</a></h5>
+		<h6>{{item.url}}</h6>
+		<span class="post__info">Comments: {{item.kids.length}}, Score: {{item.score}}</span>
+		</li>
+
+</ul>
+<div ng-hide="loading">
+<button ng-click="previous()">Previous</button><button ng-click="next()">Next</button>
+</div>

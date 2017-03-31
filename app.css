@@ -1,6 +1,26 @@
 html, body {
-	background: #fff;
+	background: coral;
 	font-family: "Helvetica Neue", Verdana, sans-serif;
+}
+
+.top__stories__list li {
+	background-color: rgba(255, 255, 255, .4);
+	padding-left: 3px;
+	width: 50%;
+	border-radius: 5px;
+
+}
+
+.comments {
+	background-color: rgba(255, 255, 255, .4);
+}
+ 
+.top__stories__list {
+	list-style: none;
+}
+.post__info{
+	color: blue;
+	font-size: .6em;
 }
 
 .item {
@@ -104,6 +124,9 @@ html, body {
 	color: #3D77CB;
 }
 
+.by {
+	color: blue;
+}
 .post__description {
 	display: block;
 	margin-bottom: 30px;
@@ -126,6 +149,7 @@ html, body {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 }
+
 
 .comments li + li {
 	margin-top: 20px;
