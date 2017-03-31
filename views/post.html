@@ -1,0 +1,13 @@
+
+<h1>{{post.title}}</h1>
+<p>By: {{post.by}}</p>
+<p>Score: {{post.score}}</p>
+<p>Url: {{post.url}}</p>
+<a ui-sref="top">Back</a>
+<h2>Comments: </h2>
+<ol class="comments" ng-repeat="kids in listOfKids">
+	<li ng-repeat="kid in kids">
+		<div>{{kid.text}}</div>
+		by: <span class="by"><strong>{{kid.by}}</strong></span>
+	</li>
+</ol>
